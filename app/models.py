@@ -14,12 +14,19 @@ class Person(Base):
 
     first_name = db.Column(db.String(128), nullable=False)
     last_name = db.Column(db.String(128))
-    phone = db.Column(db.String(128), nullable=False, unique=True)
+    phone = db.Column(db.String(128), unique=True)
     email = db.Column(db.String(128), nullable=False, unique=True)
     summary = db.Column(db.Text)
     work_experiences = db.relationship('WorkExperience', backref='person', lazy='dynamic')
     skills = db.relationship('Skill', backref='person', lazy='dynamic')
     education = db.relationship('Education', backref='person', lazy='dynamic')
+
+    def __init__(self, first_name, last_name, phone, email, summary):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.phone = phone
+        self.email = email
+        self.summary = summary
 
     @property
     def serialize(self):
@@ -43,6 +50,13 @@ class WorkExperience(Base):
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
     projects = db.relationship('Project', backref='work_experience', lazy='joined')
 
+    def __init__(self, company, position, date, location, person_id):
+        self.company = company
+        self.position = position
+        self.date = date
+        self.location = location
+        self.person_id = person_id
+
     @property
     def serialize(self):
         return {
@@ -63,6 +77,12 @@ class Project(Base):
     project_url = db.Column(db.Text, unique=True)
     work_experience_id = db.Column(db.Integer, db.ForeignKey('work_experience.id'))
 
+    def __init__(self, project, project_description, project_url, work_experience_id):
+        self.project = project
+        self.project_description = project_description
+        self.project_url = project_url
+        self.work_experience_id = work_experience_id
+
     @property
     def serialize(self):
         return {
@@ -80,6 +100,11 @@ class Skill(Base):
     category = db.Column(db.String(256), nullable=False, unique=True)
     skills = db.Column(db.Text, nullable=False)
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
+
+    def __init__(self, category, skills, person_id):
+        self.category = category
+        self.skills = skills
+        self.person_id = person_id
 
     @property
     def serialize(self):
@@ -99,6 +124,13 @@ class Education(Base):
     date = db.Column(db.String(128), nullable=False)
     location = db.Column(db.String(128), nullable=False)
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
+
+    def __init__(self, place, degree, date, location, person_id):
+        self.place = place
+        self.degree = degree
+        self.date = date
+        self.location = location
+        self.person_id = person_id
 
     @property
     def serialize(self):

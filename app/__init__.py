@@ -5,7 +5,7 @@ from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 
 # Define the WSGI application object
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../static/dist", template_folder="../static")
 
 # Configurations
 app.config.from_object('config')

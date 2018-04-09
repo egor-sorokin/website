@@ -1,0 +1,7 @@
+# OS X
+.idea/
+
+# Distribution / packaging
+node_modules
+env/
+dist/

@@ -3,11 +3,13 @@ from flask import Flask, render_template
 
 # Import SQLAlchemy
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 
 # Define the WSGI application object
 app = Flask(__name__, static_folder="../static/dist", template_folder="../static")
 
 # Configurations
+CORS(app)
 app.config.from_object('config')
 
 # Define the database object which is imported

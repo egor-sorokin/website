@@ -1,2 +1,3 @@
-export const FETCH_PERSONAL_DATA = 'FETCH_PERSONAL_DATA';
-export const RECEIVE_PERSONAL_DATA = 'RECEIVE_PERSONAL_DATA';
+export const DEFAULT_URL = 'http://127.0.0.1:8080/api/v.1.0/';
+export const URL_PATH_PERSONAL_DATA = 'person';
+export const URL_PATH_WORK_EXPERIENCE = 'work_experience';

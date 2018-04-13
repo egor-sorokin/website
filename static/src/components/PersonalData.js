@@ -1,65 +1,40 @@
 import React, { Component } from 'react';
-import { getPersonalData } from '../utils/api';
+import withFetching from '../utils/api';
+import { URL_PATH_PERSONAL_DATA } from '../constants/index';
 
 
-export default class PersonalData extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: {},
-      isFetching: false,
-      loaded: false
-    };
+const PersonalData = ({ data, isFetching, error}) => {
+  const personData = data.personData || {};
+
+  if (error) {
+    return <p>{error.message}</p>;
   }
 
-  componentDidMount() {
-    this.setState({
-      isFetching: true
-    });
-
-    let personalDataPromise = getPersonalData();
-
-    personalDataPromise
-      .then(res => {
-        this.setState({
-          data: res.data.personData,
-          isFetching: false,
-          loaded: true
-        });
-      })
-      .catch(error => {
-        console.log(`Error during fetching personal data :::: ${error}`);
-
-        this.setState({
-          isFetching: false
-        });
-      })
+  if (isFetching) {
+    return <p>Loading ...</p>;
   }
 
+  return (
+    <div>
+      <section>
+        <p>
+          {personData.id}
+        </p>
+        <p>
+          {personData.first_name}
+        </p>
+        <p>
+          {personData.last_name}
+        </p>
+        <p>
+          {personData.email}
+        </p>
+        <p>
+          {personData.summary}
+        </p>
+      </section>
+    </div>
+  );
+};
 
-  render() {
-    const data = this.state.data;
-
-    return (
-      <div>
-        <section>
-          <p>
-            {data.id}
-          </p>
-          <p>
-            {data.first_name}
-          </p>
-          <p>
-            {data.last_name}
-          </p>
-          <p>
-            {data.email}
-          </p>
-          <p>
-            {data.summary}
-          </p>
-        </section>
-      </div>
-    );
-  }
-}
+export default withFetching(URL_PATH_PERSONAL_DATA)(PersonalData);

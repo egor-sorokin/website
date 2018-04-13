@@ -1,54 +1,31 @@
 import React, { Component } from 'react';
-import { getWorkExperience } from '../utils/api';
+import withFetching from '../utils/api';
+import { URL_PATH_WORK_EXPERIENCE } from '../constants/index';
 
 
-export default class WorkExperience extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: {},
-      isFetching: false,
-      loaded: false
-    };
+const WorkExperience = ({ data, isFetching, error }) => {
+  const workExperience = data.workExperience || [];
+
+  if (error) {
+    return <p>{error.message}</p>;
   }
 
-  componentDidMount() {
-    this.setState({
-      isFetching: true
-    });
-
-    let workExperiencePromise = getWorkExperience();
-
-    workExperiencePromise
-      .then(res => {
-        this.setState({
-          data: res.data.workExperience,
-          isFetching: false,
-          loaded: true
-        });
-      })
-      .catch(error => {
-        console.log(`Error during fetching personal data :::: ${error}`);
-
-        this.setState({
-          isFetching: false
-        });
-      })
+  if (isFetching) {
+    return <p>Loading ...</p>;
   }
 
-
-  render() {
-    const data = this.state.data;
-
-    return (
+  return (
+    <div>
+      dasd
       <div>
-        <section>
-          <p>
-            {data.id}
-          </p>
-
-        </section>
+        {workExperience.map(item =>
+          <div key={item.id}>
+            asd
+          </div>
+        )}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default withFetching(URL_PATH_WORK_EXPERIENCE)(WorkExperience);

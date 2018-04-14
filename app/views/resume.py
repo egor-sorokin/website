@@ -25,7 +25,7 @@ def projects():
 
 @mod.route('/skills', methods=['GET'], strict_slashes=False)
 def skills():
-    skills = Skill.quety.all()
+    skills = Skill.query.all()
     return jsonify(skills=[i.serialize for i in skills]), 200
 
 

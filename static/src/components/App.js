@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import PersonalData from './PersonalData';
 import WorkExperience from './WorkExperience';
+import Educations from './Educations';
+import Skills from './Skills';
+import Projects from './Projects';
 
 export default class App extends Component {
   render() {
@@ -8,6 +11,9 @@ export default class App extends Component {
       <div>
         <PersonalData />
         <WorkExperience />
+        <Educations />
+        <Projects />
+        <Skills />
       </div>
     );
   }

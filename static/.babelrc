@@ -1,3 +1,36 @@
 {
-   "presets": ["react", "stage-0"]
+  "ignore": [],
+  "env": {
+    "test": {
+      "presets": [
+        "es2015",
+        "react",
+        "stage-0"
+      ]
+    },
+    "production": {
+      "presets": [
+        [
+          "es2015",
+          {
+            "modules": false
+          }
+        ],
+        "react",
+        "stage-0"
+      ]
+    },
+    "development": {
+      "presets": [
+        [
+          "es2015",
+          {
+            "modules": false
+          }
+        ],
+        "react",
+        "stage-0"
+      ]
+    }
+  }
 }

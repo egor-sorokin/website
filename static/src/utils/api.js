@@ -21,13 +21,12 @@ const withFetching = (url) => (CurrentComponent) =>
 
       fetchData() {
         this.setState({isFetching: true});
-    
+
         axios(DEFAULT_API_URL + url)
           .then(response => {
             if (response.status === 200) {
               return response.data;
             } else {
-              console.log('else');
               throw new Error('Something went wrong ...');
             }
           })

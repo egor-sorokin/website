@@ -28,4 +28,4 @@ const Skills = ({ data, isFetching, error }) => {
   );
 };
 
-export default withFetching(URL_PATH_SKILLS)(Skills);
+export default withFetching(URL_PATH_SKILLS, Skills);

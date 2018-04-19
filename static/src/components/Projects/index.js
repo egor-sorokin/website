@@ -28,4 +28,4 @@ const Projects = ({ data, isFetching, error }) => {
   );
 };
 
-export default withFetching(URL_PATH_PROJECTS)(Projects);
+export default withFetching(URL_PATH_PROJECTS, Projects);

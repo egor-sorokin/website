@@ -28,4 +28,4 @@ const WorkExperience = ({ data, isFetching, error }) => {
   );
 };
 
-export default withFetching(URL_PATH_WORK_EXPERIENCE)(WorkExperience);
+export default withFetching(URL_PATH_WORK_EXPERIENCE, WorkExperience);

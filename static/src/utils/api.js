@@ -3,7 +3,7 @@ import axios from 'axios';
 import { DEFAULT_API_URL } from '../constants/index';
 
 
-const withFetching = (url) => (CurrentComponent) =>
+const withFetching = (url, CurrentComponent) =>
     class WithFetching extends Component {
       constructor(props) {
         super(props);
@@ -16,13 +16,13 @@ const withFetching = (url) => (CurrentComponent) =>
       }
 
       componentDidMount() {
-        this.fetchData();
+        this._fetchData();
       }
 
-      fetchData() {
+      _fetchData() {
         this.setState({isFetching: true});
 
-        axios(DEFAULT_API_URL + url)
+        axios.get(DEFAULT_API_URL + url)
           .then(response => {
             if (response.status === 200) {
               return response.data;
@@ -31,7 +31,7 @@ const withFetching = (url) => (CurrentComponent) =>
             }
           })
           .then(data => this.setState({data, isFetching: false}))
-          .catch(error => this.setState({error, isFetching: false}));
+          .catch(error => this.setState({error: error.message, isFetching: false}));
       }
 
       render() {

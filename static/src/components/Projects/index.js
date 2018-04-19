@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import withFetching from '../utils/api';
-import { URL_PATH_PROJECTS } from '../constants/index';
+import withFetching from '../../utils/api';
+import { URL_PATH_PROJECTS } from '../../constants/index';
 
 
 const Projects = ({ data, isFetching, error }) => {

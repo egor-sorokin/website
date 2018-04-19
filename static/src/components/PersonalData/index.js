@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import withFetching from '../utils/api';
-import { URL_PATH_PERSONAL_DATA } from '../constants/index';
+import withFetching from '../../utils/api';
+import { URL_PATH_PERSONAL_DATA } from '../../constants/index';
 
 
 const PersonalData = ({ data, isFetching, error}) => {

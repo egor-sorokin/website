@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import withFetching from '../utils/api';
-import { URL_PATH_WORK_EXPERIENCE } from '../constants/index';
+import withFetching from '../../utils/api';
+import { URL_PATH_WORK_EXPERIENCE } from '../../constants/index';
 
 
 const WorkExperience = ({ data, isFetching, error }) => {

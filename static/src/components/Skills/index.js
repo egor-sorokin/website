@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import withFetching from '../utils/api';
-import { URL_PATH_SKILLS } from '../constants/index';
+import withFetching from '../../utils/api';
+import { URL_PATH_SKILLS } from '../../constants/index';
 
 
 const Skills = ({ data, isFetching, error }) => {

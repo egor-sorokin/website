@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import PersonalData from './../PersonalData';
-import WorkExperience from './../WorkExperience';
-import Educations from './../Educations/Educations';
-import Skills from './../Skills';
-import Projects from './../Projects';
+import PersonalData from './../PersonalData/index';
+import WorkExperience from './../WorkExperience/index';
+import Educations from './../Educations/index';
+import Skills from './../Skills/index';
+import Projects from './../Projects/index';
 
 export default class App extends Component {
   render() {

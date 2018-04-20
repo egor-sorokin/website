@@ -7,23 +7,20 @@ const Skills = ({ data, isFetching, error }) => {
   const skills = data.skills || [];
 
   if (error) {
-    return <p>{error.message}</p>;
+    return <div><p>{error}</p></div>;
   }
 
   if (isFetching) {
-    return <p>Loading ...</p>;
+    return <div><p>Loading...</p></div>;
   }
 
   return (
     <div>
-      dasd
-      <div>
-        {skills.map(item =>
-          <div key={item.id}>
-            asd
-          </div>
-        )}
-      </div>
+      {skills.map(item =>
+        <div key={item.id}>
+          asd
+        </div>
+      )}
     </div>
   );
 };

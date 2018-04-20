@@ -7,23 +7,20 @@ const Projects = ({ data, isFetching, error }) => {
   const projects = data.projects || [];
 
   if (error) {
-    return <p>{error.message}</p>;
+    return <div><p>{error}</p></div>;
   }
 
   if (isFetching) {
-    return <p>Loading ...</p>;
+    return <div><p>Loading...</p></div>;
   }
 
   return (
     <div>
-      dasd
-      <div>
-        {projects.map(item =>
-          <div key={item.id}>
-            asd
-          </div>
-        )}
-      </div>
+      {projects.map(item =>
+        <div key={item.id}>
+          asd
+        </div>
+      )}
     </div>
   );
 };

@@ -13,7 +13,7 @@
     "test:coverage": "jest --coverage"
   },
   "jest": {
-    "verbose": true,
+    "verbose": false,
     "transform": {
       "^.+\\.js$": "babel-jest"
     },

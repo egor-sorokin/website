@@ -7,11 +7,11 @@ const Educations = ({ data, isFetching, error }) => {
   const educations = data.educations || [];
 
   if (error) {
-    return <p>{error}</p>;
+    return <div><p>{error}</p></div>;
   }
 
   if (isFetching) {
-    return <p>Loading...</p>;
+    return <div><p>Loading...</p></div>;
   }
 
   return (

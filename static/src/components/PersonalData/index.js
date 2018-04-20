@@ -37,4 +37,4 @@ const PersonalData = ({ data, isFetching, error}) => {
   );
 };
 
-export default withFetching(URL_PATH_PERSONAL_DATA)(PersonalData);
+export default withFetching(URL_PATH_PERSONAL_DATA, PersonalData);

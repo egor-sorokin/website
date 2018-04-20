@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Projects /> matches snapshot 1`] = `
+<Projects
+  data={Object {}}
+  error={null}
+  isFetching={true}
+/>
+`;

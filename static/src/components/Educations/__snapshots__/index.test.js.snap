@@ -4,6 +4,6 @@ exports[`<Educations /> matches snapshot 1`] = `
 <Educations
   data={Object {}}
   error={null}
-  isFetching={false}
+  isFetching={true}
 />
 `;

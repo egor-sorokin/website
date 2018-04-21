@@ -7,11 +7,11 @@ const PersonalData = ({ data, isFetching, error}) => {
   const personData = data.personData || {};
 
   if (error) {
-    return <p>{error.message}</p>;
+    return <div><p>{error}</p></div>;
   }
 
   if (isFetching) {
-    return <p>Loading ...</p>;
+    return <div><p>Loading...</p></div>;
   }
 
   return (

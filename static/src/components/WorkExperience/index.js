@@ -7,23 +7,20 @@ const WorkExperience = ({ data, isFetching, error }) => {
   const workExperience = data.workExperience || [];
 
   if (error) {
-    return <p>{error.message}</p>;
+    return <div><p>{error}</p></div>;
   }
 
   if (isFetching) {
-    return <p>Loading ...</p>;
+    return <div><p>Loading...</p></div>;
   }
 
   return (
     <div>
-      dasd
-      <div>
-        {workExperience.map(item =>
-          <div key={item.id}>
-            asd
-          </div>
-        )}
-      </div>
+      {workExperience.map(item =>
+        <div key={item.id}>
+          asd
+        </div>
+      )}
     </div>
   );
 };

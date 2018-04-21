@@ -3,8 +3,15 @@ import App from './index';
 import { shallow, render, mount } from 'enzyme';
 
 describe('<App />', () => {
-  it('renders 1 <App /> component', () => {
-    const component = shallow(<App />);
-    expect(component).toHaveLength(1);
-  })
+  const component= shallow(<App />);
+  
+  
+  it('matches snapshot', () => {
+    expect(component).toMatchSnapshot();
+  });
+  
+  
+  it('contains 5 components', () => {
+    expect(component.children()).toHaveLength(5);
+  });
 });

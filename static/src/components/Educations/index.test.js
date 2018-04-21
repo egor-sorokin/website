@@ -4,22 +4,29 @@ import { shallow, render, mount } from 'enzyme';
 
 describe('<Educations />', () => {
   const component = shallow(<Educations />);
+  const errorMessage = 'error message';
+  const loadingIndicator = 'Loading...';
+  const educations = [
+    { id: 1 },
+    { id: 2 }
+  ];
+
 
   it('renders without crashing', () => {
     shallow(<Educations />);
   });
 
 
-  it('renders 1 <Educations /> component', () => {
-    expect(component).toHaveLength(1);
+  it('matches snapshot', () => {
+    expect(component).toMatchSnapshot();
   });
 
 
   it('renders error message', () => {
-    component.setState({ error: 'error message' });
+    component.setState({ error: errorMessage });
 
-    expect(component.state().error).toBe('error message');
-    expect(component.html()).toBe(`<p>${component.state().error}</p>`);
+    expect(component.state().error).toBe(errorMessage);
+    expect(component.html()).toBe(`<div><p>${component.state().error}</p></div>`);
 
     component.setState({ error: null });
   });
@@ -29,14 +36,19 @@ describe('<Educations />', () => {
     component.setState({ isFetching: true });
 
     expect(component.state().isFetching).toBe(true);
-    expect(component.html()).toBe('<p>Loading...</p>');
+    expect(component.html()).toBe(`<div><p>${loadingIndicator}</p></div>`);
 
     component.setState({ isFetching: false });
   });
 
 
-  it('matches snapshot', () => {
-    expect(component).toMatchSnapshot();
+  it('renders data', () => {
+    component.setState({ data: { educations: educations }});
+
+    expect(component.state().data.educations).toEqual(educations);
+    expect(component.dive().children()).toHaveLength(educations.length);
+
+    component.setState({ data: {}});
   });
 
 

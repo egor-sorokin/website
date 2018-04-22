@@ -47,6 +47,11 @@ describe('<WorkExperience />', () => {
   });
 
 
+  it('matches snapshot', () => {
+    expect(component).toMatchSnapshot();
+  });
+
+
   it('renders children when passed in', () => {
     const wrapper = shallow((
       <WorkExperience>

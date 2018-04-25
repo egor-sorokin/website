@@ -1,6 +1,7 @@
+// eslint-disable-next-line
+import { shallow, render, mount } from 'enzyme';
 import React from 'react';
 import Skills from './index';
-import { shallow, render, mount } from 'enzyme';
 
 describe('<Skills />', () => {
   const component = shallow(<Skills />);
@@ -8,7 +9,7 @@ describe('<Skills />', () => {
   const loadingIndicator = 'Loading...';
   const skills = [
     { id: 1 },
-    { id: 2 }
+    { id: 2 },
   ];
 
 
@@ -21,7 +22,7 @@ describe('<Skills />', () => {
     expect(component).toMatchSnapshot();
   });
 
-  
+
   it('renders error message', () => {
     component.setState({ error: errorMessage });
 
@@ -43,12 +44,12 @@ describe('<Skills />', () => {
 
 
   it('renders data', () => {
-    component.setState({ data: { skills: skills }});
+    component.setState({ data: { skills } });
 
     expect(component.state().data.skills).toEqual(skills);
     expect(component.dive().children()).toHaveLength(skills.length);
 
-    component.setState({ data: {}});
+    component.setState({ data: {} });
   });
 
 
@@ -64,11 +65,12 @@ describe('<Skills />', () => {
 
   it('calls componentDidMount', () => {
     const spy = jest.spyOn(Skills.prototype, 'componentDidMount');
+    // eslint-disable-next-line
     const wrapper = mount(<Skills />);
     expect(spy).toHaveBeenCalledTimes(1);
 
     afterEach(() => {
-      spy.mockClear()
+      spy.mockClear();
     });
   });
 });

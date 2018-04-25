@@ -1,10 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import withFetching from '../../utils/api';
 import { URL_PATH_EDUCATIONS } from '../../constants/index';
 
 
-const Educations = ({ data, isFetching, error }) => {
+function Educations({ data, isFetching, error }) {
   const educations = data.educations || [];
+  const educationComponent = educations.map(item => (
+    <div key={item.id}>
+      asd
+    </div>
+  ));
 
   if (error) {
     return <div><p>{error}</p></div>;
@@ -16,13 +22,27 @@ const Educations = ({ data, isFetching, error }) => {
 
   return (
     <div>
-        {educations.map(item =>
-          <div key={item.id}>
-            asd
-          </div>
-        )}
+      {educationComponent}
     </div>
   );
+}
+
+Educations.propTypes = {
+  data: PropTypes.shape([
+    PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  ]),
+  isFetching: PropTypes.bool,
+  error: PropTypes.string,
 };
+
+
+Educations.defaultProps = {
+  data: [],
+  error: '',
+  isFetching: false,
+};
+
 
 export default withFetching(URL_PATH_EDUCATIONS, Educations);

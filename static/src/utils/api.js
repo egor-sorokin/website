@@ -4,42 +4,43 @@ import { DEFAULT_API_URL } from '../constants/index';
 
 
 const withFetching = (url, CurrentComponent) =>
-    class WithFetching extends Component {
-      constructor(props) {
-        super(props);
+  class WithFetching extends Component {
+    constructor(props) {
+      super(props);
 
-        this.state = {
-          data: {},
-          isFetching: false,
-          error: null
-        }
-      }
+      this.state = {
+        data: {},
+        isFetching: false,
+        error: null,
+      };
+    }
 
-      componentDidMount() {
-        this._fetchData();
-      }
+    componentDidMount() {
+      this._fetchData();
+    }
 
-      _fetchData() {
-        this.setState({isFetching: true});
+    // eslint-disable-next-line no-underscore-dangle
+    _fetchData() {
+      this.setState({ isFetching: true });
 
-        axios.get(DEFAULT_API_URL + url)
-          .then(response => {
-            if (response.status === 200) {
-              return response.data;
-            } else {
-              throw new Error('Something went wrong ...');
-            }
-          })
-          .then(data => this.setState({data, isFetching: false}))
-          .catch(error => this.setState({error: error.message, isFetching: false}));
-      }
+      axios.get(DEFAULT_API_URL + url)
+        .then((response) => {
+          if (response.status === 200) {
+            return response.data;
+          }
+          throw new Error('Something went wrong ...');
 
-      render() {
-        return (
-          <CurrentComponent {...this.props} {...this.state} />
-        )
-      }
-    };
+        })
+        .then(data => this.setState({ data, isFetching: false }))
+        .catch(error => this.setState({ error: error.message, isFetching: false }));
+    }
+
+    render() {
+      return (
+        <CurrentComponent {...this.props} {...this.state} />
+      );
+    }
+  };
 
 
 export default withFetching;

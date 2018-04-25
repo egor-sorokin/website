@@ -1,6 +1,7 @@
+// eslint-disable-next-line
+import { shallow, render, mount } from 'enzyme';
 import React from 'react';
 import Educations from './index';
-import { shallow, render, mount } from 'enzyme';
 
 describe('<Educations />', () => {
   const component = shallow(<Educations />);
@@ -8,7 +9,7 @@ describe('<Educations />', () => {
   const loadingIndicator = 'Loading...';
   const educations = [
     { id: 1 },
-    { id: 2 }
+    { id: 2 },
   ];
 
 
@@ -43,12 +44,12 @@ describe('<Educations />', () => {
 
 
   it('renders data', () => {
-    component.setState({ data: { educations: educations }});
+    component.setState({ data: { educations } });
 
     expect(component.state().data.educations).toEqual(educations);
     expect(component.dive().children()).toHaveLength(educations.length);
 
-    component.setState({ data: {}});
+    component.setState({ data: {} });
   });
 
 
@@ -65,11 +66,12 @@ describe('<Educations />', () => {
 
   it('calls componentDidMount', () => {
     const spy = jest.spyOn(Educations.prototype, 'componentDidMount');
+    // eslint-disable-next-line
     const wrapper = mount(<Educations />);
     expect(spy).toHaveBeenCalledTimes(1);
 
     afterEach(() => {
-      spy.mockClear()
+      spy.mockClear();
     });
   });
 });

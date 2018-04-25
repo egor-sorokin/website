@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import withFetching from '../../utils/api';
 import { URL_PATH_PERSONAL_DATA } from '../../constants/index';
 
 
-const PersonalData = ({ data, isFetching, error}) => {
+const PersonalData = ({ data, isFetching, error }) => {
   const personData = data.personData || {};
 
   if (error) {
@@ -36,5 +37,24 @@ const PersonalData = ({ data, isFetching, error}) => {
     </div>
   );
 };
+
+PersonalData.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.number,
+    first_name: PropTypes.string,
+    last_name: PropTypes.string,
+    email: PropTypes.string,
+    summary: PropTypes.string,
+  }),
+  isFetching: PropTypes.bool,
+  error: PropTypes.string,
+};
+
+PersonalData.defaultProps = {
+  data: {},
+  error: '',
+  isFetching: false,
+};
+
 
 export default withFetching(URL_PATH_PERSONAL_DATA, PersonalData);

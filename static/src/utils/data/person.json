@@ -1,0 +1,9 @@
+{
+  "personData": {
+    "id": 1,
+    "first_name": "Egor",
+    "last_name": "Sorokin",
+    "email": "example@admin.com",
+    "summary": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds"
+  }
+}

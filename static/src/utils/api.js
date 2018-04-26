@@ -19,11 +19,13 @@ const withFetching = (url, CurrentComponent) =>
       this._fetchData();
     }
 
-    // eslint-disable-next-line no-underscore-dangle
     _fetchData() {
       this.setState({ isFetching: true });
+      // mock data for frontend
+      const mockDataUrl = `http://localhost:8081/src/utils/data/${url}.json`;
 
-      axios.get(DEFAULT_API_URL + url)
+      // axios.get(DEFAULT_API_URL + url)
+      axios.get(mockDataUrl)
         .then((response) => {
           if (response.status === 200) {
             return response.data;

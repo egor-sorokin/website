@@ -1,141 +1,138 @@
-import React from 'react';
-import withFetching from './api';
-import { DEFAULT_API_URL, URL_PATH_EDUCATIONS } from '../constants/index'
-import Educations from '../components/Educations/index';
+// eslint-disable-next-line
 import { shallow, render, mount } from 'enzyme';
-import axios from "axios";
+import axios from 'axios';
+import React from 'react';
+import { DEFAULT_API_URL, URL_PATH_EDUCATIONS } from '../constants/index';
+import Educations from '../components/Educations/index';
+import withFetching from './api';
 
 jest.mock('axios', () => ({
-  get: jest.fn(() => Promise.resolve({ data: { educations: [] }}))
+  get: jest.fn(() => Promise.resolve({ data: { educations: [] } })),
 }));
 
 
-describe('WithFetching',  () => {
+describe('WithFetching', () => {
   const WithFetching = withFetching(URL_PATH_EDUCATIONS, Educations);
 
   it('checks that fetchData was called only once', () => {
     const spy = jest.spyOn(WithFetching.prototype, '_fetchData');
-    const wrapper = mount(<WithFetching />);
-
+    // eslint-disable-next-line
+    const wrapper = shallow(<WithFetching />);
 
     expect(spy).toHaveBeenCalledTimes(1);
+
+    afterEach(() => {
+      spy.mockClear();
+    });
   });
-
-  
-  // it('should fetch educations', () => {
-  //   const wrapper = shallow(<WithFetching />);
-  //   const resp = {data: [{name: 'Bob'}]};
-  // axios.get.mockResolvedValue(resp);
-  //   // axios.get.mockImplementationOnce(() =>
-  //   //    Promise.resolve({
-  //   //    data: { educations: ["cat.jpg"] }
-  //   //   })
-  //   // );
-  //
-  //   return wrapper.instance()._fetchData().then(educations => expect(educations).toEqual(["cat.jpg"]));
-  // });
-
-  //  
-  //   const resp = { data: { educations: 'FooBar' }};
-  //   axios.get.mockImplementationOnce(() => Promise.resolve(resp));
-  //
-  //   expect(wrapper._fetchData()).toMatchSnapshot();
-  //
-  //   // return wrapper._fetchData().then(educations => expect(educations).toEqual(resp.data));
-  // });
 });
 
-  //
-  // // const spy = jest.spyOn(WithFetching.prototype, '_fetchData');
-  // // const wrapper = mount(<WithFetching />);
-  // const wrapper = mount(<WithFetching />).instance();
-  //
-  // console.log(mount(<WithFetching />).debug());
-  //
-  //   it('renders the WithFetching', () => {
-  //     const resp = {data: [{name: 'Bob'}]};
-  //     axios.get.mockResolvedValue(resp);
-  //
-  //
-  //     return wrapper._fetchData().then(users => expect(users).toEqual(resp.data));
-  //   // expect(wrapper.instance()).toMatchSnapshot();
-  //
-  //   // expect(spy).toHaveBeenCalledTimes(1);
-  //
-  // });
-  //
-  //
-  //
-  //
-  //
-  //
-  // });
-
-  //
-  // it('renders the WithFetching', () => {
-  //   expect(wrapper.find(WithFetching).props()._fetchData()).toMatchSnapshot();
-  //   // expect(wrapper.dive().instance()).toMatchSnapshot();
-  //   // expect(wrapper.instance()._fetchData()).toMatchSnapshot();
-  //   // expect(wrapper._fetchData()).toMatchSnapshot();
-  // });
-
-
-
-  // jest.mock('axios');
-  //
-  // test('should fetch users', () => {
-  //   const resp = {data: [{name: 'Bob'}]};
-  //   axios.get.mockResolvedValue(resp);
-  //
-  //   // or you could use the follwing depending on your use case:
-  //   // axios.get.mockImplementation(() => Promise.resolve(resp))
-  //
-  //   return Educations.then(users => expect(users).toEqual(resp.data));
-  // });
-
-  // var wrapper, WrapperComponent, FetchComponent, MockFetchComponent, instance, set;
-  //
-  // beforeEach(function () {
-  //   class MockFetchComponent extends React.Component {
-  //     render() {
-  //       return (<div>Component</div>);
-  //     }
-  //   }
-  //
-  //   set = new Set();
-  //   WrapperComponent = withFetching(URL_PATH_EDUCATION, Educations);
-  //   wrapper = shallow(<WrapperComponent />);
-  //   instance = wrapper.instance();
-  // });
-  //
-  // it('renders the List Component as the root element', function () {
-  //   expect(WrapperComponent.mock.instances).toMatchSnapshot();
-  // });
-
-  // describe('handleOnSelect', function () {
-  //   describe('when not already selected', function () {
-  //     it('adds the key to the selection set', function () {
-  //       instance.handleOnSelect('1234');
-  //       expect(instance.state.selection.has('1234')).toBeTruthy();
-  //     });
-  //   });
-  //
-  //   describe('when already selected', function () {
-  //     beforeEach(function () {
-  //       instance.setState({selection: new Set(['2314'])});
-  //     });
-  //
-  //     it('removes the selection from the set', function () {
-  //       instance.handleOnSelect('2314');
-  //       expect(instance.state.selection.has('1234')).toBeFalsy();
-  //     });
-  //   });
-  // });
+// it('should fetch educations', () => {
+//   const wrapper = shallow(<WithFetching />);
+//   const resp = {data: [{name: 'Bob'}]};
+// axios.get.mockResolvedValue(resp);
+//   // axios.get.mockImplementationOnce(() =>
+//   //    Promise.resolve({
+//   //    data: { educations: ["cat.jpg"] }
+//   //   })
+//   // );
+//
+//   return wrapper.instance()._fetchData().then(educations => expect(educations).toEqual(["cat.jpg"]));
 // });
 
+//   const resp = { data: { educations: 'FooBar' }};
+//   axios.get.mockImplementationOnce(() => Promise.resolve(resp));
+//
+//   expect(wrapper._fetchData()).toMatchSnapshot();
+//
+//   // return wrapper._fetchData().then(educations => expect(educations).toEqual(resp.data));
+// });
 
+//
+// // const spy = jest.spyOn(WithFetching.prototype, '_fetchData');
+// // const wrapper = mount(<WithFetching />);
+// const wrapper = mount(<WithFetching />).instance();
+//
+// console.log(mount(<WithFetching />).debug());
+//
+//   it('renders the WithFetching', () => {
+//     const resp = {data: [{name: 'Bob'}]};
+//     axios.get.mockResolvedValue(resp);
+//
+//
+//     return wrapper._fetchData().then(users => expect(users).toEqual(resp.data));
+//   // expect(wrapper.instance()).toMatchSnapshot();
+//
+//   // expect(spy).toHaveBeenCalledTimes(1);
+//
+// });
+//
+//
+//
+//
+//
+//
+// });
 
+//
+// it('renders the WithFetching', () => {
+//   expect(wrapper.find(WithFetching).props()._fetchData()).toMatchSnapshot();
+//   // expect(wrapper.dive().instance()).toMatchSnapshot();
+//   // expect(wrapper.instance()._fetchData()).toMatchSnapshot();
+//   // expect(wrapper._fetchData()).toMatchSnapshot();
+// });
 
+// jest.mock('axios');
+//
+// test('should fetch users', () => {
+//   const resp = {data: [{name: 'Bob'}]};
+//   axios.get.mockResolvedValue(resp);
+//
+//   // or you could use the follwing depending on your use case:
+//   // axios.get.mockImplementation(() => Promise.resolve(resp))
+//
+//   return Educations.then(users => expect(users).toEqual(resp.data));
+// });
+
+// var wrapper, WrapperComponent, FetchComponent, MockFetchComponent, instance, set;
+//
+// beforeEach(function () {
+//   class MockFetchComponent extends React.Component {
+//     render() {
+//       return (<div>Component</div>);
+//     }
+//   }
+//
+//   set = new Set();
+//   WrapperComponent = withFetching(URL_PATH_EDUCATION, Educations);
+//   wrapper = shallow(<WrapperComponent />);
+//   instance = wrapper.instance();
+// });
+//
+// it('renders the List Component as the root element', function () {
+//   expect(WrapperComponent.mock.instances).toMatchSnapshot();
+// });
+
+// describe('handleOnSelect', function () {
+//   describe('when not already selected', function () {
+//     it('adds the key to the selection set', function () {
+//       instance.handleOnSelect('1234');
+//       expect(instance.state.selection.has('1234')).toBeTruthy();
+//     });
+//   });
+//
+//   describe('when already selected', function () {
+//     beforeEach(function () {
+//       instance.setState({selection: new Set(['2314'])});
+//     });
+//
+//     it('removes the selection from the set', function () {
+//       instance.handleOnSelect('2314');
+//       expect(instance.state.selection.has('1234')).toBeFalsy();
+//     });
+//   });
+// });
+// });
 
 // describe('api', () => {
 //   it('fetches data for <Educations /> component', () => {
@@ -179,11 +176,6 @@ describe('WithFetching',  () => {
 //     // expect(instance.props).toMatchSnapshot();
 //   });
 // });
-//
-
-
-
-
 
 // jest.mock('./api', () => ({
 //   withFetching: jest.fn((url) => callback('someData'))

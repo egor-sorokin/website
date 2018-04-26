@@ -1,6 +1,7 @@
+// eslint-disable-next-line
+import { shallow, render, mount } from 'enzyme';
 import React from 'react';
 import PersonalData from './index';
-import { shallow, render, mount } from 'enzyme';
 
 describe('<PersonalData />', () => {
   const component = shallow(<PersonalData />);
@@ -11,7 +12,7 @@ describe('<PersonalData />', () => {
     first_name: 'Bob',
     last_name: 'Cat',
     email: 'example@admin.com',
-    summary: 'blablabla'
+    summary: 'blablabla',
   };
 
 
@@ -46,12 +47,11 @@ describe('<PersonalData />', () => {
 
 
   it('renders data', () => {
-    component.setState({ data: { personalData: personalData }});
+    component.setState({ data: { personalData } });
 
     expect(component.state().data.personalData).toEqual(personalData);
-    // expect(component.dive().children()).toHaveLength(educations.length);
 
-    component.setState({ data: {}});
+    component.setState({ data: {} });
   });
 
 
@@ -67,11 +67,12 @@ describe('<PersonalData />', () => {
 
   it('calls componentDidMount', () => {
     const spy = jest.spyOn(PersonalData.prototype, 'componentDidMount');
+    // eslint-disable-next-line
     const wrapper = mount(<PersonalData />);
     expect(spy).toHaveBeenCalledTimes(1);
 
     afterEach(() => {
-      spy.mockClear()
+      spy.mockClear();
     });
   });
 });

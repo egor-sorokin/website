@@ -1,6 +1,7 @@
+// eslint-disable-next-line
+import { shallow, render, mount } from 'enzyme';
 import React from 'react';
 import Projects from './index';
-import { shallow, render, mount } from 'enzyme';
 
 describe('<Projects />', () => {
   const component = shallow(<Projects />);
@@ -8,10 +9,10 @@ describe('<Projects />', () => {
   const loadingIndicator = 'Loading...';
   const projects = [
     { id: 1 },
-    { id: 2 }
+    { id: 2 },
   ];
-  
-  
+
+
   it('renders without crashing', () => {
     shallow(<Projects />);
   });
@@ -21,7 +22,7 @@ describe('<Projects />', () => {
     expect(component).toMatchSnapshot();
   });
 
-  
+
   it('renders error message', () => {
     component.setState({ error: errorMessage });
 
@@ -43,12 +44,12 @@ describe('<Projects />', () => {
 
 
   it('renders data', () => {
-    component.setState({ data: { projects: projects }});
+    component.setState({ data: { projects } });
 
     expect(component.state().data.projects).toEqual(projects);
     expect(component.dive().children()).toHaveLength(projects.length);
 
-    component.setState({ data: {}});
+    component.setState({ data: {} });
   });
 
 
@@ -64,11 +65,12 @@ describe('<Projects />', () => {
 
   it('calls componentDidMount', () => {
     const spy = jest.spyOn(Projects.prototype, 'componentDidMount');
+    // eslint-disable-next-line
     const wrapper = mount(<Projects />);
     expect(spy).toHaveBeenCalledTimes(1);
 
     afterEach(() => {
-      spy.mockClear()
+      spy.mockClear();
     });
   });
 });

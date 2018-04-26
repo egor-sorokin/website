@@ -1,6 +1,7 @@
+// eslint-disable-next-line
+import { shallow, render, mount } from 'enzyme';
 import React from 'react';
 import WorkExperience from './index';
-import { shallow, render, mount } from 'enzyme';
 
 describe('<WorkExperience />', () => {
   const component = shallow(<WorkExperience />);
@@ -8,7 +9,7 @@ describe('<WorkExperience />', () => {
   const loadingIndicator = 'Loading...';
   const workExperience = [
     { id: 1 },
-    { id: 2 }
+    { id: 2 },
   ];
 
 
@@ -38,12 +39,12 @@ describe('<WorkExperience />', () => {
 
 
   it('renders data', () => {
-    component.setState({ data: { workExperience: workExperience }});
+    component.setState({ data: { workExperience } });
 
     expect(component.state().data.workExperience).toEqual(workExperience);
     expect(component.dive().children()).toHaveLength(workExperience.length);
 
-    component.setState({ data: {}});
+    component.setState({ data: {} });
   });
 
 
@@ -64,11 +65,12 @@ describe('<WorkExperience />', () => {
 
   it('calls componentDidMount', () => {
     const spy = jest.spyOn(WorkExperience.prototype, 'componentDidMount');
+    // eslint-disable-next-line
     const wrapper = mount(<WorkExperience />);
     expect(spy).toHaveBeenCalledTimes(1);
 
     afterEach(() => {
-      spy.mockClear()
+      spy.mockClear();
     });
   });
 });

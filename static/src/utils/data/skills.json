@@ -1,0 +1,22 @@
+{
+  "skills": [
+    {
+      "id": 1,
+      "category": "Programming languages",
+      "skills": "HTML (Pug), CSS (SCSS), JavaScript (ES5, ES6), Python, SQL",
+      "person_id": 1
+    },
+    {
+      "id": 2,
+      "category": "Frameworks/Libraries/Toolkits",
+      "skills": "EmberJS, jQuery, Three.js, AngularJS, ReactJS, Flask, SQLAlchemy, Laravel",
+      "person_id": 1
+    },
+    {
+      "id": 3,
+      "category": "Build system/Automation",
+      "skills": "Gulp, Webpack",
+      "person_id": 1
+    }
+  ]
+}

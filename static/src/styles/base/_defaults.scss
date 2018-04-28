@@ -1,0 +1,49 @@
+html {
+  position: relative;
+
+  background: #fff;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  font-family: $defaultFont;
+  font-size: 1rem;
+  color: $black;
+  line-height: 1.5;
+
+  @include font-smoothing(on);
+
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+html {
+  min-height: 100%;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.75rem;
+}

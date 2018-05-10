@@ -1,7 +1,7 @@
 html {
   position: relative;
 
-  background: #fff;
+  background: $mercury;
 }
 
 body {
@@ -10,13 +10,15 @@ body {
 
   font-family: $defaultFont;
   font-size: 1rem;
-  color: $black;
+  color: $dune;
   line-height: 1.5;
 
   @include font-smoothing(on);
 
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+
+  background-color: $mercury;
 }
 
 body,

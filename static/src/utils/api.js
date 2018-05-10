@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { DEFAULT_API_URL } from '../constants/index';
+// import { DEFAULT_API_URL } from '../constants/index';
 
 
 const withFetching = (url, CurrentComponent) =>
@@ -22,7 +22,7 @@ const withFetching = (url, CurrentComponent) =>
     _fetchData() {
       this.setState({ isFetching: true });
       // mock data for frontend
-      const mockDataUrl = `http://localhost:8081/src/utils/data/${url}.json`;
+      const mockDataUrl = `http://localhost:8080/src/utils/data/${url}.json`;
 
       // axios.get(DEFAULT_API_URL + url)
       axios.get(mockDataUrl)

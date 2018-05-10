@@ -8,9 +8,9 @@ import Projects from './../Projects/index';
 const App = () => (
   <div>
     <PersonalData />
+    <Projects />
     <WorkExperience />
     <Educations />
-    <Projects />
     <Skills />
   </div>
 );

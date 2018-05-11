@@ -4,7 +4,7 @@ import withFetching from '../../utils/api';
 import { URL_PATH_EDUCATIONS } from '../../constants/index';
 
 
-function Educations({ data, isFetching, error }) {
+const Educations = ({ data, isFetching, error }) => {
   const educations = data.educations || [];
   const educationComponent = educations.map(item => (
     <div key={item.id}>
@@ -25,7 +25,7 @@ function Educations({ data, isFetching, error }) {
       {educationComponent}
     </div>
   );
-}
+};
 
 Educations.propTypes = {
   data: PropTypes.shape([

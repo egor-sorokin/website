@@ -1,25 +1,24 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 require('babel-polyfill').default;
 
 const PATHS = {
-  app: path.join(__dirname, './src'),
-  build: path.join(__dirname, './dist')
+  app: path.join(__dirname, '/src/index.js'),
+  build: path.join(__dirname, '/dist')
 };
 
 module.exports = {
-  entry: [
-    PATHS.app
-  ],
-
+  entry: {
+    main: PATHS.app
+  },
   output: {
     path: PATHS.build,
-    filename: 'bundle.js'
-  },
-
-  resolve: {
-    extensions: ['.jsx', '.js', '.scss']
+    filename: '[name].[chunkhash].js'
   },
 
   module: {
@@ -40,25 +39,31 @@ module.exports = {
         ]
       },
       {
-        test: /\.scss$/,
+        test: /\.(png|jpg|gif)$/,
         use: [
           {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-            }
-          },
-          {
-            loader: 'sass-loader'
-          },
-          {
-            loader: 'postcss-loader'
+            loader: 'file-loader',
           }
         ]
+      },
+      {
+        test: /\.scss$/,
+        use:  ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       }
     ]
-  }
+  },
+
+  plugins: [
+    new CleanWebpackPlugin('dist', {} ),
+    new MiniCssExtractPlugin({
+      filename: 'style.[contenthash].css'
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      hash: true,
+      template: './src/index.html',
+      filename: 'index.html'
+    }),
+    new WebpackMd5Hash()
+  ]
 };

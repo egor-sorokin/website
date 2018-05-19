@@ -29,9 +29,9 @@ const withFetching = (url, CurrentComponent) =>
         .then((response) => {
           if (response.status === 200) {
             return response.data;
-          } else {
-            throw new Error('Something went wrong ...');
           }
+
+          throw new Error('Something went wrong ...');
         })
         .then(data => this.setState({ data, isFetching: false }))
         .catch(error => this.setState({ error: error.message, isFetching: false }));

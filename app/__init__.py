@@ -6,7 +6,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
 # Define the WSGI application object
-app = Flask(__name__, static_folder="../static/dist", template_folder="../static")
+app = Flask(__name__, static_folder="../static/dist", template_folder="../static/src")
 
 # Configurations
 CORS(app)

@@ -1,4 +1,5 @@
 from app import db
+import json
 
 
 class Base(db.Model):
@@ -16,9 +17,9 @@ class Person(Base):
     last_name = db.Column(db.String(128))
     email = db.Column(db.String(128), nullable=False, unique=True)
     summary = db.Column(db.Text)
+    project = db.relationship('Project', backref='person', lazy='dynamic')
     social_network = db.relationship('SocialNetwork', backref='person', lazy='dynamic')
     attachment = db.relationship('Attachment', backref='person', lazy='dynamic')
-    project = db.relationship('Project', backref='person', lazy='dynamic')
 
     def __init__(self, first_name, last_name, email, summary):
         self.first_name = first_name
@@ -83,9 +84,8 @@ class SocialNetwork(Base):
     def serialize(self):
         return {
             'id': self.id,
-            'social_name': self.social_name,
-            'social_url': self.social_url,
-            'person_id': self.person_id,
+            'social_network_name': self.social_network_name,
+            'social_network_url': self.social_network_url,
         }
 
 
@@ -107,5 +107,4 @@ class Attachment(Base):
             'id': self.id,
             'attachment_name': self.attachment_name,
             'attachment_url': self.attachment_url,
-            'person_id': self.person_id,
         }

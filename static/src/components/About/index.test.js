@@ -1,20 +1,28 @@
 // eslint-disable-next-line
 import { shallow, render, mount } from 'enzyme';
 import React from 'react';
-import WorkExperience from './index';
+import About from './index';
 
-describe('<WorkExperience />', () => {
-  const component = shallow(<WorkExperience />);
+describe('<About />', () => {
+  const component = shallow(<About />);
   const errorMessage = 'error message';
   const loadingIndicator = 'Loading...';
-  const workExperience = [
-    { id: 1 },
-    { id: 2 },
-  ];
+  const personalData = {
+    id: 1,
+    first_name: 'Bob',
+    last_name: 'Cat',
+    email: 'example@admin.com',
+    summary: 'blablabla',
+  };
 
 
   it('renders without crashing', () => {
-    shallow(<WorkExperience />);
+    shallow(<About />);
+  });
+
+
+  it('matches snapshot', () => {
+    expect(component).toMatchSnapshot();
   });
 
 
@@ -39,34 +47,28 @@ describe('<WorkExperience />', () => {
 
 
   it('renders data', () => {
-    component.setState({ data: { workExperience } });
+    component.setState({ data: { personalData } });
 
-    expect(component.state().data.workExperience).toEqual(workExperience);
-    expect(component.dive().children()).toHaveLength(workExperience.length);
+    expect(component.state().data.personalData).toEqual(personalData);
 
     component.setState({ data: {} });
   });
 
 
-  it('matches snapshot', () => {
-    expect(component).toMatchSnapshot();
-  });
-
-
   it('renders children when passed in', () => {
     const wrapper = shallow((
-      <WorkExperience>
+      <About>
         <div className="unique" />
-      </WorkExperience>
+      </About>
     ));
     expect(wrapper.contains(<div className="unique" />)).toEqual(true);
   });
 
 
   it('calls componentDidMount', () => {
-    const spy = jest.spyOn(WorkExperience.prototype, 'componentDidMount');
+    const spy = jest.spyOn(About.prototype, 'componentDidMount');
     // eslint-disable-next-line
-    const wrapper = mount(<WorkExperience />);
+    const wrapper = mount(<About />);
     expect(spy).toHaveBeenCalledTimes(1);
 
     afterEach(() => {

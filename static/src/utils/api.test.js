@@ -3,7 +3,7 @@ import { shallow, render, mount } from 'enzyme';
 import axios from 'axios';
 import React from 'react';
 import { URL_PATH_EDUCATIONS } from '../constants/index';
-import Educations from '../components/Educations/index';
+import Projects from '../components/Projects/index';
 import withFetching from './api';
 
 
@@ -13,7 +13,7 @@ jest.mock('axios', () => ({
 
 
 describe('WithFetching', () => {
-  const WithFetching = withFetching(URL_PATH_EDUCATIONS, Educations);
+  const WithFetching = withFetching(URL_PATH_EDUCATIONS, Projects);
   let wrapper;
 
 
@@ -28,15 +28,15 @@ describe('WithFetching', () => {
   });
 
 
-  it('should fetch educations', () => {
+  it('should fetch projects', () => {
     // eslint-disable-next-line
-    const educations = ['High'];
+    const projects = ['High'];
 
     axios.get.mockImplementationOnce(() =>
       Promise.resolve({
         status: 200,
         data: {
-          educations,
+          projects,
         },
       }));
 
@@ -45,7 +45,7 @@ describe('WithFetching', () => {
 
     return Promise.resolve().then(() => {}).then(() => {}).then(() => {})
       .then(() => {
-        expect(wrapper.state().data.educations).toEqual(educations);
+        expect(wrapper.state().data.projects).toEqual(projects);
       });
   });
 

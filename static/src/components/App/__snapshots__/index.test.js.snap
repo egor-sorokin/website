@@ -6,6 +6,5 @@ exports[`<App /> matches snapshot 1`] = `
   <WithFetching />
   <WithFetching />
   <WithFetching />
-  <WithFetching />
 </div>
 `;

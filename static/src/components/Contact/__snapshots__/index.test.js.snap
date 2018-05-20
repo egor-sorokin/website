@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Educations /> matches snapshot 1`] = `
-<Educations
+exports[`<Contact /> matches snapshot 1`] = `
+<Contact
   data={Object {}}
   error={null}
   isFetching={true}

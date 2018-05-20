@@ -1,20 +1,23 @@
 // eslint-disable-next-line
 import { shallow, render, mount } from 'enzyme';
 import React from 'react';
-import Skills from './index';
+import Contact from './index';
 
-describe('<Skills />', () => {
-  const component = shallow(<Skills />);
+describe('<Contact />', () => {
+  const component = shallow(<Contact />);
   const errorMessage = 'error message';
   const loadingIndicator = 'Loading...';
-  const skills = [
-    { id: 1 },
-    { id: 2 },
-  ];
+  const personalData = {
+    id: 1,
+    first_name: 'Bob',
+    last_name: 'Cat',
+    email: 'example@admin.com',
+    summary: 'blablabla',
+  };
 
 
   it('renders without crashing', () => {
-    shallow(<Skills />);
+    shallow(<Contact />);
   });
 
 
@@ -44,10 +47,9 @@ describe('<Skills />', () => {
 
 
   it('renders data', () => {
-    component.setState({ data: { skills } });
+    component.setState({ data: { personalData } });
 
-    expect(component.state().data.skills).toEqual(skills);
-    expect(component.dive().children()).toHaveLength(skills.length);
+    expect(component.state().data.personalData).toEqual(personalData);
 
     component.setState({ data: {} });
   });
@@ -55,18 +57,18 @@ describe('<Skills />', () => {
 
   it('renders children when passed in', () => {
     const wrapper = shallow((
-      <Skills>
+      <Contact>
         <div className="unique" />
-      </Skills>
+      </Contact>
     ));
     expect(wrapper.contains(<div className="unique" />)).toEqual(true);
   });
 
 
   it('calls componentDidMount', () => {
-    const spy = jest.spyOn(Skills.prototype, 'componentDidMount');
+    const spy = jest.spyOn(Contact.prototype, 'componentDidMount');
     // eslint-disable-next-line
-    const wrapper = mount(<Skills />);
+    const wrapper = mount(<Contact />);
     expect(spy).toHaveBeenCalledTimes(1);
 
     afterEach(() => {

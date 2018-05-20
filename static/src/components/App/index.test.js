@@ -12,7 +12,7 @@ describe('<App />', () => {
   });
 
 
-  it('contains 5 components', () => {
-    expect(component.children()).toHaveLength(5);
+  it('contains 4 components', () => {
+    expect(component.children()).toHaveLength(4);
   });
 });

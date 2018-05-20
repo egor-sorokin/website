@@ -3,24 +3,20 @@
     {
       "id": 1,
       "project": "Company.com",
-      "role": "Web Software Engineer",
-      "role_url": "https://en.wikipedia.org/wiki/Web_engineering",
+      "position": "Web Software Engineer",
       "company": "Handsome",
       "company_url": "www.handsome.is",
       "project_description": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design a dashboard and a marketing website, improve SEO and speed of loading these websites in users’ browsers",
       "project_url": "www.company.com",
-      "work_experience_id": 2
     },
     {
       "id": 2,
       "project": "Com.Company",
-      "role": "Web Software Engineer",
-      "role_url": "https://en.wikipedia.org/wiki/Web_engineering",
+      "position": "Web Software Engineer",
       "company": "Handsome",
       "company_url": "www.handsome.is",
       "project_description": "Other tools that have been used in the work but not mentioned: GitLab, SourceTree, Vagrant, SumoMe, Google Analytics",
       "project_url": "www.company.com",
-      "work_experience_id": 2
     }
   ]
 }

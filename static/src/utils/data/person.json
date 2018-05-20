@@ -4,6 +4,20 @@
     "first_name": "Egor",
     "last_name": "Sorokin",
     "email": "example@admin.com",
-    "summary": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds"
+    "summary": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds",
+    "socials": [
+      {
+        "id": 1,
+        "social_network_name": "social_network-name",
+        "social_network_url": "social_network-url"
+      }
+    ],
+    "attachments": [
+      {
+        "id": 1,
+        "attachment_name": "attachment-name",
+        "attachment_url": "attachment-url",
+      }
+    ]
   }
 }

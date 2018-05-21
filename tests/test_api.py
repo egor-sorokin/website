@@ -1,5 +1,4 @@
 from testing_config import BaseTestConfig
-from app.models import Person
 import json
 from app.models import Person, Project, SocialNetwork, Attachment
 from app import db

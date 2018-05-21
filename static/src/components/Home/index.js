@@ -5,8 +5,8 @@ import { URL_PATH_PERSONAL_DATA } from '../../constants/index';
 import './styles.scss';
 
 
-const PersonalData = ({ data, isFetching, error }) => {
-  const personData = data.personData || {};
+const Home = ({ data, isFetching, error }) => {
+  const personalData = data.personalData || {};
 
   if (error) {
     return <div><p>{error}</p></div>;
@@ -36,11 +36,11 @@ const PersonalData = ({ data, isFetching, error }) => {
         </div>
         <div className="name">
           <p className="firstname">
-            {personData.first_name}
+            {personalData.first_name}
           </p>
           <div className="delimiter" />
           <p className="lastname">
-            {personData.last_name}
+            {personalData.last_name}
           </p>
         </div>
         <div className="button">
@@ -52,7 +52,7 @@ const PersonalData = ({ data, isFetching, error }) => {
   );
 };
 
-PersonalData.propTypes = {
+Home.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number,
     first_name: PropTypes.string,
@@ -64,11 +64,11 @@ PersonalData.propTypes = {
   error: PropTypes.string,
 };
 
-PersonalData.defaultProps = {
+Home.defaultProps = {
   data: {},
   error: '',
   isFetching: false,
 };
 
 
-export default withFetching(URL_PATH_PERSONAL_DATA, PersonalData);
+export default withFetching(URL_PATH_PERSONAL_DATA, Home);

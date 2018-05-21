@@ -1,17 +1,15 @@
 import React from 'react';
-import PersonalData from './../PersonalData/index';
-import WorkExperience from './../WorkExperience/index';
-import Educations from './../Educations/index';
-import Skills from './../Skills/index';
+import Home from './../Home/index';
+import Contact from './../Contact/index';
+import About from './../About/index';
 import Projects from './../Projects/index';
 
 const App = () => (
   <div>
-    <PersonalData />
+    <Home />
+    <About />
     <Projects />
-    <WorkExperience />
-    <Educations />
-    <Skills />
+    <Contact />
   </div>
 );
 

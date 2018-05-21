@@ -1,10 +1,10 @@
 // eslint-disable-next-line
 import { shallow, render, mount } from 'enzyme';
 import React from 'react';
-import PersonalData from './index';
+import Home from './index';
 
-describe('<PersonalData />', () => {
-  const component = shallow(<PersonalData />);
+describe('<Home />', () => {
+  const component = shallow(<Home />);
   const errorMessage = 'error message';
   const loadingIndicator = 'Loading...';
   const personalData = {
@@ -17,7 +17,7 @@ describe('<PersonalData />', () => {
 
 
   it('renders without crashing', () => {
-    shallow(<PersonalData />);
+    shallow(<Home />);
   });
 
 
@@ -57,18 +57,18 @@ describe('<PersonalData />', () => {
 
   it('renders children when passed in', () => {
     const wrapper = shallow((
-      <PersonalData>
+      <Home>
         <div className="unique" />
-      </PersonalData>
+      </Home>
     ));
     expect(wrapper.contains(<div className="unique" />)).toEqual(true);
   });
 
 
   it('calls componentDidMount', () => {
-    const spy = jest.spyOn(PersonalData.prototype, 'componentDidMount');
+    const spy = jest.spyOn(Home.prototype, 'componentDidMount');
     // eslint-disable-next-line
-    const wrapper = mount(<PersonalData />);
+    const wrapper = mount(<Home />);
     expect(spy).toHaveBeenCalledTimes(1);
 
     afterEach(() => {

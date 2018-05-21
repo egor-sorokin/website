@@ -32,12 +32,7 @@ const Projects = ({ data, isFetching, error }) => {
               <div className="tile__text">
                 <h6 className="tile__subtitle">Role</h6>
                 <div className="tile__link">
-                  <div className="link">
-                    <span className="link__placeholder">{item.role}</span>
-                    <div className="link__mask">
-                      <a className="link__text" href={item.role_url} target="_blank">{item.role}</a>
-                    </div>
-                  </div>
+                  <p className="">{item.position}</p>
                 </div>
               </div>
               <div className="tile__text">

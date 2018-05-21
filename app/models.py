@@ -14,17 +14,15 @@ class Person(Base):
 
     first_name = db.Column(db.String(128), nullable=False)
     last_name = db.Column(db.String(128))
-    phone = db.Column(db.String(128), unique=True)
     email = db.Column(db.String(128), nullable=False, unique=True)
     summary = db.Column(db.Text)
-    work_experiences = db.relationship('WorkExperience', backref='person', lazy='dynamic')
-    skills = db.relationship('Skill', backref='person', lazy='dynamic')
-    education = db.relationship('Education', backref='person', lazy='dynamic')
+    project = db.relationship('Project', backref='person', lazy='dynamic')
+    social_network = db.relationship('SocialNetwork', backref='person', lazy='dynamic')
+    attachment = db.relationship('Attachment', backref='person', lazy='dynamic')
 
-    def __init__(self, first_name, last_name, phone, email, summary):
+    def __init__(self, first_name, last_name, email, summary):
         self.first_name = first_name
         self.last_name = last_name
-        self.phone = phone
         self.email = email
         self.summary = summary
 
@@ -34,38 +32,7 @@ class Person(Base):
             'id': self.id,
             'first_name': self.first_name,
             'last_name': self.last_name,
-            'phone': self.phone,
-            'email': self.email,
             'summary': self.summary,
-        }
-
-
-class WorkExperience(Base):
-    __tablename__ = 'work_experience'
-
-    company = db.Column(db.String(128), nullable=False)
-    position = db.Column(db.String(256), nullable=False)
-    date = db.Column(db.String(128), nullable=False)
-    location = db.Column(db.String(128), nullable=False)
-    person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
-    projects = db.relationship('Project', backref='work_experience', lazy='joined')
-
-    def __init__(self, company, position, date, location, person_id):
-        self.company = company
-        self.position = position
-        self.date = date
-        self.location = location
-        self.person_id = person_id
-
-    @property
-    def serialize(self):
-        return {
-            'id': self.id,
-            'company': self.company,
-            'position': self.position,
-            'date': self.date,
-            'location': self.location,
-            'person_id': self.person_id
         }
 
 
@@ -75,13 +42,18 @@ class Project(Base):
     project = db.Column(db.String(128), nullable=False, unique=True)
     project_description = db.Column(db.Text)
     project_url = db.Column(db.Text, unique=True)
-    work_experience_id = db.Column(db.Integer, db.ForeignKey('work_experience.id'))
+    company = db.Column(db.String(128), nullable=False)
+    company_url = db.Column(db.String(128), nullable=False)
+    position = db.Column(db.String(256), nullable=False)
+    person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
 
-    def __init__(self, project, project_description, project_url, work_experience_id):
+    def __init__(self, project, project_description, project_url, company, company_url, position):
         self.project = project
         self.project_description = project_description
         self.project_url = project_url
-        self.work_experience_id = work_experience_id
+        self.company = company
+        self.company_url = company_url
+        self.position = position
 
     @property
     def serialize(self):
@@ -90,55 +62,48 @@ class Project(Base):
             'project': self.project,
             'project_description': self.project_description,
             'project_url': self.project_url,
-            'work_experience_id': self.work_experience_id,
+            'company': self.company,
+            'position': self.position,
         }
 
 
-class Skill(Base):
-    __tablename__ = 'skill'
+class SocialNetwork(Base):
+    __tablename__ = 'social_network'
 
-    category = db.Column(db.String(256), nullable=False, unique=True)
-    skills = db.Column(db.Text, nullable=False)
+    social_network_name = db.Column(db.String(256), nullable=False, unique=True)
+    social_network_url = db.Column(db.String(256), nullable=False, unique=True)
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
 
-    def __init__(self, category, skills, person_id):
-        self.category = category
-        self.skills = skills
+    def __init__(self, social_network_name, social_network_url, person_id):
+        self.social_network_name = social_network_name
+        self.social_network_url = social_network_url
         self.person_id = person_id
 
     @property
     def serialize(self):
         return {
             'id': self.id,
-            'category': self.category,
-            'skills': self.skills,
-            'person_id': self.person_id,
+            'social_network_name': self.social_network_name,
+            'social_network_url': self.social_network_url,
         }
 
 
-class Education(Base):
-    __tablename__ = 'education'
+class Attachment(Base):
+    __tablename__ = 'attachment'
 
-    place = db.Column(db.String(256), nullable=False)
-    degree = db.Column(db.String(256), nullable=False)
-    date = db.Column(db.String(128), nullable=False)
-    location = db.Column(db.String(128), nullable=False)
+    attachment_name = db.Column(db.String(256), nullable=False, unique=True)
+    attachment_url = db.Column(db.String(256), nullable=False, unique=True)
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
 
-    def __init__(self, place, degree, date, location, person_id):
-        self.place = place
-        self.degree = degree
-        self.date = date
-        self.location = location
+    def __init__(self, attachment_name, attachment_url, person_id):
+        self.attachment_name = attachment_name
+        self.attachment_url = attachment_url
         self.person_id = person_id
 
     @property
     def serialize(self):
         return {
             'id': self.id,
-            'place': self.place,
-            'degree': self.degree,
-            'date': self.date,
-            'location': self.location,
-            'person_id': self.person_id,
+            'attachment_name': self.attachment_name,
+            'attachment_url': self.attachment_url,
         }

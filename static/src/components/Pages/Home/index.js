@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withFetching from '../../utils/api';
-import { URL_PATH_PERSONAL_DATA } from '../../constants/index';
+import withFetching from '../../../utils/api';
+import { URL_PATH_PERSONAL_DATA } from '../../../constants/index';
 import './styles.scss';
 
 

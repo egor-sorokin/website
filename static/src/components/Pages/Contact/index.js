@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withFetching from '../../utils/api';
-import { URL_PATH_PERSONAL_DATA } from '../../constants/index';
+import withFetching from '../../../utils/api';
+import { URL_PATH_PERSONAL_DATA } from '../../../constants/index';
 import './styles.scss';
 
 
-const About = ({ data, isFetching, error }) => {
+const Contact = ({ data, isFetching, error }) => {
   const personalData = data.personalData || {};
 
   if (error) {
@@ -23,7 +23,7 @@ const About = ({ data, isFetching, error }) => {
   );
 };
 
-About.propTypes = {
+Contact.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number,
     first_name: PropTypes.string,
@@ -35,11 +35,11 @@ About.propTypes = {
   error: PropTypes.string,
 };
 
-About.defaultProps = {
+Contact.defaultProps = {
   data: {},
   error: '',
   isFetching: false,
 };
 
 
-export default withFetching(URL_PATH_PERSONAL_DATA, About);
+export default withFetching(URL_PATH_PERSONAL_DATA, Contact);

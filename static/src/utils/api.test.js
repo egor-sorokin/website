@@ -3,7 +3,7 @@ import { shallow, render, mount } from 'enzyme';
 import axios from 'axios';
 import React from 'react';
 import { URL_PATH_EDUCATIONS } from '../constants/index';
-import Projects from '../components/Projects/index';
+import Projects from '../components/Pages/Projects/index';
 import withFetching from './api';
 
 

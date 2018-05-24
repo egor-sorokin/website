@@ -1,11 +1,12 @@
 import React from 'react';
-import GridItem from './GridItem';
 import './styles.scss';
 
 
 const Grid = ({ data }) => {
   const gridComponent = data.map((item) =>
-    <GridItem key={item.id}></GridItem>
+    <li  key={item.id} className="item">
+      <a href={item.url}></a>
+    </li>
   );
 
   return (

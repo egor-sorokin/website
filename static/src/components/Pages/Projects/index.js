@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withFetching from '../../../utils/api';
-import Content from './Content/index';
-import Grid from './Grid/index';
+import Content from '../../Content/index';
 import { URL_PATH_PROJECTS } from '../../../constants/index';
 import './styles.scss';
 
@@ -11,11 +10,13 @@ const Projects = ({ data, isFetching, error }) => {
   const projects = data.projects || [];
   const projectsComponent = projects.map(item => (
     <section key={item.id} className="slide">
-      <a href="/">MENU</a>
+      <a href="/">Menu</a>
       <div className="container">
-          <Content></Content>
-          <Grid></Grid>
+          <Content ></Content>
       </div>
+      <div className="line line--top"></div>
+      <a href={item.project_url} target="_blank">Launch</a>
+      <div className="line line--bottom"></div>
     </section>
   ));
 
@@ -28,9 +29,9 @@ const Projects = ({ data, isFetching, error }) => {
   }
 
   return (
-    <div>
+    <main>
       {projectsComponent}
-    </div>
+    </main>
   );
 };
 

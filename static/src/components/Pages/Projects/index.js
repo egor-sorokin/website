@@ -12,11 +12,15 @@ const Projects = ({ data, isFetching, error }) => {
     <section key={item.id} className="slide">
       <a href="/">Menu</a>
       <div className="container">
-          <Content ></Content>
+        <Content
+          projectName={item.project}
+          info={item.info}
+          image={item.image}
+        />
       </div>
-      <div className="line line--top"></div>
+      <div className="line line--top" />
       <a href={item.project_url} target="_blank">Launch</a>
-      <div className="line line--bottom"></div>
+      <div className="line line--bottom" />
     </section>
   ));
 

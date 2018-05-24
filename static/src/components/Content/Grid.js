@@ -2,12 +2,14 @@ import React from 'react';
 import './styles.scss';
 
 
-const Grid = ({ data }) => {
-  const gridComponent = data.map((item) =>
-    <li  key={item.id} className="item">
-      <a href={item.url}></a>
+const Grid = ({ gridData }) => {
+  const gridComponent = gridData.map(item => (
+    <li key={item.src} className="item">
+      {/* eslint-disable */ }
+      <a className="image__inner" href={item.url} style={{ backgroundImage: `url(${item.src})` }} />
+      {/* eslint-enable */}
     </li>
-  );
+  ));
 
   return (
     <ul>

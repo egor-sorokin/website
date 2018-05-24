@@ -2,10 +2,10 @@ import React from 'react';
 import './styles.scss';
 
 
-const List = ({ data }) => {
-  const listComponent = data.map((item) =>
-    <li key={item.id} className="item">
-    <h6 className="item__title">{item.title}</h6>
+const List = ({ listData }) => {
+  const listComponent = listData.map(item => (
+    <li key={item.label} className="item">
+      <h6 className="item__title">{item.label}</h6>
       {item.url ? (
         <div className="item__link">
           <div className="link">
@@ -20,8 +20,8 @@ const List = ({ data }) => {
           <p className="">{item.text}</p>
         </div>
       )}
-  </li>
-  );
+    </li>
+  ));
 
   return (
     <ul>

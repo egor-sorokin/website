@@ -3,20 +3,75 @@
     {
       "id": 1,
       "project": "Company.com",
-      "position": "Web Software Engineer",
-      "company": "Handsome",
-      "company_url": "www.handsome.is",
-      "project_description": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design a dashboard and a marketing website, improve SEO and speed of loading these websites in users’ browsers",
-      "project_url": "www.company.com",
+      "project_url": "https://www.company.com",
+      "info": [
+        {
+          "label": "role",
+          "text": "Web Software Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "Handsome",
+          "url": "https://www.handsome.is"
+        },
+        {
+          "label": "description",
+          "text": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design their dashboard and marketing website",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "lorem-ipsum",
+        "alt": "lorem"
+      },
+      "experiments": []
     },
     {
       "id": 2,
-      "project": "Com.Company",
-      "position": "Web Software Engineer",
-      "company": "Handsome",
-      "company_url": "www.handsome.is",
-      "project_description": "Other tools that have been used in the work but not mentioned: GitLab, SourceTree, Vagrant, SumoMe, Google Analytics",
-      "project_url": "www.company.com",
+      "project": "Company.com",
+      "project_url": "https://www.company.com",
+      "info": [
+        {
+          "label": "role",
+          "text": "Web Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "Handsome",
+          "url": "https://www.handsome.is"
+        },
+        {
+          "label": "description",
+          "text": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design their dashboard and marketing website",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "",
+        "alt": ""
+      },
+      "experiments": [
+        {
+          "label": "lorem",
+          "url": "lorem-ipsum",
+          "img": "",
+          "src": "src"
+        },
+        {
+          "label": "lorem",
+          "url": "lorem-ipsum",
+          "img": "",
+          "src": "src"
+        },
+        {
+          "label": "lorem",
+          "url": "lorem-ipsum",
+          "img": "",
+          "src": "src"
+        }
+      ]
     }
   ]
 }

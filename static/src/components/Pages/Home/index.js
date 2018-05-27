@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withFetching from '../../utils/api';
-import { URL_PATH_PERSONAL_DATA } from '../../constants/index';
+import withFetching from '../../../utils/api';
+import { URL_PATH_PERSON_DATA } from '../../../constants/index';
 import './styles.scss';
 
 
 const Home = ({ data, isFetching, error }) => {
-  const personalData = data.personalData || {};
+  const personData = data.personData || {};
 
   if (error) {
     return <div><p>{error}</p></div>;
@@ -36,11 +36,11 @@ const Home = ({ data, isFetching, error }) => {
         </div>
         <div className="name">
           <p className="firstname">
-            {personalData.first_name}
+            {personData.first_name}
           </p>
           <div className="delimiter" />
           <p className="lastname">
-            {personalData.last_name}
+            {personData.last_name}
           </p>
         </div>
         <div className="button">
@@ -71,4 +71,4 @@ Home.defaultProps = {
 };
 
 
-export default withFetching(URL_PATH_PERSONAL_DATA, Home);
+export default withFetching(URL_PATH_PERSON_DATA, Home);

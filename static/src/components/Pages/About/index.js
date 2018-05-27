@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withFetching from '../../utils/api';
-import { URL_PATH_PERSONAL_DATA } from '../../constants/index';
+import withFetching from '../../../utils/api';
+import { URL_PATH_PERSON_DATA } from '../../../constants/index';
 import './styles.scss';
 
 
 const About = ({ data, isFetching, error }) => {
-  const personalData = data.personalData || {};
+  const personData = data.personData || {};
 
   if (error) {
     return <div><p>{error}</p></div>;
@@ -42,4 +42,4 @@ About.defaultProps = {
 };
 
 
-export default withFetching(URL_PATH_PERSONAL_DATA, About);
+export default withFetching(URL_PATH_PERSON_DATA, About);

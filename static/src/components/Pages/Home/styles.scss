@@ -1,4 +1,4 @@
-@import '../../styles/base/_vars.scss';
+@import '../../../styles/base/_vars.scss';
 
 .banner {
   position: relative;
@@ -106,23 +106,23 @@
   }
 }
 
-.line {
-  position: absolute;
-
-  height: 210px;
-  width: 1px;
-
-  background-color: $mercuryLight;
-
-  &--left {
-    left: 30px;
-    bottom: 0;
-  }
-  &--right {
-    right: 30px;
-    top: 0;
-  }
-}
+//.line {
+//  position: absolute;
+//
+//  height: 210px;
+//  width: 1px;
+//
+//  background-color: $mercuryLight;
+//
+//  &--left {
+//    left: 30px;
+//    bottom: 0;
+//  }
+//  &--right {
+//    right: 30px;
+//    top: 0;
+//  }
+//}
 
 .button:hover {
   &:after {

@@ -1,8 +1,8 @@
 import React from 'react';
-import Home from './../Home/index';
-import Contact from './../Contact/index';
-import About from './../About/index';
-import Projects from './../Projects/index';
+import Home from '../Pages/Home/index';
+import Contact from '../Pages/Contact/index';
+import About from '../Pages/About/index';
+import Projects from '../Pages/Projects/index';
 
 const App = () => (
   <div>

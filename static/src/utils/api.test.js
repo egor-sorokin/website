@@ -2,8 +2,8 @@
 import { shallow, render, mount } from 'enzyme';
 import axios from 'axios';
 import React from 'react';
-import { URL_PATH_EDUCATIONS } from '../constants/index';
-import Projects from '../components/Projects/index';
+import { URL_PATH_PROJECTS } from '../constants/index';
+import Projects from '../components/Pages/Projects/index';
 import withFetching from './api';
 
 
@@ -13,7 +13,7 @@ jest.mock('axios', () => ({
 
 
 describe('WithFetching', () => {
-  const WithFetching = withFetching(URL_PATH_EDUCATIONS, Projects);
+  const WithFetching = withFetching(URL_PATH_PROJECTS, Projects);
   let wrapper;
 
 

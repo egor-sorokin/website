@@ -3,7 +3,7 @@
     {
       "id": 1,
       "project": "Company.com",
-      "project_url": "www.company.com",
+      "project_url": "https://www.company.com",
       "info": [
         {
           "label": "role",
@@ -13,11 +13,11 @@
         {
           "label": "company",
           "text": "Handsome",
-          "url": "www.handsome.is"
+          "url": "https://www.handsome.is"
         },
         {
           "label": "description",
-          "text": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design a dashboard and a marketing website, improve SEO and speed of loading these websites in users’ browsers",
+          "text": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design their dashboard and marketing website",
           "url": ""
         }
       ],
@@ -30,7 +30,7 @@
     {
       "id": 2,
       "project": "Company.com",
-      "project_url": "www.company.com",
+      "project_url": "https://www.company.com",
       "info": [
         {
           "label": "role",
@@ -40,11 +40,11 @@
         {
           "label": "company",
           "text": "Handsome",
-          "url": "www.handsome.is"
+          "url": "https://www.handsome.is"
         },
         {
           "label": "description",
-          "text": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design a dashboard and a marketing website, improve SEO and speed of loading these websites in users’ browsers",
+          "text": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design their dashboard and marketing website",
           "url": ""
         }
       ],

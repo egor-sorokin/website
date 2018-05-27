@@ -10,7 +10,6 @@ const Projects = ({ data, isFetching, error }) => {
   const projects = data.projects || [];
   const projectsComponent = projects.map(item => (
     <section key={item.id} className="slide">
-      <a href="/">Menu</a>
       <div className="container">
         <Content
           projectName={item.project}
@@ -18,9 +17,17 @@ const Projects = ({ data, isFetching, error }) => {
           image={item.image}
         />
       </div>
-      <div className="line line--top" />
-      <a href={item.project_url} target="_blank">Launch</a>
-      <div className="line line--bottom" />
+      <div className="switcher">
+        <div className="switcher__line line--top" />
+        <a
+          href={item.project_url}
+          target="_blank"
+          className="switcher__link font-w-b font-f-sec font-s-10 text-t-u text-c-dune"
+        >
+            Launch
+        </a>
+        <div className="switcher__line line--bottom" />
+      </div>
     </section>
   ));
 

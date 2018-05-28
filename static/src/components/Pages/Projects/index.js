@@ -15,18 +15,24 @@ const Projects = ({ data, isFetching, error }) => {
           projectName={item.project}
           info={item.info}
           image={item.image}
+          experiments={item.experiments}
         />
       </div>
+
       <div className="switcher">
         <div className="switcher__line line--top" />
-        <a
-          href={item.project_url}
-          target="_blank"
-          className="switcher__link font-w-b font-f-sec font-s-10 text-t-u text-c-dune"
-        >
-            Launch
-        </a>
-        <div className="switcher__line line--bottom" />
+        {item.project_url && (
+          <a
+            href={item.project_url}
+            target="_blank"
+            className="switcher__link font-w-b font-f-sec font-s-10 text-t-u text-c-dune"
+          >
+              Launch
+          </a>
+        )}
+        {item.project_url && (
+          <div className="switcher__line line--bottom" />
+        )}
       </div>
     </section>
   ));

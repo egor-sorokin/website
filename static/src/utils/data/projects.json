@@ -29,22 +29,22 @@
     },
     {
       "id": 2,
-      "project": "Company.com",
-      "project_url": "https://www.company.com",
+      "project": "Experiments",
+      "project_url": "",
       "info": [
         {
           "label": "role",
-          "text": "Web Engineer",
+          "text": "Web Software Engineer",
           "url": ""
         },
         {
           "label": "company",
-          "text": "Handsome",
-          "url": "https://www.handsome.is"
+          "text": "-",
+          "url": ""
         },
         {
           "label": "description",
-          "text": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design their dashboard and marketing website",
+          "text": "Set of own experiments hosted on Codepen and Heroku",
           "url": ""
         }
       ],
@@ -54,18 +54,42 @@
       },
       "experiments": [
         {
+          "id": 1,
           "label": "lorem",
           "url": "lorem-ipsum",
           "img": "",
           "src": "src"
         },
         {
+          "id": 2,
           "label": "lorem",
           "url": "lorem-ipsum",
           "img": "",
           "src": "src"
         },
         {
+          "id": 3,
+          "label": "lorem",
+          "url": "lorem-ipsum",
+          "img": "",
+          "src": "src"
+        },
+        {
+          "id": 4,
+          "label": "lorem",
+          "url": "lorem-ipsum",
+          "img": "",
+          "src": "src"
+        },
+        {
+          "id": 5,
+          "label": "lorem",
+          "url": "lorem-ipsum",
+          "img": "",
+          "src": "src"
+        },
+        {
+          "id": 6,
           "label": "lorem",
           "url": "lorem-ipsum",
           "img": "",

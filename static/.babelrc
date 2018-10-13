@@ -3,32 +3,32 @@
   "env": {
     "test": {
       "presets": [
-        "es2015",
-        "react",
+        "babel-preset-es2015",
+        "babel-preset-react",
         "stage-0"
       ]
     },
     "production": {
       "presets": [
         [
-          "es2015",
+          "babel-preset-es2015",
           {
             "modules": false
           }
         ],
-        "react",
+        "babel-preset-react",
         "stage-0"
       ]
     },
     "development": {
       "presets": [
         [
-          "es2015",
+          "babel-preset-es2015",
           {
             "modules": false
           }
         ],
-        "react",
+        "babel-preset-react",
         "stage-0"
       ]
     }

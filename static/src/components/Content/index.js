@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import List from './List';
 import Grid from './Grid';
 import './styles.scss';
@@ -32,5 +33,27 @@ const Content = ({
     </div>
   </section>
 );
+
+Content.propTypes = {
+  projectName: PropTypes.string,
+  info: PropTypes.shape([
+    PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  ]),
+  image: PropTypes.string,
+  experiments: PropTypes.shape([
+    PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  ]),
+};
+
+Content.defaultProps = {
+  projectName: '',
+  info: [],
+  image: '',
+  experiments: [],
+};
 
 export default Content;

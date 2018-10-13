@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 
@@ -36,6 +37,18 @@ const List = ({ listData }) => {
       {listComponent}
     </ul>
   );
+};
+
+List.propTypes = {
+  listData: PropTypes.shape({
+    id: PropTypes.number,
+    url: PropTypes.string,
+    text: PropTypes.string,
+  }),
+};
+
+List.defaultProps = {
+  listData: {},
 };
 
 export default List;

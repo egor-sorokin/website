@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 
@@ -20,5 +21,19 @@ const Grid = ({ gridData }) => {
   );
 };
 
+Grid.propTypes = {
+  gridData: PropTypes.shape({
+    personData: PropTypes.shape({
+      id: PropTypes.number,
+      url: PropTypes.string,
+      src: PropTypes.string,
+    }),
+  }),
+};
+
+Grid.defaultProps = {
+  gridData: {
+  },
+};
 
 export default Grid;

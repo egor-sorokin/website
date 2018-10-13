@@ -18,7 +18,9 @@ const About = ({ data, isFetching, error }) => {
 
   return (
     <div>
-      <section className="banner" />
+      <section className="banner">
+        {personData.id}
+      </section>
     </div>
   );
 };

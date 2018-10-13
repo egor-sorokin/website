@@ -18,25 +18,31 @@ const Contact = ({ data, isFetching, error }) => {
 
   return (
     <div>
-      <section className="banner" />
+      <section className="banner">
+        {personData.id}
+      </section>
     </div>
   );
 };
 
 Contact.propTypes = {
   data: PropTypes.shape({
-    id: PropTypes.number,
-    first_name: PropTypes.string,
-    last_name: PropTypes.string,
-    email: PropTypes.string,
-    summary: PropTypes.string,
+    personData: PropTypes.shape({
+      id: PropTypes.number,
+      first_name: PropTypes.string,
+      last_name: PropTypes.string,
+      email: PropTypes.string,
+      summary: PropTypes.string,
+    }),
   }),
   isFetching: PropTypes.bool,
   error: PropTypes.string,
 };
 
 Contact.defaultProps = {
-  data: {},
+  data: {
+    personData: {},
+  },
   error: '',
   isFetching: false,
 };

@@ -36,23 +36,15 @@ const Content = ({
 
 Content.propTypes = {
   projectName: PropTypes.string,
-  info: PropTypes.shape([
-    PropTypes.shape({
-      id: PropTypes.number,
-    }),
-  ]),
-  image: PropTypes.string,
-  experiments: PropTypes.shape([
-    PropTypes.shape({
-      id: PropTypes.number,
-    }),
-  ]),
+  info: PropTypes.instanceOf(Array),
+  image: PropTypes.shape({}),
+  experiments: PropTypes.instanceOf(Array),
 };
 
 Content.defaultProps = {
   projectName: '',
   info: [],
-  image: '',
+  image: {},
   experiments: [],
 };
 

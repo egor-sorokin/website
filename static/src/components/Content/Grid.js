@@ -9,7 +9,7 @@ const Grid = ({ gridData }) => {
       {/* eslint-disable */ }
       <a className="image__inner"
          href={item.url}
-         style={{ backgroundImage: `url(${item.src})` }} />
+         style={{ backgroundImage: `url(${item.src})` }}/>
       {/* eslint-enable */}
     </li>
   ));
@@ -22,18 +22,11 @@ const Grid = ({ gridData }) => {
 };
 
 Grid.propTypes = {
-  gridData: PropTypes.shape({
-    personData: PropTypes.shape({
-      id: PropTypes.number,
-      url: PropTypes.string,
-      src: PropTypes.string,
-    }),
-  }),
+  gridData: PropTypes.instanceOf(Array),
 };
 
 Grid.defaultProps = {
-  gridData: {
-  },
+  gridData: [],
 };
 
 export default Grid;

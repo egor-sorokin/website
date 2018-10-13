@@ -40,15 +40,11 @@ const List = ({ listData }) => {
 };
 
 List.propTypes = {
-  listData: PropTypes.shape({
-    id: PropTypes.number,
-    url: PropTypes.string,
-    text: PropTypes.string,
-  }),
+  listData: PropTypes.instanceOf(Array),
 };
 
 List.defaultProps = {
-  listData: {},
+  listData: [],
 };
 
 export default List;

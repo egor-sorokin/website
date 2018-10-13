@@ -9,7 +9,7 @@ import './styles.scss';
 const Projects = ({ data, isFetching, error }) => {
   const projects = data.projects || [];
   const projectsComponent = projects.map(item => (
-    <section key={item.id} className="slide">
+    <section key={item.id} className="slide-inner">
       <div className="container">
         <Content
           projectName={item.project}
@@ -53,19 +53,15 @@ const Projects = ({ data, isFetching, error }) => {
 };
 
 Projects.propTypes = {
-  data: PropTypes.shape([
-    PropTypes.shape({
-      id: PropTypes.number,
-    }),
-  ]),
+  data: PropTypes.shape([]),
   isFetching: PropTypes.bool,
   error: PropTypes.string,
 };
 
 Projects.defaultProps = {
   data: [],
-  error: '',
   isFetching: false,
+  error: '',
 };
 
 

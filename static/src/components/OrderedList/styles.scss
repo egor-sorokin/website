@@ -1,0 +1,59 @@
+@import '../../styles/base/_vars.scss';
+
+.orderedlist {
+  &__list {
+    list-style: none;
+    counter-reset: item -1;
+  }
+
+  &__item {
+    counter-increment: item;
+    position: relative;
+
+    &:before {
+      content: counter(item, decimal-leading-zero);
+
+      margin-left: 10px;
+      margin-right: 25px;
+    }
+    &:after {
+      content: '';
+      display: block;
+
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+      width: 5px;
+      height: 1px;
+      background-color: $mercuryLight;
+
+      transform: translateY(50%);
+    }
+  }
+  &__text {
+    &:before {
+      content: '';
+      display: block;
+
+      position: absolute;
+      top: 50%;
+      left: 28px;
+
+      width: 15px;
+      height: 1px;
+      background-color: $mercuryLight;
+
+      transform: translateY(50%);
+    }
+  }
+  &__title {
+    font-family: $secondaryFont;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+}

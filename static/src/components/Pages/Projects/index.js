@@ -9,7 +9,7 @@ import './styles.scss';
 const Projects = ({ data, isFetching, error }) => {
   const projects = data.projects || [];
   const projectsComponent = projects.map(item => (
-    <section key={item.id} className="slide-inner">
+    <section id="projects" key={item.id} className="slide-inner">
       <div className="container">
         <Content
           projectName={item.project}

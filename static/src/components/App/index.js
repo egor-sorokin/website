@@ -6,8 +6,8 @@ import Projects from '../Pages/Projects/index';
 
 const App = () => (
   <div>
-    <Home />
     <About />
+    <Home />
     <Projects />
     <Contact />
   </div>

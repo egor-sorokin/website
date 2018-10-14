@@ -24,6 +24,7 @@
     "react/jsx-no-target-blank": 0,
     "react/react-in-jsx-scope": 2,
     "react/no-array-index-key": 0,
+    "react/no-unused-state": 1,
     "block-scoped-var": 0,
     "padded-blocks": 0,
     "no-console": 0,

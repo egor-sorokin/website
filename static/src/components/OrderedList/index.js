@@ -7,7 +7,6 @@ const OrderedList = () => {
     <li className="orderedlist__item">
       <span className="orderedlist__text">{item}</span>
     </li>
-    
   ));
 
   return (

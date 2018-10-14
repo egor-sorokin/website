@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withFetching from '../../../utils/api';
-import { URL_PATH_PERSON_DATA } from '../../../constants/index';
+import OrderedList from '../../OrderedList/index'
+import IntroText from '../../IntroText/index'
+import Logo from '../../Logo/index';
+import {URL_PATH_PERSON_DATA} from '../../../constants/index';
 import './styles.scss';
 
 
-const About = ({ data, isFetching, error }) => {
+const About = ({data, isFetching, error}) => {
   const personData = data.personData || {};
 
   if (error) {
@@ -18,8 +21,28 @@ const About = ({ data, isFetching, error }) => {
 
   return (
     <div>
-      <section className="banner">
-        {personData.id}
+      <section className="about">
+        <div className="about__item about__item--left">
+          <div className="line line--top"></div>
+          <Logo></Logo>
+          <div className="line line--bottom"></div>
+        </div>
+        <div className="about__item about__item--middle">
+          <h1 className="about__title">{personData.first_name + ' ' + personData.last_name}</h1>
+          <IntroText
+            personData={personData}
+          ></IntroText>
+          <div class="about__item-footer">
+            <OrderedList></OrderedList>
+          </div>
+        </div>
+        <div className="about__item about__item--right">
+          <button className="button-close">
+            <span className="button-close__text"></span>
+          </button>
+          <OrderedList></OrderedList>
+        </div>
+
       </section>
     </div>
   );

@@ -5,7 +5,7 @@ import './styles.scss';
 const OrderedList = () => {
   const orderedListItems = ['LinkedIn', 'Xing', 'GitHub', 'Codepen'].map((item) => (
     <li className="orderedlist__item">
-      <span className="orderedlist__text">{item}</span>
+      <a href="/" className="orderedlist__text">{item}</a>
     </li>
   ));
 

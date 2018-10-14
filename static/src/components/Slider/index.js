@@ -1,68 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Slider from './Slider';
+import './styles.scss';
 
 
-class Slider extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { windowHeight: props.height, windowWidth: props.width };
-  }
+const FullSlider = ({children}) => {
+  let slides = children.map((item, i) => (
+    <Slider.Item
+      key={i}
+      className={`slide slide-${i}`}
+    >
+      <div className="content">{item}</div>
+    </Slider.Item>
+  ));
 
-  getInitialState = () => ({ windowHeight: `${window.innerHeight}px`, windowWidth: `${window.innerWidth}px` });
+  return (
+    <Slider>
+      {slides}
+    </Slider>
+  );
+};
 
-  componentWillMount = () => {
-    this.setState({
-      windowHeight: `${window.innerHeight}px`,
-      windowWidth: `${window.innerWidth}px`,
-    });
-  };
-
-  componentDidMount = () => {
-    window.addEventListener('resize', this.handleResize);
-  };
-
-  componentWillUnmount = () => {
-    window.removeEventListener('resize', this.handleResize);
-  };
-
-  handleResize = () => {
-    this.setState({
-      windowHeight: `${window.innerHeight}px`,
-      windowWidth: `${window.innerWidth}px`,
-    });
-  };
-
-  render() {
-    const { children } = this.props;
-
-    const slides = children.map((item, i) => (
-      <div
-        key={i}
-        className={`slide ${i < 1 ? 'slide-auto' : 'slide-normal'} slide-${i}`}
-        style={{ height: this.state.windowHeight, width: this.state.windowWidth }}
-      >{item}
-      </div>
-    ));
-
-    return (
-      <div className="slider">
-        {slides}
-      </div>
-    );
-  }
-}
-
-
-Slider.propTypes = {
+FullSlider.propTypes = {
   children: PropTypes.instanceOf(Array),
-  height: PropTypes.string,
-  width: PropTypes.string,
 };
 
-Slider.defaultProps = {
+FullSlider.defaultProps = {
   children: [],
-  height: '0',
-  width: '0',
 };
 
-export default Slider;
+export default FullSlider;

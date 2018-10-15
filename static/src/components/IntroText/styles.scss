@@ -1,0 +1,25 @@
+@import '../../styles/base/_vars.scss';
+
+.introtext {
+  margin-top: 50px;
+
+  &__item {
+    &:nth-of-type(n+2) {
+      margin-top: 30px;
+    }
+  }
+  &__title {
+    font-family: $secondaryFont;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  &__text {
+    font-family: $secondaryFont;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+  }
+}

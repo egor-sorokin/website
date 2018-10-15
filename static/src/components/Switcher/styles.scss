@@ -1,0 +1,45 @@
+@import '../../styles/base/_vars.scss';
+
+.switcher {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  width: 4vw;
+}
+
+.switcher__line {
+  height: 44vh;
+  width: 1px;
+
+  background-color: $dune;
+  opacity: 0.3;
+}
+
+.switcher__link {
+  display: flex;
+
+  height: 12vh;
+
+  align-items: center;
+
+  transform: translateX(-40px);
+  transition: transform $defaultTiming $defaultEasing,
+  letter-spacing $defaultTiming $defaultEasing;
+}
+
+.switcher__link:hover {
+  letter-spacing: 4px;
+
+  transform: translateX(-30px);
+}
+
+.switcher--white {
+  .switcher__line {
+    background-color: $mercury;
+    opacity: 0.6;
+  }
+  .switcher__link {
+    color: $mercuryLight;
+  }
+}

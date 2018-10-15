@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withFetching from '../../../utils/api';
 import Content from '../../Content/index';
-import { URL_PATH_PROJECTS } from '../../../constants/index';
+import Switcher from '../../Switcher/index';
+import {URL_PATH_PROJECTS} from '../../../constants/index';
 import './styles.scss';
 
 
-const Projects = ({ data, isFetching, error }) => {
+const Projects = ({data, isFetching, error}) => {
   const projects = data.projects || [];
   const projectsComponent = projects.map(item => (
     <section id="projects" key={item.id} className="slide-inner">
@@ -18,22 +19,11 @@ const Projects = ({ data, isFetching, error }) => {
           experiments={item.experiments}
         />
       </div>
-
-      <div className="switcher">
-        <div className="switcher__line line--top" />
-        {item.project_url && (
-          <a
-            href={item.project_url}
-            target="_blank"
-            className="switcher__link font-w-b font-f-sec font-s-10 text-t-u text-c-dune"
-          >
-              Launch
-          </a>
-        )}
-        {item.project_url && (
-          <div className="switcher__line line--bottom" />
-        )}
-      </div>
+      <Switcher
+        data={item}
+        label="Launch"
+        type="black"
+      ></Switcher>
     </section>
   ));
 

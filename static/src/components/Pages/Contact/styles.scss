@@ -1,0 +1,40 @@
+@import '../../../styles/base/_vars.scss';
+
+.contact-inner {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+
+  width: 30%;
+  height: 100%;
+  align-items: center;
+
+  &__itme {
+    display: flex;
+    position: relative;
+  }
+}
+
+.contact {
+  .logo {
+    margin-top: 90px;
+    margin-bottom: 150px;
+  }
+  .navbar {
+    margin-top: 155px;
+  }
+}
+
+.delimiter {
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 1px;
+  height: 320px;
+  background-color: $mercuryLight;
+
+  transform: translateX(-50%);
+}
+

@@ -10,83 +10,40 @@
   color: $mercuryLight;
 }
 
-.logo {
-  position: absolute;
-  left: 20%;
-  top: 40%;
+.home {
+  &__name {
+    display: flex;
+    flex-direction: row;
 
-  width: 205px;
-  height: 205px;
-
-  border: 1px solid $mercuryLight;
-
-  transform: translateY(-50%) rotateZ(45deg);
-
-  &__circles {
-    position: relative;
+    position: absolute;
+    left: 10%;
     top: 50%;
-    left: 50%;
 
-    transform: translateY(-50%) translateX(-50%);
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    transform: translateY(-50%);
+  }
+
+  .line {
+    position: absolute;
+    right: 4%;
+
+    height: 40vh;
+    width: 1px;
+    background-color: $mercuryLight;
+
+    transform: translateX(-50%);
+
+    &--bottom {
+      bottom: 0;
+    }
+    &--top {
+      top: 0;
+    }
   }
 }
-
-.name {
-  display: flex;
-  flex-direction: row;
-
-  position: absolute;
-  right: 15%;
-  top: 50%;
-
-  transform: translateY(-50%);
-}
-
-.firstname,
-.lastname {
-  font-size: 48px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-}
-
-.firstname {
-  margin-top: 15px;
-  align-self: flex-start;
-}
-
-.lastname {
-  margin-bottom: 15px;
-  align-self: flex-end;
-}
-
-.delimiter {
-  margin: 0 20px;
-
-  height: 154px;
-  width: 1px;
-
-  background-color: $mercuryLight;
-}
-
-
-//.line {
-//  position: absolute;
-//
-//  height: 210px;
-//  width: 1px;
-//
-//  background-color: $mercuryLight;
-//
-//  &--left {
-//    left: 30px;
-//    bottom: 0;
-//  }
-//  &--right {
-//    right: 30px;
-//    top: 0;
-//  }
-//}
-
 
 .button {
   position: absolute;

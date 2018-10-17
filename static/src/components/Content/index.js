@@ -5,21 +5,23 @@ import Grid from './Grid';
 import './styles.scss';
 
 
-const Content = ({
-  projectName, info, image, experiments,
-}) => (
+const Content = ({name, url, info, image, experiments}) => (
   <section className="project">
     <div className="col col--left">
       <h1 className="font-s-48 font-w-m">
-        {projectName}
+        {name}
       </h1>
-      <List listData={info} />
+      <List
+        listData={info}
+      />
     </div>
     <div className="col col--right">
       {experiments.length === 0 ? (
         <div className="image">
           image
-          <div
+          <a
+            href={url}
+            target="_blank"
             className="image__inner"
             title={image.alt}
             style={{ backgroundImage: `url(${image.src})` }}
@@ -35,16 +37,18 @@ const Content = ({
 );
 
 Content.propTypes = {
-  projectName: PropTypes.string,
-  info: PropTypes.instanceOf(Array),
+  name: PropTypes.string,
+  url: PropTypes.string,
   image: PropTypes.shape({}),
+  info: PropTypes.instanceOf(Array),
   experiments: PropTypes.instanceOf(Array),
 };
 
 Content.defaultProps = {
-  projectName: '',
-  info: [],
+  name: '',
+  url: '',
   image: {},
+  info: [],
   experiments: [],
 };
 

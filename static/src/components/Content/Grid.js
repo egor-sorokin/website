@@ -3,20 +3,23 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 
-const Grid = ({ gridData }) => {
-  const gridComponent = gridData.map(item => (
-    <li key={item.id} className="grid__item item">
-      {/* eslint-disable */ }
-      <a className="image__inner"
-         href={item.url}
-         style={{ backgroundImage: `url(${item.src})` }}/>
-      {/* eslint-enable */}
+const Grid = ({gridData}) => {
+  const component = gridData.map(item => (
+    <li
+      key={item.id}
+      className="grid__item item">
+      <a
+        href={item.url}
+        target="_blank"
+        className="image__inner"
+        style={{ backgroundImage: `url(${item.image})` }}
+      />
     </li>
   ));
 
   return (
     <ul className="grid">
-      {gridComponent}
+      {component}
     </ul>
   );
 };

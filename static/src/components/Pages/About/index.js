@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withFetching from '../../../utils/api';
 import OrderedList from '../../OrderedList/index'
-import IntroText from '../../IntroText/index'
+import Summary from '../../Summary/index'
 import Logo from '../../Logo/index';
 import {URL_PATH_PERSON_DATA} from '../../../constants/index';
 import './styles.scss';
@@ -10,6 +10,8 @@ import './styles.scss';
 
 const About = ({data, isFetching, error}) => {
   const personData = data.personData || {};
+  const socials = personData.socials || [];
+  const attachments = personData.attachments || [];
 
   if (error) {
     return <div><p>{error}</p></div>;
@@ -29,41 +31,40 @@ const About = ({data, isFetching, error}) => {
         </div>
         <div className="about__item about__item--middle">
           <h1 className="about__title">{personData.first_name + ' ' + personData.last_name}</h1>
-          <IntroText
-            personData={personData}
-          ></IntroText>
-          <div class="about__item-footer">
-            <OrderedList></OrderedList>
+          <Summary
+            summary={personData.summary}
+          ></Summary>
+          <div className="about__item-footer">
+            <OrderedList
+              title={socials.title}
+              items={socials.items}
+            ></OrderedList>
           </div>
         </div>
         <div className="about__item about__item--right">
           <button className="button-close">
-            <span className="button-close__text"></span>
+            <span className="button-close__text">Close</span>
           </button>
-          <OrderedList></OrderedList>
+          <OrderedList
+            title={attachments.title}
+            items={attachments.items}
+          ></OrderedList>
         </div>
-
       </section>
     </div>
   );
 };
 
 About.propTypes = {
-  data: PropTypes.shape({
-    id: PropTypes.number,
-    first_name: PropTypes.string,
-    last_name: PropTypes.string,
-    email: PropTypes.string,
-    summary: PropTypes.string,
-  }),
+  data: PropTypes.shape({}),
   isFetching: PropTypes.bool,
   error: PropTypes.string,
 };
 
 About.defaultProps = {
   data: {},
-  error: '',
   isFetching: false,
+  error: '',
 };
 
 

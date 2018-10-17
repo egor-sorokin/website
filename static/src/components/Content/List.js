@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 
-const List = ({ listData }) => {
-  const listComponent = listData.map(item => (
-    <li key={item.label} className="list__item item">
+const List = ({listData}) => {
+  const component = listData.map((item, i) => (
+    <li
+      key={i+1}
+      className="list__item item">
       <h6 className="item__title font-f-sec font-s-10 font-w-b text-t-u">
         {item.label}
       </h6>
@@ -34,7 +36,7 @@ const List = ({ listData }) => {
 
   return (
     <ul className="list">
-      {listComponent}
+      {component}
     </ul>
   );
 };

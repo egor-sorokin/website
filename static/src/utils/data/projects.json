@@ -2,8 +2,62 @@
   "projects": [
     {
       "id": 1,
-      "project": "Company.com",
-      "project_url": "https://www.company.com",
+      "name": "Southwestern University",
+      "url": "https://www.southwestern.edu",
+      "info": [
+        {
+          "label": "role",
+          "text": "Web Software Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "Handsome",
+          "url": "https://www.handsome.is"
+        },
+        {
+          "label": "description",
+          "text": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "lorem-ipsum",
+        "alt": "lorem"
+      },
+      "experiments": []
+    },
+    {
+      "id": 2,
+      "name": "Game: Orbs",
+      "url": "https://labs.handsome.is/games/orbs/",
+      "info": [
+        {
+          "label": "role",
+          "text": "Web Software Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "Handsome",
+          "url": "https://www.handsome.is"
+        },
+        {
+          "label": "description",
+          "text": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "lorem-ipsum",
+        "alt": "lorem"
+      },
+      "experiments": []
+    },
+    {
+      "id": 3,
+      "name": "Company.com",
+      "url": "https://www.company.com",
       "info": [
         {
           "label": "role",
@@ -28,13 +82,94 @@
       "experiments": []
     },
     {
-      "id": 2,
-      "project": "Experiments",
-      "project_url": "",
+      "id": 4,
+      "name": "Brand Retail OS",
+      "url": "https://www.brandretailos.com/",
       "info": [
         {
           "label": "role",
-          "text": "Web Software Engineer",
+          "text": "Frontend Software Engineer (Freelance)",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "LIGADIGITAL",
+          "url": "https://www.ligadigital.com"
+        },
+        {
+          "label": "description",
+          "text": "We are digital. We design and develop highly innovative and state of the art web-based software. We are a sparring partner for both large and small companies and facilitate their journey into the digital age with our unique, extremely intuitive products.",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "lorem-ipsum",
+        "alt": "lorem"
+      },
+      "experiments": []
+    },
+    {
+      "id": 5,
+      "name": "Scroll Versions for Confluence",
+      "url": "https://labs.handsome.is/games/orbs/",
+      "info": [
+        {
+          "label": "role",
+          "text": "Software Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "K15t Software",
+          "url": "https://www.k15t.com"
+        },
+        {
+          "label": "description",
+          "text": "K15t is growing fast, and we're always excited to receive speculative applications from talented candidates of all backgrounds. If you have the skills to help us improve and grow, then get in touch. We've hired many great people in the past who didn't apply for a specific open position, so why not give it a go?",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "lorem-ipsum",
+        "alt": "lorem"
+      },
+      "experiments": []
+    },
+    {
+      "id": 6,
+      "name": "Scroll Translations for Confluence",
+      "url": "https://labs.handsome.is/games/orbs/",
+      "info": [
+        {
+          "label": "role",
+          "text": "Software Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "K15t Software",
+          "url": "https://www.k15t.com"
+        },
+        {
+          "label": "description",
+          "text": "K15t is growing fast, and we're always excited to receive speculative applications from talented candidates of all backgrounds. If you have the skills to help us improve and grow, then get in touch. We've hired many great people in the past who didn't apply for a specific open position, so why not give it a go?",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "lorem-ipsum",
+        "alt": "lorem"
+      },
+      "experiments": []
+    },
+    {
+      "id": 7,
+      "name": "Experiments",
+      "url": "",
+      "info": [
+        {
+          "label": "role",
+          "text": "Software Engineer",
           "url": ""
         },
         {
@@ -57,43 +192,37 @@
           "id": 1,
           "label": "lorem",
           "url": "lorem-ipsum",
-          "img": "",
-          "src": "src"
+          "image": ""
         },
         {
           "id": 2,
           "label": "lorem",
           "url": "lorem-ipsum",
-          "img": "",
-          "src": "src"
+          "image": ""
         },
         {
           "id": 3,
           "label": "lorem",
           "url": "lorem-ipsum",
-          "img": "",
-          "src": "src"
+          "image": ""
         },
         {
           "id": 4,
           "label": "lorem",
           "url": "lorem-ipsum",
-          "img": "",
-          "src": "src"
+          "image": ""
         },
         {
           "id": 5,
           "label": "lorem",
           "url": "lorem-ipsum",
-          "img": "",
-          "src": "src"
+          "image": ""
         },
         {
           "id": 6,
           "label": "lorem",
           "url": "lorem-ipsum",
-          "img": "",
-          "src": "src"
+          "image": ""
         }
       ]
     }

@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Logo from '../../Logo/index';
+import UnorderedList from '../../UnorderedList/index';
+import Navbar from '../../Navbar/index';
 import withFetching from '../../../utils/api';
-import { URL_PATH_PERSON_DATA } from '../../../constants/index';
+import {URL_PATH_PERSON_DATA} from '../../../constants/index';
 import './styles.scss';
 
 
-const Contact = ({ data, isFetching, error }) => {
+const Contact = ({data, isFetching, error}) => {
   const personData = data.personData || {};
+  console.log(personData);
 
   if (error) {
     return <div><p>{error}</p></div>;
@@ -18,8 +22,23 @@ const Contact = ({ data, isFetching, error }) => {
 
   return (
     <div>
-      <section className="banner">
-        {personData.id}
+      <section className="banner contact">
+        <div className="contact-inner">
+          <div class="contact-inner__item">
+            <Navbar
+              items={['Home', 'About', 'Projects', 'Experiments']}
+            ></Navbar>
+            <div className="delimiter"></div>
+          </div>
+          <div class="contact-inner__item">
+            <Logo></Logo>
+          </div>
+          <div class="contact-inner__item">
+            <UnorderedList
+              items={['Github', 'CodePen', 'Heroku', 'LinkedIn', 'Xing']}
+            ></UnorderedList>
+          </div>
+        </div>
       </section>
     </div>
   );

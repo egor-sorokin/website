@@ -22,16 +22,6 @@
   height: 12vh;
 
   align-items: center;
-
-  transform: translateX(-40px);
-  transition: transform $defaultTiming $defaultEasing,
-  letter-spacing $defaultTiming $defaultEasing;
-}
-
-.switcher__link:hover {
-  letter-spacing: 4px;
-
-  transform: translateX(-30px);
 }
 
 .switcher--white {
@@ -39,7 +29,7 @@
     background-color: $mercury;
     opacity: 0.6;
   }
-  .switcher__link {
+  .link-stretched {
     color: $mercuryLight;
   }
 }

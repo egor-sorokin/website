@@ -13,22 +13,23 @@
     &:before {
       content: counter(item, decimal-leading-zero);
 
+      display: inline-block;
       margin-left: 10px;
-      margin-right: 25px;
+
+      min-width: 20px;
     }
     &:after {
       content: '';
       display: block;
 
       position: absolute;
-      top: 50%;
+      top: 14px;
       left: 0;
 
       width: 5px;
       height: 1px;
-      background-color: $mercuryLight;
 
-      transform: translateY(50%);
+      background-color: $mercuryLight;
     }
   }
   &__text {
@@ -36,17 +37,16 @@
 
     &:before {
       content: '';
-      display: block;
+      display: inline-block;
 
-      position: absolute;
-      top: 50%;
-      left: 28px;
+      margin-right: 10px;
 
       width: 15px;
       height: 1px;
+
       background-color: $mercuryLight;
 
-      transform: translateY(50%);
+      vertical-align: middle;
     }
   }
   &__title {

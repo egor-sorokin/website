@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LinkStretched from '../LinkStretched/index';
 import './styles.scss';
 
 
 const Navbar = ({items}) => {
+  const cssClassesLinkStretched = 'navbar__text link-stretched font-w-b font-f-sec font-s-10 text-t-u text-c-mercury-light';
   const navbarItems = items.map((item, i) => (
     <li
       key={i+1}
-      className="navbar__item">
-      <a
-        href="/"
-        className="navbar__text"
-      >{item}</a>
+      className="navbar__item"
+    >
+      <LinkStretched
+        linkData={item}
+        cssClasses={cssClassesLinkStretched}
+      ></LinkStretched>
     </li>
   ));
 

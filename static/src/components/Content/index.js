@@ -8,7 +8,7 @@ import './styles.scss';
 const Content = ({name, url, info, image, experiments}) => (
   <section className="project">
     <div className="col col--left">
-      <h1 className="font-s-48 font-w-m">
+      <h1 className="font-s-40 font-w-m">
         {name}
       </h1>
       <List

@@ -1,0 +1,15 @@
+@import '../../styles/base/_vars.scss';
+
+.link-stretched {
+  letter-spacing: 3px;
+
+  transform: translateX(-40px);
+  transition: transform $defaultTiming $defaultEasing,
+  letter-spacing $defaultTiming $defaultEasing;
+}
+
+.link-stretched:hover {
+  letter-spacing: 5px;
+
+  transform: translateX(-30px);
+}

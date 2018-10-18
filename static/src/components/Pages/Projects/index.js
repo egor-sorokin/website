@@ -3,31 +3,31 @@ import PropTypes from 'prop-types';
 import withFetching from '../../../utils/api';
 import Content from '../../Content/index';
 import Switcher from '../../Switcher/index';
-import {URL_PATH_PROJECTS} from '../../../constants/index';
+import {URL_PATH_PROJECTS, SWITCHER_PROJECTS} from '../../../constants/index';
 import './styles.scss';
 
 
 const Projects = ({data, isFetching, error}) => {
   const projects = data.projects || [];
-  const projectsComponent = projects.map(item => (
+
+  const projectsComponent = projects.map(project => (
     <section
       id="projects"
-      key={item.id}
+      key={project.id}
       className="slide-inner"
     >
       <div className="container">
         <Content
-          name={item.name}
-          url={item.url}
-          info={item.info}
-          image={item.image}
-          experiments={item.experiments}
+          name={project.name}
+          url={project.url}
+          info={project.info}
+          image={project.image}
+          experiments={project.experiments}
         />
       </div>
       <Switcher
-        data={item}
-        label="Launch"
-        type="black"
+        data={project}
+        switcherLink={SWITCHER_PROJECTS}
       ></Switcher>
     </section>
   ));

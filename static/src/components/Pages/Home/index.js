@@ -4,7 +4,7 @@ import scrollToY from 'scroll-to-y';
 import Button from './Button';
 import Switcher from '../../Switcher/index';
 import withFetching from '../../../utils/api';
-import {URL_PATH_PERSON_DATA} from '../../../constants/index';
+import {URL_PATH_PERSON_DATA, SWITCHER_HOME} from '../../../constants/index';
 import './styles.scss';
 
 
@@ -41,8 +41,7 @@ class Home extends Component {
             Explore
           </Button>
           <Switcher
-            label="About"
-            type="white"
+            switcherLink={SWITCHER_HOME}
           ></Switcher>
         </section>
       </div>

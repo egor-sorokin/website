@@ -4,9 +4,14 @@ import './styles.scss';
 
 
 const Navbar = ({items}) => {
-  const navbarItems = items.map((item) => (
-    <li className="navbar__item">
-      <a href="/" className="navbar__text">{item}</a>
+  const navbarItems = items.map((item, i) => (
+    <li
+      key={i+1}
+      className="navbar__item">
+      <a
+        href="/"
+        className="navbar__text"
+      >{item}</a>
     </li>
   ));
 

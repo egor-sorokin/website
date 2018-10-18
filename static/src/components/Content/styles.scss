@@ -35,6 +35,10 @@
   width: 100%;
 }
 
+.list__item {
+  overflow: hidden;
+}
+
 .list__item:nth-of-type(n+1) {
   margin-top: 20px;
 }
@@ -50,7 +54,7 @@
 }
 
 .grid__item {
-  width: 265px;
+  min-width: 33%;
   min-height: 265px;
   height: 100%;
 

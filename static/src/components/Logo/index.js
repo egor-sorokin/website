@@ -14,7 +14,7 @@ const Logo = () => (
           <feMergeNode in="SourceGraphic"/>
         </feMerge>
       </filter>
-      <g fill="none" fill-rule="evenodd" filter="url(#a)" stroke="#ddd" transform="translate(1 1)">
+      <g fill="none" fillRule="evenodd" filter="url(#a)" stroke="#ddd" transform="translate(1 1)">
         <ellipse cx="43" cy="41.5" fill="#424242" rx="43" ry="41.5"/>
         <ellipse cx="53.238" cy="27.553" fill="#2d2b28" rx="25.254" ry="24.832"/>
         <ellipse cx="61.429" cy="18.709" fill="#696969" rx="13.651" ry="13.266"/>

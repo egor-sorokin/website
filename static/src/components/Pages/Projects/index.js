@@ -10,10 +10,15 @@ import './styles.scss';
 const Projects = ({data, isFetching, error}) => {
   const projects = data.projects || [];
   const projectsComponent = projects.map(item => (
-    <section id="projects" key={item.id} className="slide-inner">
+    <section
+      id="projects"
+      key={item.id}
+      className="slide-inner"
+    >
       <div className="container">
         <Content
-          projectName={item.project}
+          name={item.name}
+          url={item.url}
           info={item.info}
           image={item.image}
           experiments={item.experiments}
@@ -43,13 +48,13 @@ const Projects = ({data, isFetching, error}) => {
 };
 
 Projects.propTypes = {
-  data: PropTypes.shape([]),
+  data: PropTypes.shape({}),
   isFetching: PropTypes.bool,
   error: PropTypes.string,
 };
 
 Projects.defaultProps = {
-  data: [],
+  data: {},
   isFetching: false,
   error: '',
 };

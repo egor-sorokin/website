@@ -4,20 +4,70 @@
     "first_name": "Egor",
     "last_name": "Sorokin",
     "email": "example@admin.com",
-    "summary": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds",
-    "socials": [
+    "summary": [
       {
-        "id": 1,
-        "social_network_name": "social_network-name",
-        "social_network_url": "social_network-url"
+        "title": "introduction",
+        "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds"
+      },
+      {
+        "title": "main",
+        "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
       }
     ],
-    "attachments": [
-      {
-        "id": 1,
-        "attachment_name": "attachment-name",
-        "attachment_url": "attachment-url"
-      }
-    ]
+    "socials": {
+      "title": "socials",
+      "items": [
+        {
+          "id": 1,
+          "name": "GitHub",
+          "url": "https://github.com/egor-sorokin"
+        },
+        {
+          "id": 2,
+          "name": "CodePen",
+          "url": "https://codepen.io/egor-sorokin/#"
+        },
+        {
+          "id": 3,
+          "name": "Heroku",
+          "url": "http://threejs-examples-egor.herokuapp.com/"
+        },
+        {
+          "id": 4,
+          "name": "LinkedIn",
+          "url": "https://www.linkedin.com/in/egor-sorokin-1b13ba105"
+        },
+        {
+          "id": 5,
+          "name": "Xing",
+          "url": "https://www.xing.com/"
+        },
+        {
+          "id": 6,
+          "name": "Gmail",
+          "url": "https://mail.google.com/"
+        }
+      ]
+    },
+    "attachments": {
+      "title": "attachments",
+      "items": [
+        {
+          "id": 1,
+          "name": "CV",
+          "url": "attachment-url"
+        },
+        {
+          "id": 2,
+          "name": "Fullstack Nanodegree Certificate",
+          "url": "attachment-url"
+        },
+        {
+          "id": 3,
+          "name": "Mobile Sites Certificate",
+          "url": "attachment-url"
+        }
+      ]
+    }
   }
 }

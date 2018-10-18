@@ -10,7 +10,8 @@ import './styles.scss';
 
 const Contact = ({data, isFetching, error}) => {
   const personData = data.personData || {};
-  console.log(personData);
+  const socials = personData.socials || [];
+  const navbarItems = ['Home', 'About', 'Projects', 'Experiments'];
 
   if (error) {
     return <div><p>{error}</p></div>;
@@ -24,18 +25,19 @@ const Contact = ({data, isFetching, error}) => {
     <div>
       <section className="banner contact">
         <div className="contact-inner">
-          <div class="contact-inner__item">
+          <div className="contact-inner__item">
             <Navbar
-              items={['Home', 'About', 'Projects', 'Experiments']}
+              items={navbarItems}
             ></Navbar>
             <div className="delimiter"></div>
           </div>
-          <div class="contact-inner__item">
+          <div className="contact-inner__item">
             <Logo></Logo>
           </div>
-          <div class="contact-inner__item">
+          <div className="contact-inner__item">
             <UnorderedList
-              items={['Github', 'CodePen', 'Heroku', 'LinkedIn', 'Xing']}
+              title=''
+              items={socials.items}
             ></UnorderedList>
           </div>
         </div>
@@ -45,23 +47,13 @@ const Contact = ({data, isFetching, error}) => {
 };
 
 Contact.propTypes = {
-  data: PropTypes.shape({
-    personData: PropTypes.shape({
-      id: PropTypes.number,
-      first_name: PropTypes.string,
-      last_name: PropTypes.string,
-      email: PropTypes.string,
-      summary: PropTypes.string,
-    }),
-  }),
+  data: PropTypes.shape({}),
   isFetching: PropTypes.bool,
   error: PropTypes.string,
 };
 
 Contact.defaultProps = {
-  data: {
-    personData: {},
-  },
+  data: {},
   error: '',
   isFetching: false,
 };

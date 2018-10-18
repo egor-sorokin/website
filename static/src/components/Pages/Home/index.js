@@ -51,21 +51,15 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  data: PropTypes.shape({
-    id: PropTypes.number,
-    first_name: PropTypes.string,
-    last_name: PropTypes.string,
-    email: PropTypes.string,
-    summary: PropTypes.string,
-  }),
+  data: PropTypes.shape({}),
   isFetching: PropTypes.bool,
   error: PropTypes.string,
 };
 
 Home.defaultProps = {
   data: {},
-  error: '',
   isFetching: false,
+  error: '',
 };
 
 

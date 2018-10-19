@@ -10,9 +10,12 @@
   height: 100%;
   align-items: center;
 
-  &__itme {
+  &__item {
     display: flex;
+    justify-content: center;
     position: relative;
+
+    width: 100%;
   }
 }
 

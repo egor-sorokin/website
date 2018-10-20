@@ -3,17 +3,18 @@
 .orderedlist {
   &__list {
     list-style: none;
-    counter-reset: item -1;
+    counter-reset: item - 1;
   }
 
   &__item {
     counter-increment: item;
     position: relative;
+    display: flex;
+    flex-direction: row;
+
 
     &:before {
       content: counter(item, decimal-leading-zero);
-
-      display: inline-block;
       margin-left: 10px;
 
       min-width: 20px;
@@ -31,23 +32,18 @@
 
       background-color: $mercuryLight;
     }
-  }
-  &__text {
-    color: $mercuryLight;
-
-    &:before {
-      content: '';
-      display: inline-block;
-
+    &-dash {
+      margin-top: 13px;
       margin-right: 10px;
 
       width: 15px;
       height: 1px;
 
       background-color: $mercuryLight;
-
-      vertical-align: middle;
     }
+  }
+  &__text {
+    color: $mercuryLight;
   }
   &__title {
     font-family: $secondaryFont;

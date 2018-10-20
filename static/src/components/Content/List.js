@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LinkMasked from '../LinkMasked/index';
 import './styles.scss';
 
 
 const List = ({listData}) => {
+  const cssClassesLinkMasked = "link-masked--white font-s-20 font-w-m text-c-l-dune";
   const component = listData.map((item, i) => (
     <li
       key={i+1}
@@ -13,18 +15,11 @@ const List = ({listData}) => {
       </h6>
       {item.url ? (
         <div className="item__link">
-          <div className="link-tr">
-            <span className="link-tr__placeholder font-s-20 font-w-m text-c-l-dune">{item.text}</span>
-            <div className="link-tr__mask">
-              <a
-                href={item.url}
-                target="_blank"
-                className="link-tr__text font-s-20 font-w-m text-c-l-dune"
-              >
-                {item.text}
-              </a>
-            </div>
-          </div>
+          <LinkMasked
+            linkData={item}
+            cssClasses={cssClassesLinkMasked}
+            target="_blank"
+          ></LinkMasked>
         </div>
       ) : (
         <p className="item__plain-text font-s-20 font-w-m text-c-l-dune">

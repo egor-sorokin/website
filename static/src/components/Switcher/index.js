@@ -5,7 +5,7 @@ import './styles.scss';
 
 
 const Switcher = ({data, switcherLink}) => {
-  const cssClassesLinkStretched = "switcher__link link-stretched font-w-b font-f-sec font-s-10 text-t-u text-c-dune";
+  const cssClassesLinkStretched = "switcher__link font-w-b font-f-sec font-s-10 text-t-u text-c-dune";
   let link = '';
 
   if (switcherLink.text.toLowerCase() === 'about') {

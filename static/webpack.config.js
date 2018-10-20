@@ -5,7 +5,7 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-require('babel-polyfill').default;
+require('@babel/polyfill').default;
 
 const PATHS = {
   app: path.join(__dirname, '/src/index.js'),

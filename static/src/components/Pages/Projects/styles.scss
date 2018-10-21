@@ -9,7 +9,7 @@
   min-height: 100vh;
   width: 100%;
 
-  padding: 0 2vw 0 6vw;
+  padding: 3vh 2vw 3vh 6vw;
 }
 
 .container {
@@ -22,42 +22,4 @@
   height: 100%;
 
   align-self: center;
-}
-
-.link-tr {
-  display: inline-block;
-  position: relative;
-
-  cursor: pointer;
-
-  &__placeholder {
-    color: $mercuryLight;
-  }
-  &__mask {
-    overflow: hidden;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    transform: translateX(-100%) translateZ(0);
-    transition: transform $defaultTiming $defaultEasing;
-  }
-  &__text {
-    display: block;
-
-    color: $dune;
-
-    transform: translateX(100%) translateZ(0);
-    transition: transform $defaultTiming $defaultEasing;
-  }
-}
-
-.link-tr:hover {
-  .link-tr__mask {
-    transform: translateX(0) translateZ(0)
-  }
-  .link-tr__text {
-    transform: translateX(0) translateZ(0);
-  }
 }

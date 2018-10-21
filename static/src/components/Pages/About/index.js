@@ -4,7 +4,7 @@ import withFetching from '../../../utils/api';
 import OrderedList from '../../OrderedList/index'
 import Summary from '../../Summary/index'
 import Logo from '../../Logo/index';
-import {URL_PATH_PERSON_DATA} from '../../../constants/index';
+import {URL_PATH_PERSON_DATA, LINK_MASKED} from '../../../constants/index';
 import './styles.scss';
 
 
@@ -38,6 +38,7 @@ const About = ({data, isFetching, error}) => {
             <OrderedList
               title={socials.title}
               items={socials.items}
+              type={LINK_MASKED}
             ></OrderedList>
           </div>
         </div>
@@ -48,6 +49,7 @@ const About = ({data, isFetching, error}) => {
           <OrderedList
             title={attachments.title}
             items={attachments.items}
+            type={LINK_MASKED}
           ></OrderedList>
         </div>
       </section>

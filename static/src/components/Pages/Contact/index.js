@@ -4,7 +4,7 @@ import Logo from '../../Logo/index';
 import UnorderedList from '../../UnorderedList/index';
 import Navbar from '../../Navbar/index';
 import withFetching from '../../../utils/api';
-import {URL_PATH_PERSON_DATA, NAVBAR_ITEMS} from '../../../constants/index';
+import {URL_PATH_PERSON_DATA, NAVBAR_ITEMS, LINK_MASKED} from '../../../constants/index';
 import './styles.scss';
 
 
@@ -37,6 +37,7 @@ const Contact = ({data, isFetching, error}) => {
             <UnorderedList
               title=''
               items={socials.items}
+              type={LINK_MASKED}
             ></UnorderedList>
           </div>
         </div>

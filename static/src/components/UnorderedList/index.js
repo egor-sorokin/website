@@ -6,7 +6,7 @@ import './styles.scss';
 
 
 const UnorderedList = ({title, items, type}) => {
-  const cssClassesLinkMasked = "unorderedlist__text";
+  const cssClassesLinkMasked = "unorderedlist__text font-s-18 text-c-mercury-light";
   const unorderedListItems = items.map((item) => {
     if (type === LINK_MASKED) {
       let data = {

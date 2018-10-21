@@ -8,10 +8,9 @@
 
   &__item {
     counter-increment: item;
-    position: relative;
     display: flex;
     flex-direction: row;
-
+    position: relative;
 
     &:before {
       content: counter(item, decimal-leading-zero);
@@ -42,15 +41,7 @@
       background-color: $mercuryLight;
     }
   }
-  &__text {
-    color: $mercuryLight;
-  }
   &__title {
-    font-family: $secondaryFont;
-    font-size: 12px;
-    letter-spacing: 3px;
     text-align: left;
-    text-transform: uppercase;
-    font-weight: 700;
   }
 }

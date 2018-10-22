@@ -5,7 +5,7 @@ import './styles.scss';
 
 const LinkStretched = ({linkData, cssClasses, target}) => (
   <a
-    href={linkData.link}
+    href={linkData.url}
     target={target}
     className={'link-stretched ' + cssClasses}
   >{linkData.text}</a>

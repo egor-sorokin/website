@@ -3,33 +3,33 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 
-const Grid = ({gridData}) => {
+const ImageGrid = ({gridData}) => {
   const component = gridData.map(item => (
     <li
       key={item.id}
-      className="grid__item item text-c-mercury">
+      className="image-grid__item item text-c-mercury">
       <a
         href={item.url}
         target="_blank"
-        className="image__inner"
+        className="item__image image"
         style={{ backgroundImage: `url(${item.image})` }}
       />
     </li>
   ));
 
   return (
-    <ul className="grid">
+    <ul className="image-grid">
       {component}
     </ul>
   );
 };
 
-Grid.propTypes = {
+ImageGrid.propTypes = {
   gridData: PropTypes.instanceOf(Array),
 };
 
-Grid.defaultProps = {
+ImageGrid.defaultProps = {
   gridData: [],
 };
 
-export default Grid;
+export default ImageGrid;

@@ -4,12 +4,12 @@ import LinkMasked from '../LinkMasked/index';
 import './styles.scss';
 
 
-const List = ({listData}) => {
+const DescriptionList = ({listData}) => {
   const cssClassesLinkMasked = "link-masked--white font-s-20 text-c-l-dune";
   const component = listData.map((item, i) => (
     <li
       key={i+1}
-      className="list__item item">
+      className="description-list__item item">
       <h6 className="item__title font-s-12-secondary">
         {item.label}
       </h6>
@@ -30,18 +30,18 @@ const List = ({listData}) => {
   ));
 
   return (
-    <ul className="list">
+    <ul className="description-list">
       {component}
     </ul>
   );
 };
 
-List.propTypes = {
+DescriptionList.propTypes = {
   listData: PropTypes.instanceOf(Array),
 };
 
-List.defaultProps = {
+DescriptionList.defaultProps = {
   listData: [],
 };
 
-export default List;
+export default DescriptionList;

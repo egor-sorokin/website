@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import List from './List';
-import Grid from './Grid';
+import DescriptionList from '../DescriptionList/index';
+import ImageGrid from '../ImageGrid/index';
 import './styles.scss';
 
 
@@ -11,7 +11,7 @@ const Content = ({name, url, info, image, experiments}) => (
       <h1 className="font-s-40">
         {name}
       </h1>
-      <List
+      <DescriptionList
         listData={info}
       />
     </div>
@@ -28,7 +28,7 @@ const Content = ({name, url, info, image, experiments}) => (
           />
         </div>
       ) : (
-        <Grid
+        <ImageGrid
           gridData={experiments}
         />
       )}

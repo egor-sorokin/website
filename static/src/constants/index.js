@@ -3,33 +3,33 @@ export const URL_PATH_PERSON_DATA = 'person';
 export const URL_PATH_PROJECTS = 'projects';
 export const LINK_MASKED = 'mask';
 export const SWITCHER_PROJECTS = {
-  link: '',
+  url: '',
   text: 'Launch',
   type: 'black'
 };
 export const SWITCHER_HOME = {
-  link: '',
+  url: '',
   text: 'About',
   type: 'white'
 };
 export const NAVBAR_ITEMS = [
   {
-    link: '/',
+    url: '/',
     text: 'Home',
     type: 'white'
   },
   {
-    link: '/',
+    url: '/',
     text: 'About',
     type: 'white'
   },
   {
-    link: '/',
+    url: '/',
     text: 'Projects',
     type: 'white'
   },
   {
-    link: '/',
+    url: '/',
     text: 'Experiments',
     type: 'white'
   }

@@ -8,7 +8,7 @@ const LinkStretched = ({linkData, cssClasses, target}) => (
     <span className={'link-masked__placeholder ' + cssClasses}>{linkData.text}</span>
     <div className="link-masked__mask">
       <a
-        href={linkData.link}
+        href={linkData.url}
         target={target}
         className={'link-masked__text ' + cssClasses}
       >

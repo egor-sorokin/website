@@ -5,12 +5,12 @@ import './styles.scss';
 
 
 const List = ({listData}) => {
-  const cssClassesLinkMasked = "link-masked--white font-s-20 font-w-m text-c-l-dune";
+  const cssClassesLinkMasked = "link-masked--white font-s-20 text-c-l-dune";
   const component = listData.map((item, i) => (
     <li
       key={i+1}
       className="list__item item">
-      <h6 className="item__title font-f-sec font-s-10 font-w-b text-t-u">
+      <h6 className="item__title font-s-12-secondary">
         {item.label}
       </h6>
       {item.url ? (
@@ -22,7 +22,7 @@ const List = ({listData}) => {
           ></LinkMasked>
         </div>
       ) : (
-        <p className="item__plain-text font-s-20 font-w-m text-c-l-dune">
+        <p className="item__plain-text font-s-20 text-c-l-dune">
           {item.text}
         </p>
       )}

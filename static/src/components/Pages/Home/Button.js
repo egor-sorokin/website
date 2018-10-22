@@ -11,7 +11,7 @@ const Button = props => {
     <div className="button button--white">
       <a
         href="#projects"
-        className="button__link"
+        className="button__link font-s-12"
         onClick={handleClick}
       >
         {props.children}

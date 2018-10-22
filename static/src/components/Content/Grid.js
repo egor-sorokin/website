@@ -7,7 +7,7 @@ const Grid = ({gridData}) => {
   const component = gridData.map(item => (
     <li
       key={item.id}
-      className="grid__item item">
+      className="grid__item item text-c-mercury">
       <a
         href={item.url}
         target="_blank"

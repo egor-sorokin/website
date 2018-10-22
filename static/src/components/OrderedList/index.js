@@ -6,7 +6,7 @@ import './styles.scss';
 
 
 const OrderedList = ({title, items, type}) => {
-    const cssClassesLinkMasked = "orderedlist__text";
+    const cssClassesLinkMasked = "orderedlist__text font-s-18 text-c-mercury-light";
     const orderedListItems = items.map((item) => {
       if (type === LINK_MASKED) {
         let data = {
@@ -43,7 +43,7 @@ const OrderedList = ({title, items, type}) => {
 
     return (
       <div className="orderedlist">
-        {title.length > 0 && (<h5 className="orderedlist__title">{title}</h5>)}
+        {title.length > 0 && (<h5 className="orderedlist__title font-s-12-secondary">{title}</h5>)}
         <ol className="orderedlist__list">
           {orderedListItems}
         </ol>

@@ -26,21 +26,45 @@
   color: $mercuryLight;
 }
 
-.font-s-40 {
-  font-size: 40px;
+.text-c-mercury {
+  color: $mercury;
 }
 
-.font-s-14 {
-  font-size: 14px;
+.font-s-40 {
+  font-size: 2.5em;
+  font-weight: 400;
+}
+
+.font-s-36 {
+  font-size: 2.2em;
+  letter-spacing: 5px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .font-s-20 {
-  font-size: 20px;
+  font-size: 1.3em;
+  font-weight: 400;
 }
 
-.font-s-10 {
-  font-size: 10px;
-  letter-spacing: 2px;
+.font-s-12-secondary {
+  font-family: $secondaryFont;
+  letter-spacing: 2.5px;
+}
+
+.font-s-12,
+.font-s-12-secondary {
+  font-size: 0.7em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.font-s-18 {
+  font-size: 1.1em;
+}
+
+.font-s-16 {
+  font-size: 1em;
 }
 
 .font-f-def {

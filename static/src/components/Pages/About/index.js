@@ -23,14 +23,14 @@ const About = ({data, isFetching, error}) => {
 
   return (
     <div>
-      <section className="about">
+      <section className="about text-c-mercury-light">
         <div className="about__item about__item--left">
           <div className="line line--top"></div>
           <Logo></Logo>
           <div className="line line--bottom"></div>
         </div>
         <div className="about__item about__item--middle">
-          <h1 className="about__title">{personData.first_name + ' ' + personData.last_name}</h1>
+          <h1 className="about__title font-s-36">{personData.first_name + ' ' + personData.last_name}</h1>
           <Summary
             summary={personData.summary}
           ></Summary>

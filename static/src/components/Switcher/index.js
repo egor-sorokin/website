@@ -11,15 +11,16 @@ const Switcher = ({data, switcherLink}) => {
   if (switcherLink.text.toLowerCase() === 'about') {
     link = (
       <LinkStretched
-        linkData={switcherLink}
         cssClasses={cssClassesLinkStretched}
+        text={switcherLink.text}
       ></LinkStretched>
     );
   } else if (data && data.url) {
     link = (
       <LinkStretched
-        linkData={switcherLink}
         cssClasses={cssClassesLinkStretched}
+        text={switcherLink.text}
+        url={data.url}
         target="_blank"
       ></LinkStretched>
     );

@@ -9,17 +9,12 @@ const UnorderedList = ({title, items, type}) => {
   const cssClassesLinkMasked = "unorderedlist__text font-s-18 text-c-mercury-light";
   const unorderedListItems = items.map((item) => {
     if (type === LINK_MASKED) {
-      let data = {
-        text: item.name,
-        link: item.url
-      };
-
       return (
         <li
           key={item.id}
           className="unorderedlist__item">
           <LinkMasked
-            linkData={data}
+            linkData={item}
             cssClasses={cssClassesLinkMasked}
             target="_blank"
           ></LinkMasked>

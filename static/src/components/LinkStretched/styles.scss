@@ -6,6 +6,8 @@
   transform: translateX(-40px);
   transition: transform $defaultTiming $defaultEasing,
   letter-spacing $defaultTiming $defaultEasing;
+
+  cursor: pointer;
 }
 
 .link-stretched:hover {

@@ -19,32 +19,32 @@
       "items": [
         {
           "id": 1,
-          "name": "GitHub",
+          "text": "GitHub",
           "url": "https://github.com/egor-sorokin"
         },
         {
           "id": 2,
-          "name": "CodePen",
+          "text": "CodePen",
           "url": "https://codepen.io/egor-sorokin/#"
         },
         {
           "id": 3,
-          "name": "Heroku",
+          "text": "Heroku",
           "url": "http://threejs-examples-egor.herokuapp.com/"
         },
         {
           "id": 4,
-          "name": "LinkedIn",
+          "text": "LinkedIn",
           "url": "https://www.linkedin.com/in/egor-sorokin-1b13ba105"
         },
         {
           "id": 5,
-          "name": "Xing",
+          "text": "Xing",
           "url": "https://www.xing.com/"
         },
         {
           "id": 6,
-          "name": "Gmail",
+          "text": "Gmail",
           "url": "https://mail.google.com/"
         }
       ]
@@ -54,17 +54,17 @@
       "items": [
         {
           "id": 1,
-          "name": "CV",
+          "text": "CV",
           "url": "attachment-url"
         },
         {
           "id": 2,
-          "name": "Fullstack Nanodegree Certificate",
+          "text": "Fullstack Nanodegree Certificate",
           "url": "attachment-url"
         },
         {
           "id": 3,
-          "name": "Mobile Sites Certificate",
+          "text": "Mobile Sites Certificate",
           "url": "attachment-url"
         }
       ]

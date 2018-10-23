@@ -1,0 +1,17 @@
+.description-list {
+  margin-top: 10px;
+  width: 100%;
+
+  .item {
+    overflow: hidden;
+  }
+
+  .item:nth-of-type(n+1) {
+    margin-top: 20px;
+  }
+
+  .item__plain-text {
+    line-height: 1.3;
+  }
+}
+

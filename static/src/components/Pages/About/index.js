@@ -4,6 +4,7 @@ import withFetching from '../../../utils/api';
 import OrderedList from '../../OrderedList/index'
 import Summary from '../../Summary/index'
 import Logo from '../../Logo/index';
+import LinkStretched from '../../LinkStretched/index';
 import {URL_PATH_PERSON_DATA, LINK_MASKED} from '../../../constants/index';
 import './styles.scss';
 
@@ -12,6 +13,11 @@ const About = ({data, isFetching, error}) => {
   const personData = data.personData || {};
   const socials = personData.socials || [];
   const attachments = personData.attachments || [];
+  const cssClassesButton = "button-close__link font-s-12-secondary text-c-mercury-light";
+  const closeButtonData = {
+    text: 'Close',
+    link: ''
+  };
 
   if (error) {
     return <div><p>{error}</p></div>;
@@ -43,14 +49,18 @@ const About = ({data, isFetching, error}) => {
           </div>
         </div>
         <div className="about__item about__item--right">
-          <button className="button-close">
-            <span className="button-close__text">Close</span>
-          </button>
           <OrderedList
             title={attachments.title}
             items={attachments.items}
             type={LINK_MASKED}
           ></OrderedList>
+        </div>
+        <div className="button-close">
+          <LinkStretched
+            linkData={closeButtonData}
+            cssClasses={cssClassesButton}
+          ></LinkStretched>
+          <span className="button-close__text"></span>
         </div>
       </section>
     </div>

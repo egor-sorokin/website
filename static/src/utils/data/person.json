@@ -36,16 +36,6 @@
           "id": 4,
           "text": "LinkedIn",
           "url": "https://www.linkedin.com/in/egor-sorokin-1b13ba105"
-        },
-        {
-          "id": 5,
-          "text": "Xing",
-          "url": "https://www.xing.com/"
-        },
-        {
-          "id": 6,
-          "text": "Gmail",
-          "url": "https://mail.google.com/"
         }
       ]
     },
@@ -59,12 +49,12 @@
         },
         {
           "id": 2,
-          "text": "Fullstack Nanodegree Certificate",
+          "text": "Mobile Sites Certificate",
           "url": "attachment-url"
         },
         {
           "id": 3,
-          "text": "Mobile Sites Certificate",
+          "text": "Fullstack Nanodegree Certificate",
           "url": "attachment-url"
         }
       ]

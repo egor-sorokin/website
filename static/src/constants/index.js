@@ -14,22 +14,22 @@ export const SWITCHER_HOME = {
 };
 export const NAVBAR_ITEMS = [
   {
-    url: '/',
+    url: '#home',
     text: 'Home',
     type: 'white'
   },
   {
-    url: '/',
+    url: '#',
     text: 'About',
     type: 'white'
   },
   {
-    url: '/',
+    url: '#projects',
     text: 'Projects',
     type: 'white'
   },
   {
-    url: '/',
+    url: '#experiments',
     text: 'Experiments',
     type: 'white'
   }

@@ -10,27 +10,39 @@ import './styles.scss';
 const Projects = ({data, isFetching, error}) => {
   const projects = data.projects || [];
 
-  const projectsComponent = projects.map(project => (
-    <section
-      id="projects"
-      key={project.id}
-      className="slide-inner"
-    >
-      <div className="container">
-        <Content
-          name={project.name}
-          url={project.url}
-          info={project.info}
-          image={project.image}
-          experiments={project.experiments}
+  const projectsComponent = projects.map((project, i) => {
+    let id = '';
+
+    if (i === 0) {
+      id = 'projects';
+    }
+
+    if (i === projects.length - 1) {
+      id = 'experiments';
+    }
+    
+    return (
+      <section
+        id={id}
+        key={project.id}
+        className="slide-inner"
+      >
+        <div className="container">
+          <Content
+            name={project.name}
+            url={project.url}
+            info={project.info}
+            image={project.image}
+            experiments={project.experiments}
+          />
+        </div>
+        <Switcher
+          data={project}
+          switcherLink={SWITCHER_PROJECTS}
         />
-      </div>
-      <Switcher
-        data={project}
-        switcherLink={SWITCHER_PROJECTS}
-      ></Switcher>
-    </section>
-  ));
+      </section>
+    );
+  });
 
   if (error) {
     return <div><p>{error}</p></div>;

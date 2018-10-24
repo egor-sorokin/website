@@ -16,7 +16,7 @@ const About = ({data, isFetching, error}) => {
   const cssClassesButton = "button-close__link font-s-12-secondary text-c-mercury-light";
   const closeButtonData = {
     text: 'Close',
-    link: ''
+    url: ''
   };
 
   if (error) {
@@ -57,7 +57,8 @@ const About = ({data, isFetching, error}) => {
         </div>
         <div className="button-close">
           <LinkStretched
-            linkData={closeButtonData}
+            url={closeButtonData.url}
+            text={closeButtonData.text}
             cssClasses={cssClassesButton}
           ></LinkStretched>
           <span className="button-close__text"></span>

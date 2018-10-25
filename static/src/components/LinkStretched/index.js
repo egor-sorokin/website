@@ -7,7 +7,12 @@ const LinkStretched = props => {
   const {text, url, target, cssClasses, onClick} = props;
 
   const handleClick = (e) => {
-    onClick(e.currentTarget.dataset.anchorId.substring(1), true);
+    if (!url) {
+      e.preventDefault();
+      onClick();
+    } else {
+      onClick(e.currentTarget.dataset.anchorId.substring(1), true);
+    }
   };
 
   return (

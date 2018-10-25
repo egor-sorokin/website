@@ -6,16 +6,9 @@ import './styles.scss';
 
 const Switcher = ({data, switcherLink}) => {
   const cssClassesLinkStretched = "switcher__link font-s-12-secondary text-c-dune";
-  let link = '';
+  let link;
 
-  if (switcherLink.text.toLowerCase() === 'about') {
-    link = (
-      <LinkStretched
-        cssClasses={cssClassesLinkStretched}
-        text={switcherLink.text}
-      ></LinkStretched>
-    );
-  } else if (data && data.url) {
+  if (data && data.url) {
     link = (
       <LinkStretched
         cssClasses={cssClassesLinkStretched}
@@ -30,7 +23,7 @@ const Switcher = ({data, switcherLink}) => {
     <div className={`switcher switcher--${switcherLink.type}`}>
       <div className="switcher__line line--top"/>
       {link}
-      {((data && data.url) || switcherLink.text.toLowerCase() === 'about') && (
+      {(link || switcherLink.text.toLowerCase() === 'about') && (
         <div className="switcher__line line--bottom"/>)}
     </div>);
 };

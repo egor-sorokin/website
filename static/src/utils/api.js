@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 // import { DEFAULT_API_URL } from '../constants/index';
 
@@ -20,7 +20,7 @@ const withFetching = (url, CurrentComponent) =>
     }
 
     _fetchData() {
-      this.setState({ isFetching: true });
+      this.setState({isFetching: true});
       // mock data for frontend
       const mockDataUrl = `http://localhost:8080/src/utils/data/${url}.json`;
 
@@ -33,8 +33,8 @@ const withFetching = (url, CurrentComponent) =>
 
           throw new Error('Something went wrong ...');
         })
-        .then(data => this.setState({ data, isFetching: false }))
-        .catch(error => this.setState({ error: error.message, isFetching: false }));
+        .then(data => this.setState({data, isFetching: false}))
+        .catch(error => this.setState({error: error.message, isFetching: false}));
     }
 
     render() {

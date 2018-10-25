@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const Button = props => {
+const ButtonExplore = props => {
   const handleClick = () => {
     props.onClick('projects', true);
   };
@@ -20,13 +20,13 @@ const Button = props => {
   );
 };
 
-Button.defaultProps = {
+ButtonExplore.defaultProps = {
   children: [],
   onClick: () => {
   }
 };
 
-Button.propTypes = {
+ButtonExplore.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
@@ -34,4 +34,4 @@ Button.propTypes = {
   onClick: PropTypes.func
 };
 
-export default Button;
+export default ButtonExplore;

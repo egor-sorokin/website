@@ -3,12 +3,37 @@ import PropTypes from 'prop-types';
 import scrollToY from 'scroll-to-y';
 import ButtonExplore from './ButtonExplore';
 import LinkStretched from '../../LinkStretched/index';
-import withFetching from '../../../utils/api';
+import fetchData from '../../../utils/api';
 import {URL_PATH_PERSON_DATA, BUTTON_EXPLORE, BUTTON_ABOUT} from '../../../constants/index';
 import './styles.scss';
 
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: {},
+      isFetching: false,
+      error: null,
+    };
+  }
+
+
+  componentDidMount() {
+    this._fetchData();
+  }
+
+
+  _fetchData() {
+    this.setState({isFetching: true});
+
+    fetchData(URL_PATH_PERSON_DATA)
+      .then(data => this.setState({data, isFetching: false}))
+      .catch(error => this.setState({error: error.message, isFetching: false}));
+  }
+
+
   scrollToProjects = (section, scrollTo) => {
     if (scrollTo) {
       scrollToY(
@@ -26,7 +51,7 @@ class Home extends Component {
 
 
   render() {
-    const {data, isFetching, error} = this.props;
+    const {data, isFetching, error} = this.state;
     const personData = data.personData || {};
 
     if (error) {
@@ -64,19 +89,13 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  data: PropTypes.shape({}),
-  isFetching: PropTypes.bool,
-  error: PropTypes.string,
   toggleAboutSection: PropTypes.func
 };
 
 Home.defaultProps = {
-  data: {},
-  isFetching: false,
-  error: '',
   toggleAboutSection: () => {
   }
 };
 
 
-export default withFetching(URL_PATH_PERSON_DATA, Home);
+export default Home;

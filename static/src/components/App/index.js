@@ -13,10 +13,12 @@ class App extends Component {
     }
   }
 
+  
   toggleAboutSection = () => {
     this.setState({isOpenedAbout: !this.state.isOpenedAbout});
   };
 
+  
   render() {
     return (
       <div>
@@ -28,7 +30,9 @@ class App extends Component {
           toggleAboutSection={this.toggleAboutSection}
         />
         <Projects />
-        <Contact />
+        <Contact
+          toggleAboutSection={this.toggleAboutSection}
+        />
       </div>
     )
   }

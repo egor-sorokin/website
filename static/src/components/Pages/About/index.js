@@ -1,22 +1,70 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import withFetching from '../../../utils/api';
+import {TimelineMax, Power2} from 'gsap';
 import OrderedList from '../../OrderedList/index'
 import Summary from '../../Summary/index'
 import Logo from '../../Logo/index';
 import LinkStretched from '../../LinkStretched/index';
+import fetchData from '../../../utils/api';
 import {URL_PATH_PERSON_DATA, LINK_MASKED, BUTTON_CLOSE} from '../../../constants/index';
 import './styles.scss';
 
 
 class About extends Component {
+  constructor(props) {
+    super(props);
+
+    this.aboutSection = React.createRef();
+    this.name = React.createRef();
+    this.aboutTween = null;
+    this.state = {
+      data: {},
+      isFetching: false,
+      error: null,
+    };
+  }
+
+
+  componentDidMount() {
+    this._fetchData()
+      .finally(() => {
+        this.aboutTween = new TimelineMax();
+        this.aboutTween
+          .to(this.aboutSection.current, .8,
+            {x: 0, ease: Power2.easeInOut}
+          )
+          .fromTo(this.name.current, .8,
+            {x: "50%", opacity: 0, ease: Power2.easeInOut},
+            {x: "0%", opacity: 1, ease: Power2.easeInOut}
+          )
+          .reversed(true);
+      });
+  }
+
+
+  componentDidUpdate(prepProps) {
+    if (this.props.isOpenedAbout !== prepProps.isOpenedAbout) {
+      this.aboutTween.reversed(!this.props.isOpenedAbout);
+    }
+  }
+
+
+  _fetchData() {
+    this.setState({isFetching: true});
+
+    return fetchData(URL_PATH_PERSON_DATA)
+      .then(data => this.setState({data, isFetching: false}))
+      .catch(error => this.setState({error: error.message, isFetching: false}));
+  }
+
+
   clickCloseButton = () => {
     this.props.toggleAboutSection();
   };
 
-  render() {
-    const {data, isFetching, error, isOpenedAbout} = this.props;
 
+  render() {
+    const {data, isFetching, error} = this.state;
     const personData = data.personData || {};
     const socials = personData.socials || [];
     const attachments = personData.attachments || [];
@@ -32,14 +80,19 @@ class About extends Component {
 
     return (
       <div>
-        <section className={'about text-c-mercury-light ' + (isOpenedAbout ? 'visible' : 'hidden')}>
+        <section ref={this.aboutSection}
+                 className="about text-c-mercury-light">
           <div className="about__item about__item--left">
             <div className="line line--top"></div>
             <Logo></Logo>
             <div className="line line--bottom"></div>
           </div>
           <div className="about__item about__item--middle">
-            <h1 className="about__title font-s-36">{personData.first_name + ' ' + personData.last_name}</h1>
+            <h1 ref={this.name}
+                className="about__title font-s-36"
+            >
+              {personData.first_name + ' ' + personData.last_name}
+            </h1>
             <Summary
               summary={personData.summary}
             ></Summary>
@@ -72,21 +125,15 @@ class About extends Component {
 }
 
 About.propTypes = {
-  data: PropTypes.shape({}),
-  isFetching: PropTypes.bool,
   isOpenedAbout: PropTypes.bool,
-  error: PropTypes.string,
   toggleAboutSection: PropTypes.func
 };
 
 About.defaultProps = {
-  data: {},
-  isFetching: false,
   isOpenedAbout: false,
-  error: '',
   toggleAboutSection: () => {
   }
 };
 
 
-export default withFetching(URL_PATH_PERSON_DATA, About);
+export default About;

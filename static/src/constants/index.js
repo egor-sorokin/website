@@ -26,11 +26,6 @@ export const NAVBAR_ITEMS = [
     type: 'white'
   },
   {
-    url: '#',
-    text: 'About',
-    type: 'white'
-  },
-  {
     url: '#projects',
     text: 'Projects',
     type: 'white'

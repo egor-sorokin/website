@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {TimelineMax, Power2} from 'gsap';
+import {TimelineMax} from 'gsap';
+import {attachToggleAnimation} from './animation';
 import OrderedList from '../../OrderedList/index'
 import Summary from '../../Summary/index'
 import Logo from '../../Logo/index';
@@ -16,6 +17,7 @@ class About extends Component {
 
     this.aboutSection = React.createRef();
     this.name = React.createRef();
+
     this.aboutTween = null;
     this.state = {
       data: {},
@@ -29,15 +31,7 @@ class About extends Component {
     this._fetchData()
       .finally(() => {
         this.aboutTween = new TimelineMax();
-        this.aboutTween
-          .to(this.aboutSection.current, .8,
-            {x: 0, ease: Power2.easeInOut}
-          )
-          .fromTo(this.name.current, .8,
-            {x: "50%", opacity: 0, ease: Power2.easeInOut},
-            {x: "0%", opacity: 1, ease: Power2.easeInOut}
-          )
-          .reversed(true);
+        attachToggleAnimation(this.aboutTween);
       });
   }
 
@@ -45,6 +39,7 @@ class About extends Component {
   componentDidUpdate(prepProps) {
     if (this.props.isOpenedAbout !== prepProps.isOpenedAbout) {
       this.aboutTween.reversed(!this.props.isOpenedAbout);
+      // document.body.style.overflowY = (this.props.isOpenedAbout ? 'hidden' : 'initial');
     }
   }
 

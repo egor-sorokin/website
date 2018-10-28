@@ -3,8 +3,8 @@ import axios from 'axios';
 
 
 const fetchData = (url) => {
-  // const mockDataUrl = `http://localhost:8080/dist/utils/data/${url}.json`;
-  const mockDataUrl = `http://egor-sorokin.github.io/website/dist/${url}.json`;
+  // const mockDataUrl = `http://localhost:8080/src/utils/data/${url}.json`;
+  const mockDataUrl = `http://egor-sorokin.github.io/website/data/${url}.json`;
 
   return axios.get(mockDataUrl)
     .then((response) => {

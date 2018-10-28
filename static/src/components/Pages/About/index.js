@@ -39,7 +39,7 @@ class About extends Component {
   componentDidUpdate(prepProps) {
     if (this.props.isOpenedAbout !== prepProps.isOpenedAbout) {
       this.aboutTween.reversed(!this.props.isOpenedAbout);
-      // document.body.style.overflowY = (this.props.isOpenedAbout ? 'hidden' : 'initial');
+      document.body.style.overflowY = (this.props.isOpenedAbout ? 'hidden' : 'initial');
     }
   }
 
@@ -62,7 +62,6 @@ class About extends Component {
     const {data, isFetching, error} = this.state;
     const personData = data.personData || {};
     const socials = personData.socials || [];
-    const attachments = personData.attachments || [];
     const cssClassesButton = "button-close__link font-s-12-secondary text-c-mercury-light";
 
     if (error) {
@@ -91,19 +90,12 @@ class About extends Component {
             <Summary
               summary={personData.summary}
             ></Summary>
-            <div className="about__item-footer">
-              <OrderedList
-                title={socials.title}
-                items={socials.items}
-                type={LINK_MASKED}
-              ></OrderedList>
-            </div>
           </div>
           <div className="about__item about__item--right">
             <OrderedList
-              title={attachments.title}
-              items={attachments.items}
-              type={LINK_MASKED}
+              title={socials.title}
+                items={socials.items}
+                type={LINK_MASKED}
             ></OrderedList>
           </div>
           <div className="button-close">

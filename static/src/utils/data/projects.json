@@ -17,13 +17,13 @@
         },
         {
           "label": "description",
-          "text": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue",
+          "text": "Southwestern is a place and time of personal growth and joint endeavor. The main goals of the partnership with Handsome were to do not just a re-branding and a re-design of the website, but also to create a set of reusable UI components for the future usage",
           "url": ""
         }
       ],
       "image": {
-        "src": "lorem-ipsum",
-        "alt": "lorem"
+        "src": "/assets/pr_su.jpg",
+        "alt": "Southwestern University"
       },
       "experiments": []
     },
@@ -44,13 +44,13 @@
         },
         {
           "label": "description",
-          "text": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
+          "text": "The project was focused on studying Vanilla JavaScript, on the implementation of complex animations using standard tools and setting up the project infrastructure from scratch",
           "url": ""
         }
       ],
       "image": {
-        "src": "lorem-ipsum",
-        "alt": "lorem"
+        "src": "/assets/pr_orbs.gif",
+        "alt": "Game: Orbs"
       },
       "experiments": []
     },
@@ -76,13 +76,40 @@
         }
       ],
       "image": {
-        "src": "lorem-ipsum",
-        "alt": "lorem"
+        "src": "/assets/pr_company.jpg",
+        "alt": "Company.com"
       },
       "experiments": []
     },
     {
       "id": 4,
+      "name": "Handsome Wiki (internal project)",
+      "url": "https://www.google.com",
+      "info": [
+        {
+          "label": "role",
+          "text": "Web Software Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "Handsome",
+          "url": "https://www.handsome.is"
+        },
+        {
+          "label": "description",
+          "text": "The main idea of the project was to create a knowledge base for employees at Handsome with the support of different devices (mobile phones, tablets, desktop)",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "/assets/pr_hndwiki.jpg",
+        "alt": "Handsome: Wiki"
+      },
+      "experiments": []
+    },
+    {
+      "id": 5,
       "name": "Brand Retail OS",
       "url": "https://www.brandretailos.com/",
       "info": [
@@ -98,47 +125,20 @@
         },
         {
           "label": "description",
-          "text": "We are digital. We design and develop highly innovative and state of the art web-based software. We are a sparring partner for both large and small companies and facilitate their journey into the digital age with our unique, extremely intuitive products.",
+          "text": "Manage your entire marketing campaign end to end with BrandRetail OS. Work on this project included bugfix and an implementation of new features",
           "url": ""
         }
       ],
       "image": {
-        "src": "lorem-ipsum",
-        "alt": "lorem"
-      },
-      "experiments": []
-    },
-    {
-      "id": 5,
-      "name": "Scroll Versions for Confluence",
-      "url": "https://labs.handsome.is/games/orbs/",
-      "info": [
-        {
-          "label": "role",
-          "text": "Software Engineer",
-          "url": ""
-        },
-        {
-          "label": "company",
-          "text": "K15t Software",
-          "url": "https://www.k15t.com"
-        },
-        {
-          "label": "description",
-          "text": "K15t is growing fast, and we're always excited to receive speculative applications from talented candidates of all backgrounds. If you have the skills to help us improve and grow, then get in touch. We've hired many great people in the past who didn't apply for a specific open position, so why not give it a go?",
-          "url": ""
-        }
-      ],
-      "image": {
-        "src": "lorem-ipsum",
-        "alt": "lorem"
+        "src": "/assets/pr_bros.jpg",
+        "alt": "Brand Retail OS"
       },
       "experiments": []
     },
     {
       "id": 6,
-      "name": "Scroll Translations for Confluence",
-      "url": "https://labs.handsome.is/games/orbs/",
+      "name": "Scroll Versions for Confluence",
+      "url": "https://marketplace.atlassian.com/apps/1210818/scroll-versions-for-confluence",
       "info": [
         {
           "label": "role",
@@ -152,20 +152,20 @@
         },
         {
           "label": "description",
-          "text": "K15t is growing fast, and we're always excited to receive speculative applications from talented candidates of all backgrounds. If you have the skills to help us improve and grow, then get in touch. We've hired many great people in the past who didn't apply for a specific open position, so why not give it a go?",
+          "text": "Scroll Versions is the engine that powers great documentation. It takes management, authoring, and publishing in Confluence to new levels of ease and flexibility. The work on the project included moving code towards new technologies, bugfix, refactoring, writing tests, and developing new features with a focus on usability",
           "url": ""
         }
       ],
       "image": {
-        "src": "lorem-ipsum",
-        "alt": "lorem"
+        "src": "/assets/pr_scversions.jpg",
+        "alt": "Scroll Versions for Confluence"
       },
       "experiments": []
     },
     {
       "id": 7,
-      "name": "Experiments",
-      "url": "",
+      "name": "Scroll Translations for Confluence",
+      "url": "https://marketplace.atlassian.com/apps/1211616/scroll-translations-for-confluence",
       "info": [
         {
           "label": "role",
@@ -174,7 +174,34 @@
         },
         {
           "label": "company",
-          "text": "-",
+          "text": "K15t Software",
+          "url": "https://www.k15t.com"
+        },
+        {
+          "label": "description",
+          "text": "Scroll Translations helps you manage and deliver your Confluence content to a global audience. Manage multiple languages of your documentation in a single space. The work on the project included moving code towards new technologies, bugfix, refactoring, writing tests and developing new features with a focus on usability",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "/assets/pr_sctranslations.jpg",
+        "alt": "Scroll Translations for Confluence"
+      },
+      "experiments": []
+    },
+    {
+      "id": 8,
+      "name": "Experiments",
+      "url": "",
+      "info": [
+        {
+          "label": "role",
+          "text": "—",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "—",
           "url": ""
         },
         {
@@ -190,39 +217,39 @@
       "experiments": [
         {
           "id": 1,
-          "label": "lorem",
-          "url": "lorem-ipsum",
-          "image": ""
+          "label": "title",
+          "url": "",
+          "image": "/assets/exp_name.jpg"
         },
         {
           "id": 2,
-          "label": "lorem",
-          "url": "lorem-ipsum",
-          "image": ""
+          "label": "Glitch",
+          "url": "https://codepen.io/egor-sorokin/pen/xXpGzw",
+          "image": "/assets/exp_glitch.jpg"
         },
         {
           "id": 3,
-          "label": "lorem",
-          "url": "lorem-ipsum",
-          "image": ""
+          "label": "Geometric shapes",
+          "url": "http://threejs-examples-egor.herokuapp.com/geometric-shapes/",
+          "image": "/assets/exp_shapes.jpg"
         },
         {
           "id": 4,
-          "label": "lorem",
-          "url": "lorem-ipsum",
-          "image": ""
+          "label": "Logo",
+          "url": "",
+          "image": "/assets/exp_logo.jpg"
         },
         {
           "id": 5,
-          "label": "lorem",
-          "url": "lorem-ipsum",
-          "image": ""
+          "label": "Loader",
+          "url": "http://threejs-examples-egor.herokuapp.com/loader/",
+          "image": "/assets/exp_loader.jpg"
         },
         {
           "id": 6,
-          "label": "lorem",
-          "url": "lorem-ipsum",
-          "image": ""
+          "label": "Grid",
+          "url": "https://codepen.io/egor-sorokin/pen/yzKpBL",
+          "image": "/assets/exp_grid.jpg"
         }
       ]
     }

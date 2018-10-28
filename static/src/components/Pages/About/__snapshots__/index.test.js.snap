@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<About /> matches snapshot 1`] = `
-<About
-  data={Object {}}
-  error={null}
-  isFetching={true}
-/>
-`;

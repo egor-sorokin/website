@@ -20,6 +20,7 @@
     "globals": {
       "NODE_ENV": "test"
     },
+    "testURL": "http://localhost:8080/",
     "moduleFileExtensions": [
       "js",
       "jsx"

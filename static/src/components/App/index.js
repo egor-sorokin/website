@@ -3,6 +3,8 @@ import Home from '../Pages/Home/index';
 import Contact from '../Pages/Contact/index';
 import About from '../Pages/About/index';
 import Projects from '../Pages/Projects/index';
+import '../../utils/data/person.json';
+import '../../utils/data/projects.json';
 
 class App extends Component {
   constructor() {

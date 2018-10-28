@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Personal website v1.0",
   "main": "index.js",
-  "homepage": "https://egor-sorokin.github.io/egor-sorokin.github.io",
+  "homepage": "https://egor-sorokin.github.io/website/",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production",

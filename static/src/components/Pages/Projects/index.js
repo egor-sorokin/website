@@ -56,7 +56,6 @@ class Projects extends Component {
           <div className="container">
             <Content
               name={project.name}
-              url={project.url}
               info={project.info}
               image={project.image}
               experiments={project.experiments}

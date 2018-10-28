@@ -4,16 +4,23 @@ import './styles.scss';
 
 
 const ImageGrid = ({gridData}) => {
-  const component = gridData.map(item => (
+  const component = gridData.map((item, i) => (
     <li
       key={item.id}
       className="image-grid__item item text-c-mercury">
-      <a
-        href={item.url}
-        target="_blank"
-        className="item__image image"
-        style={{ backgroundImage: `url(${item.image})` }}
-      />
+      {(i === 0 || i === 3) ?
+        (<div
+          className="item__image image"
+          style={{ backgroundImage: `url(${item.image})` }}
+        />) : (
+        <a
+          href={item.url}
+          target="_blank"
+          className="item__image image"
+          style={{ backgroundImage: `url(${item.image})` }}
+        />)
+      }
+
     </li>
   ));
 

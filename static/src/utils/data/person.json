@@ -10,8 +10,8 @@
         "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds"
       },
       {
-        "title": "main",
-        "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
+        "title": "purpose of the website",
+        "text": "This website was design and developed by Egor Sorokin to collect all his projects at one place. The website itself is built with technologies such as React, GSAP, Webpack, Jest, Flask and some others"
       }
     ],
     "socials": {
@@ -36,26 +36,6 @@
           "id": 4,
           "text": "LinkedIn",
           "url": "https://www.linkedin.com/in/egor-sorokin-1b13ba105"
-        }
-      ]
-    },
-    "attachments": {
-      "title": "attachments",
-      "items": [
-        {
-          "id": 1,
-          "text": "CV",
-          "url": "attachment-url"
-        },
-        {
-          "id": 2,
-          "text": "Mobile Sites Certificate",
-          "url": "attachment-url"
-        },
-        {
-          "id": 3,
-          "text": "Fullstack Nanodegree Certificate",
-          "url": "attachment-url"
         }
       ]
     }

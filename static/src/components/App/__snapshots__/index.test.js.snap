@@ -2,9 +2,16 @@
 
 exports[`<App /> matches snapshot 1`] = `
 <div>
-  <WithFetching />
-  <WithFetching />
-  <WithFetching />
-  <WithFetching />
+  <About
+    isOpenedAbout={false}
+    toggleAboutSection={[Function]}
+  />
+  <Home
+    toggleAboutSection={[Function]}
+  />
+  <Projects />
+  <Contact
+    toggleAboutSection={[Function]}
+  />
 </div>
 `;

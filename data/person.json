@@ -1,0 +1,43 @@
+{
+  "personData": {
+    "id": 1,
+    "first_name": "Egor",
+    "last_name": "Sorokin",
+    "email": "example@admin.com",
+    "summary": [
+      {
+        "title": "introduction",
+        "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds"
+      },
+      {
+        "title": "purpose of the website",
+        "text": "This website was design and developed by Egor Sorokin to collect all his projects at one place. The website itself is built with technologies such as React, GSAP, Webpack, Jest, Flask and some others"
+      }
+    ],
+    "socials": {
+      "title": "socials",
+      "items": [
+        {
+          "id": 1,
+          "text": "GitHub",
+          "url": "https://github.com/egor-sorokin"
+        },
+        {
+          "id": 2,
+          "text": "CodePen",
+          "url": "https://codepen.io/egor-sorokin/#"
+        },
+        {
+          "id": 3,
+          "text": "Heroku",
+          "url": "http://threejs-examples-egor.herokuapp.com/"
+        },
+        {
+          "id": 4,
+          "text": "LinkedIn",
+          "url": "https://www.linkedin.com/in/egor-sorokin-1b13ba105"
+        }
+      ]
+    }
+  }
+}

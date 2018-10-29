@@ -22,7 +22,7 @@
         }
       ],
       "image": {
-        "src": "/assets/pr_su.jpg",
+        "src": "assets/pr_su.jpg",
         "alt": "Southwestern University"
       },
       "experiments": []
@@ -49,7 +49,7 @@
         }
       ],
       "image": {
-        "src": "/assets/pr_orbs.gif",
+        "src": "assets/pr_orbs.gif",
         "alt": "Game: Orbs"
       },
       "experiments": []
@@ -76,7 +76,7 @@
         }
       ],
       "image": {
-        "src": "/assets/pr_company.jpg",
+        "src": "assets/pr_company.jpg",
         "alt": "Company.com"
       },
       "experiments": []
@@ -103,7 +103,7 @@
         }
       ],
       "image": {
-        "src": "/assets/pr_hndwiki.jpg",
+        "src": "assets/pr_hndwiki.jpg",
         "alt": "Handsome: Wiki"
       },
       "experiments": []
@@ -130,7 +130,7 @@
         }
       ],
       "image": {
-        "src": "/assets/pr_bros.jpg",
+        "src": "assets/pr_bros.jpg",
         "alt": "Brand Retail OS"
       },
       "experiments": []
@@ -157,7 +157,7 @@
         }
       ],
       "image": {
-        "src": "/assets/pr_scversions.jpg",
+        "src": "assets/pr_scversions.jpg",
         "alt": "Scroll Versions for Confluence"
       },
       "experiments": []
@@ -184,7 +184,7 @@
         }
       ],
       "image": {
-        "src": "/assets/pr_sctranslations.jpg",
+        "src": "assets/pr_sctranslations.jpg",
         "alt": "Scroll Translations for Confluence"
       },
       "experiments": []
@@ -219,37 +219,37 @@
           "id": 1,
           "label": "title",
           "url": "",
-          "image": "/assets/exp_name.jpg"
+          "image": "assets/exp_name.jpg"
         },
         {
           "id": 2,
           "label": "Glitch",
           "url": "https://codepen.io/egor-sorokin/pen/xXpGzw",
-          "image": "/assets/exp_glitch.jpg"
+          "image": "assets/exp_glitch.jpg"
         },
         {
           "id": 3,
           "label": "Geometric shapes",
           "url": "http://threejs-examples-egor.herokuapp.com/geometric-shapes/",
-          "image": "/assets/exp_shapes.jpg"
+          "image": "assets/exp_shapes.jpg"
         },
         {
           "id": 4,
           "label": "Logo",
           "url": "",
-          "image": "/assets/exp_logo.jpg"
+          "image": "assets/exp_logo.jpg"
         },
         {
           "id": 5,
           "label": "Loader",
           "url": "http://threejs-examples-egor.herokuapp.com/loader/",
-          "image": "/assets/exp_loader.jpg"
+          "image": "assets/exp_loader.jpg"
         },
         {
           "id": 6,
           "label": "Grid",
           "url": "https://codepen.io/egor-sorokin/pen/yzKpBL",
-          "image": "/assets/exp_grid.jpg"
+          "image": "assets/exp_grid.jpg"
         }
       ]
     }

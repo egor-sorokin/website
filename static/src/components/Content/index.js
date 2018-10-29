@@ -19,7 +19,7 @@ const Content = ({name, info, image, experiments}) => (
       {experiments.length === 0 ? (
         <img className="image"
              title={image.alt}
-             alt="asd"
+             alt={image.alt}
              src={image.src}>
         </img>
       ) : (

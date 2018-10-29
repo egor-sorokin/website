@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 require('@babel/polyfill').default;
 
@@ -64,6 +65,11 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html'
     }),
-    new WebpackMd5Hash()
+    new WebpackMd5Hash(),
+    new CopyWebpackPlugin([
+      { from: path.join(__dirname, 'src/data/*.json'), to: 'data/', flatten: true },
+      { from: path.join(__dirname, 'src/assets/*'), to: 'assets/', flatten: true },
+      { from: path.join(__dirname, 'src/favicon.ico'), flatten: true }
+    ])
   ]
 };

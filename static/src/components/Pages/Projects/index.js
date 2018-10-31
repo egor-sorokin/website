@@ -1,89 +1,62 @@
-import React, {Component} from 'react';
-import fetchData from '../../../utils/api';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Content from '../../Content/index';
 import Switcher from '../../Switcher/index';
-import {URL_PATH_PROJECTS, SWITCHER_PROJECTS} from '../../../constants/index';
+import {SWITCHER_PROJECTS} from '../../../constants/index';
 import './styles.scss';
 
 
-class Projects extends Component {
-  constructor(props) {
-    super(props);
+const Projects = ({data}) => {
+  const projects = data.projects || [];
 
-    this.state = {
-      data: {},
-      isFetching: false,
-      error: null,
-    };
-  }
+  const projectsComponent = projects.map((project, i) => {
+    let id = '';
 
-
-  componentDidMount() {
-    this._fetchData();
-  }
-
-
-  _fetchData() {
-    this.setState({isFetching: true});
-
-    fetchData(URL_PATH_PROJECTS)
-      .then(data => this.setState({data, isFetching: false}))
-      .catch(error => this.setState({error: error.message, isFetching: false}));
-  }
-
-
-  render() {
-    const {data, error, isFetching} = this.state;
-    const projects = data.projects || [];
-
-    const projectsComponent = projects.map((project, i) => {
-      let id = '';
-
-      if (i === 0) {
-        id = 'projects';
-      }
-
-      if (i === projects.length - 1) {
-        id = 'experiments';
-      }
-
-      return (
-        <section
-          id={id}
-          key={project.id}
-          className="slide-inner"
-        >
-          <div className="container">
-            <Content
-              name={project.name}
-              info={project.info}
-              image={project.image}
-              experiments={project.experiments}
-            />
-          </div>
-          <Switcher
-            data={project}
-            switcherLink={SWITCHER_PROJECTS}
-          />
-        </section>
-      );
-    });
-
-    if (error) {
-      return <div><p>{error}</p></div>;
+    if (i === 0) {
+      id = 'projects';
     }
 
-    if (isFetching) {
-      return <div><p>Loading...</p></div>;
+    if (i === projects.length - 1) {
+      id = 'experiments';
     }
 
     return (
-      <main>
-        {projectsComponent}
-      </main>
+      <section
+        id={id}
+        key={project.id}
+        className="slide-inner"
+      >
+        <div className="container">
+          <Content
+            name={project.name}
+            info={project.info}
+            image={project.image}
+            experiments={project.experiments}
+          />
+        </div>
+        <Switcher
+          data={project}
+          switcherLink={SWITCHER_PROJECTS}
+        />
+      </section>
     );
-  }
-}
+  });
+
+  return (
+    <main>
+      {projectsComponent}
+    </main>
+  );
+};
+
+
+Projects.propTypes = {
+  data: PropTypes.shape({})
+};
+
+Projects.defaultProps = {
+  data: {}
+};
 
 
 export default Projects;

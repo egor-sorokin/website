@@ -6,8 +6,7 @@ import OrderedList from '../../OrderedList/index'
 import Summary from '../../Summary/index'
 import Logo from '../../Logo/index';
 import LinkStretched from '../../LinkStretched/index';
-import fetchData from '../../../utils/api';
-import {URL_PATH_PERSON_DATA, LINK_MASKED, BUTTON_CLOSE} from '../../../constants/index';
+import {LINK_MASKED, BUTTON_CLOSE} from '../../../constants/index';
 import './styles.scss';
 
 
@@ -19,20 +18,14 @@ class About extends Component {
     this.name = React.createRef();
 
     this.aboutTween = null;
-    this.state = {
-      data: {},
-      isFetching: false,
-      error: null,
-    };
   }
 
 
   componentDidMount() {
-    this._fetchData()
-      .finally(() => {
-        this.aboutTween = new TimelineMax();
-        attachToggleAnimation(this.aboutTween);
-      });
+    if (!this.props.isFetching) {
+      this.aboutTween = new TimelineMax();
+      attachToggleAnimation(this.aboutTween);
+    }
   }
 
 
@@ -44,33 +37,16 @@ class About extends Component {
   }
 
 
-  _fetchData() {
-    this.setState({isFetching: true});
-
-    return fetchData(URL_PATH_PERSON_DATA)
-      .then(data => this.setState({data, isFetching: false}))
-      .catch(error => this.setState({error: error.message, isFetching: false}));
-  }
-
-
   clickCloseButton = () => {
     this.props.toggleAboutSection();
   };
 
 
   render() {
-    const {data, isFetching, error} = this.state;
+    const {data} = this.props;
     const personData = data.personData || {};
     const socials = personData.socials || [];
     const cssClassesButton = "button-close__link font-s-12-secondary text-c-mercury-light";
-
-    if (error) {
-      return <div><p>{error}</p></div>;
-    }
-
-    if (isFetching) {
-      return <div><p>Loading...</p></div>;
-    }
 
     return (
       <div>
@@ -94,8 +70,8 @@ class About extends Component {
           <div className="about__item about__item--right">
             <OrderedList
               title={socials.title}
-                items={socials.items}
-                type={LINK_MASKED}
+              items={socials.items}
+              type={LINK_MASKED}
             ></OrderedList>
           </div>
           <div className="button-close">
@@ -111,12 +87,17 @@ class About extends Component {
   }
 }
 
+
 About.propTypes = {
+  isFetching: PropTypes.bool,
+  data: PropTypes.shape({}),
   isOpenedAbout: PropTypes.bool,
   toggleAboutSection: PropTypes.func
 };
 
 About.defaultProps = {
+  data: {},
+  isFetching: true,
   isOpenedAbout: false,
   toggleAboutSection: () => {
   }

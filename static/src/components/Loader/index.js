@@ -2,8 +2,8 @@ import React from 'react';
 import './styles.scss';
 
 const Loader = () => (
-  <div class="loader">
-    <h3 class="loader__inner font-s-20 text-c-mercury-light">
+  <div className="loader">
+    <h3 className="loader__inner font-s-20 text-c-l-dune">
       Loading...
     </h3>
   </div>

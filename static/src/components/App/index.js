@@ -3,6 +3,8 @@ import Home from '../Pages/Home/index';
 import Contact from '../Pages/Contact/index';
 import About from '../Pages/About/index';
 import Projects from '../Pages/Projects/index';
+import Loader from '../Loader/index';
+import RequestError from '../RequestError/index';
 import fetchData from '../../utils/api';
 import {URL_PATH_PERSON_DATA, URL_PATH_PROJECTS} from '../../constants/index';
 
@@ -33,12 +35,12 @@ class App extends Component {
     Promise.all([promisePersonData, promiseProjectsData])
       .then((results) => {
         this.setState({
-          isFetching: false,
           personData: results[0],
           projectsData: results[1]
         })
       })
-      .catch(error => this.setState({error: error.message, isFetching: false}));
+      .catch(error => this.setState({error: error.message}))
+      .finally(() => this.setState({isFetching: false}));
   }
 
 
@@ -49,11 +51,11 @@ class App extends Component {
 
   render() {
     if (this.state.error) {
-      return <div><p>{this.state.error}</p></div>;
+      return <RequestError></RequestError>;
     }
 
     if (this.state.isFetching) {
-      return <div><p>Loading...</p></div>;
+      return <Loader></Loader>;
     }
 
     return (

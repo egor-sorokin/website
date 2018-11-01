@@ -1,0 +1,17 @@
+@import '../../styles/base/_vars.scss';
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $dune;
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+  }
+}

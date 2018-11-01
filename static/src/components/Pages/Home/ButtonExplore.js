@@ -7,8 +7,10 @@ const ButtonExplore = props => {
     props.onClick('projects', true);
   };
 
+  let classNames = `${props.cssClasses} button button--white`;
+
   return (
-    <div className="button button--white">
+    <div className={classNames}>
       <a
         href="#projects"
         className="button__link font-s-12"
@@ -20,18 +22,21 @@ const ButtonExplore = props => {
   );
 };
 
-ButtonExplore.defaultProps = {
-  children: [],
-  onClick: () => {
-  }
-};
-
 ButtonExplore.propTypes = {
+  cssClasses: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]),
   onClick: PropTypes.func
+};
+
+
+ButtonExplore.defaultProps = {
+  cssClasses: '',
+  children: [],
+  onClick: () => {
+  }
 };
 
 export default ButtonExplore;

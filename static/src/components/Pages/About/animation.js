@@ -3,7 +3,6 @@ import {Power2} from 'gsap';
 
 export const attachToggleAnimation = (targetTween) => {
   targetTween
-    .to('html', 0, {overflowY: 'hidden'})
     .to('.about', .8,
       {x: 0, ease: Power2.easeInOut}
     )

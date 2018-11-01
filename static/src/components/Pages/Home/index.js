@@ -1,13 +1,31 @@
 import React, {Component} from 'react';
+import {TimelineMax} from 'gsap';
 import PropTypes from 'prop-types';
 import scrollToY from 'scroll-to-y';
 import ButtonExplore from './ButtonExplore';
 import LinkStretched from '../../LinkStretched/index';
+import {attachShowAnimation} from './animation';
 import {BUTTON_EXPLORE, BUTTON_ABOUT} from '../../../constants/index';
 import './styles.scss';
 
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.homeTween = null;
+  }
+
+
+  componentDidMount() {
+    if (!this.props.isFetching) {
+      this.homeTween = new TimelineMax();
+      attachShowAnimation(this.homeTween);
+      this.homeTween.play();
+    }
+  }
+
+
   scrollToProjects = (section, scrollTo) => {
     if (scrollTo) {
       scrollToY(
@@ -30,12 +48,15 @@ class Home extends Component {
 
     return (
       <div>
-        <section id="home" className="home banner text-c-mercury-light">
+        <section
+          id="home"
+          className="home banner text-c-mercury-light">
           <h3 className="home__name font-s-36">
             {personData.first_name + ' ' + personData.last_name}
           </h3>
 
           <ButtonExplore
+            cssClasses="home__explore-button"
             onClick={this.scrollToProjects}
           >{BUTTON_EXPLORE.text}</ButtonExplore>
 
@@ -56,11 +77,13 @@ class Home extends Component {
 
 
 Home.propTypes = {
+  isFetching: PropTypes.bool,
   data: PropTypes.shape({}),
   toggleAboutSection: PropTypes.func
 };
 
 Home.defaultProps = {
+  isFetching: true,
   data: {},
   toggleAboutSection: () => {
   }

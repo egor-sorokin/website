@@ -67,6 +67,7 @@ class App extends Component {
           toggleAboutSection={this.toggleAboutSection}
         />
         <Home
+          isFetching={this.state.isFetching}
           data={this.state.personData}
           toggleAboutSection={this.toggleAboutSection}
         />

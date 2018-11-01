@@ -3,6 +3,7 @@ import Home from '../Pages/Home/index';
 import Contact from '../Pages/Contact/index';
 import About from '../Pages/About/index';
 import Projects from '../Pages/Projects/index';
+import ThreeContainer from '../ThreeContainer/index';
 import Loader from '../Loader/index';
 import RequestError from '../RequestError/index';
 import fetchData from '../../utils/api';
@@ -60,6 +61,7 @@ class App extends Component {
 
     return (
       <div>
+        <ThreeContainer></ThreeContainer>
         <About
           isFetching={this.state.isFetching}
           data={this.state.personData}

@@ -2,11 +2,20 @@ import axios from 'axios';
 // import { DEFAULT_API_URL } from '../constants/index';
 
 
+const timeout = (ms, promise) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      promise.then(resolve, reject)
+    }, ms);
+  })
+};
+
+
 const fetchData = (url) => {
   // const mockDataUrl = `http://localhost:8080/src/utils/data/${url}.json`;
   const mockDataUrl = `https://egor-sorokin.github.io/website/data/${url}.json`;
 
-  return axios.get(mockDataUrl)
+  return timeout(200, axios.get(mockDataUrl))
     .then((response) => {
       if (response.status === 200) {
         return response.data;

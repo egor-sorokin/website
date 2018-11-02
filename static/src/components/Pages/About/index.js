@@ -14,9 +14,6 @@ class About extends Component {
   constructor(props) {
     super(props);
 
-    this.aboutSection = React.createRef();
-    this.name = React.createRef();
-
     this.aboutTween = null;
   }
 
@@ -50,16 +47,14 @@ class About extends Component {
 
     return (
       <div>
-        <section ref={this.aboutSection}
-                 className="about text-c-mercury-light">
+        <section className="about text-c-mercury-light">
           <div className="about__item about__item--left">
             <div className="line line--top"></div>
             <Logo></Logo>
             <div className="line line--bottom"></div>
           </div>
           <div className="about__item about__item--middle">
-            <h1 ref={this.name}
-                className="about__title font-s-36"
+            <h1 className="about__title font-s-36"
             >
               {personData.first_name + ' ' + personData.last_name}
             </h1>

@@ -56,17 +56,19 @@ class Home extends Component {
           </h3>
 
           <ButtonExplore
-            cssClasses="home__explore-button"
+            cssClasses="home__button-explore"
             onClick={this.scrollToProjects}
           >{BUTTON_EXPLORE.text}</ButtonExplore>
 
           <div className="switcher switcher--white">
             <div className="switcher__line line--top"/>
-            <LinkStretched
+            <div className="home__button-about">
+              <LinkStretched
               onClick={this.clickAboutButton}
               cssClasses="switcher__link font-s-12-secondary text-c-dune"
               text={BUTTON_ABOUT.text}
             ></LinkStretched>
+            </div>
             <div className="switcher__line line--bottom"/>
           </div>
         </section>

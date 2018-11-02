@@ -21,7 +21,7 @@ const LinkStretched = props => {
       data-anchor-id={url}
       target={target}
       onClick={handleClick}
-      className={'link-stretched ' + cssClasses}
+      className={`${cssClasses} link-stretched`}
     >{text}</a>
   )
 };

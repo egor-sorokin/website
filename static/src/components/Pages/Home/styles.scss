@@ -1,4 +1,5 @@
 @import '../../../styles/base/_vars.scss';
+@import '../../../styles/mixins/_breakpoints.scss';
 
 .banner {
   position: relative;
@@ -18,6 +19,21 @@
     top: 50%;
 
     transform: translateY(-50%);
+  }
+  .switcher {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 4vw;
+
+    @include breakpoint-tablet {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+
+      width: auto;
+    }
   }
 
   .line {

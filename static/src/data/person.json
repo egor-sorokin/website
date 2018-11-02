@@ -11,7 +11,7 @@
       },
       {
         "title": "purpose of the website",
-        "text": "This website was design and developed by Egor Sorokin to collect all his projects at one place. The website itself is built with technologies such as React, GSAP, Webpack, Jest, Flask and some others"
+        "text": "This website was design and developed by Egor Sorokin to collect all his projects at one place. The website itself is built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others"
       }
     ],
     "socials": {

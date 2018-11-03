@@ -1,4 +1,6 @@
 @import '../../styles/base/_vars.scss';
+@import '../../styles/mixins/_breakpoints.scss';
+
 
 .orderedlist {
   &__list {
@@ -39,6 +41,11 @@
       height: 1px;
 
       background-color: $mercuryLight;
+
+      @include breakpoint-mobile {
+        width: 5px;
+        margin-right: 5px;
+      }
     }
   }
   &__title {

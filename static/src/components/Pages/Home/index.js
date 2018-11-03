@@ -50,7 +50,7 @@ class Home extends Component {
       <div>
         <section
           id="home"
-          className="home banner text-c-mercury-light">
+          className="banner home text-c-mercury-light">
           <h3 className="home__name font-s-36">
             {personData.first_name + ' ' + personData.last_name}
           </h3>

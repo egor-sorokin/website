@@ -1,7 +1,6 @@
 @import '../../../styles/base/_vars.scss';
 @import '../../../styles/mixins/_breakpoints.scss';
 
-
 .about {
   display: flex;
   flex-direction: row;
@@ -19,6 +18,13 @@
 
   z-index: 9999;
 
+  @include breakpoint-mobile {
+    overflow-y: scroll;
+    flex-wrap: wrap;
+
+    padding: 15vh 10vw 5vh;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -32,10 +38,22 @@
       display: flex;
       flex-direction: column;
       flex-basis: 20vw;
+
+      @include breakpoint-mobile {
+        display: none;
+      }
     }
     &--middle {
       padding-left: 8vw;
       flex-basis: 52vw;
+
+      @include breakpoint-mobile {
+        padding-left: 0;
+
+        justify-content: center;
+
+        flex-basis: inherit;
+      }
     }
     &--right {
       flex-basis: 28vw;
@@ -43,12 +61,26 @@
       padding-left: 8vw;
 
       align-self: center;
+
+      @include breakpoint-mobile {
+        margin-top: 4vh;
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: center;
+
+        flex-basis: inherit;
+      }
     }
 
     &--right,
     &--middle {
       padding-top: 10vh;
       padding-bottom: 10vh;
+
+      @include breakpoint-mobile {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
     }
   }
 

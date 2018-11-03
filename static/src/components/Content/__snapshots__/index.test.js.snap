@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Content /> base tests matches snapshot 1`] = `
+<section
+  className="project"
+>
+  <div
+    className="col col--left"
+  >
+    <h1
+      className="font-s-40"
+    />
+    <DescriptionList
+      listData={Array []}
+    />
+  </div>
+  <div
+    className="col col--right"
+  >
+    <img
+      className="image"
+    />
+  </div>
+</section>
+`;

@@ -16,7 +16,9 @@ class App extends Component {
     this.state = {
       personData: {},
       projectsData: {},
-      isOpenedAbout: false
+      isOpenedAbout: false,
+      isFetching: true,
+      error: null
     }
   }
 
@@ -35,12 +37,12 @@ class App extends Component {
     Promise.all([promisePersonData, promiseProjectsData])
       .then((results) => {
         this.setState({
+          isFetching: false,
           personData: results[0],
           projectsData: results[1]
         })
       })
-      .catch(error => this.setState({error: error.message}))
-      .finally(() => this.setState({isFetching: false}));
+      .catch(error => this.setState({error: error.message, isFetching: false}))
   }
 
 

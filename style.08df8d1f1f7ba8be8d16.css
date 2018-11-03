@@ -200,6 +200,15 @@ a.link-stretched:hover {
         .navbar__item:nth-of-type(2n+1) {
           left: -60%; } }
 
+/* from $largeWidth + 1px to $extraLargeWidth */
+/* from $mediumWidth + 1px to $largeWidth */
+/* from $smallWidth + 1px  to $mediumWidth */
+/* from $extraSmallWidth + 1px to $smallWidth */
+/* more than $mediumWidth, less than $mediumHeight */
+/* mainly used for Sidebar resizing */
+@media (max-width: 599px) {
+  .contact {
+    padding-bottom: 5vh; } }
 .contact-inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -214,7 +223,7 @@ a.link-stretched:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
-  .contact-inner__item {
+.contact-inner__item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -223,14 +232,14 @@ a.link-stretched:hover {
             justify-content: center;
     position: relative;
     width: 100%; }
-  .contact .logo {
+.contact .logo {
   margin-top: 90px;
   margin-bottom: 150px;
   -webkit-transform: translateX(7px);
           transform: translateX(7px); }
-  .contact .navbar {
+.contact .navbar {
   margin-top: 155px; }
-  .delimiter {
+.delimiter {
   position: absolute;
   top: 0;
   left: 50%;
@@ -240,10 +249,15 @@ a.link-stretched:hover {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%); }
 
+/* from $largeWidth + 1px to $extraLargeWidth */
+/* from $mediumWidth + 1px to $largeWidth */
+/* from $smallWidth + 1px  to $mediumWidth */
+/* from $extraSmallWidth + 1px to $smallWidth */
+/* more than $mediumWidth, less than $mediumHeight */
+/* mainly used for Sidebar resizing */
 .orderedlist__list {
   list-style: none;
   counter-reset: item-1; }
-
 .orderedlist__item {
   counter-increment: item;
   display: -webkit-box;
@@ -254,12 +268,10 @@ a.link-stretched:hover {
       -ms-flex-direction: row;
           flex-direction: row;
   position: relative; }
-
 .orderedlist__item:before {
     content: counter(item, decimal-leading-zero);
     margin-left: 10px;
     min-width: 20px; }
-
 .orderedlist__item:after {
     content: '';
     display: block;
@@ -269,14 +281,16 @@ a.link-stretched:hover {
     width: 5px;
     height: 1px;
     background-color: rgba(231, 231, 231, 0.6); }
-
 .orderedlist__item-dash {
     margin-top: 13px;
     margin-right: 10px;
     width: 15px;
     height: 1px;
     background-color: rgba(231, 231, 231, 0.6); }
-
+@media (max-width: 599px) {
+      .orderedlist__item-dash {
+        width: 5px;
+        margin-right: 5px; } }
 .orderedlist__title {
   text-align: left; }
 
@@ -313,6 +327,12 @@ a.link-stretched:hover {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   z-index: 9999; }
+@media (max-width: 599px) {
+    .about {
+      overflow-y: scroll;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      padding: 15vh 10vw 5vh; } }
 .about__item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -334,10 +354,21 @@ a.link-stretched:hover {
               flex-direction: column;
       -ms-flex-preferred-size: 20vw;
           flex-basis: 20vw; }
+@media (max-width: 599px) {
+        .about__item--left {
+          display: none; } }
 .about__item--middle {
       padding-left: 8vw;
       -ms-flex-preferred-size: 52vw;
           flex-basis: 52vw; }
+@media (max-width: 599px) {
+        .about__item--middle {
+          padding-left: 0;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -ms-flex-preferred-size: inherit;
+              flex-basis: inherit; } }
 .about__item--right {
       -ms-flex-preferred-size: 28vw;
           flex-basis: 28vw;
@@ -345,9 +376,23 @@ a.link-stretched:hover {
       padding-left: 8vw;
       -ms-flex-item-align: center;
           align-self: center; }
+@media (max-width: 599px) {
+        .about__item--right {
+          margin-top: 4vh;
+          padding-left: 0;
+          padding-right: 0;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -ms-flex-preferred-size: inherit;
+              flex-basis: inherit; } }
 .about__item--right, .about__item--middle {
       padding-top: 10vh;
       padding-bottom: 10vh; }
+@media (max-width: 599px) {
+        .about__item--right, .about__item--middle {
+          padding-top: 0;
+          padding-bottom: 0; } }
 .about__title {
     text-align: center; }
 .about .line {

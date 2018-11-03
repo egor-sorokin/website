@@ -24,12 +24,12 @@ export const attachShowAnimation = (targetTween) => {
       {y: "0%", ease: Power2.easeOut},
       "-=0.4",
     )
-    .fromTo('.home .switcher__link', .1,
+    .fromTo('.home .home__button-about', .1,
       {x: "100%", opacity: 0, ease: Power2.easeOut},
-      {x: "-50%", opacity: 1, ease: Power2.easeOut},
+      {x: "0%", opacity: 1, ease: Power2.easeOut},
       "-=0.1"
     )
-    .fromTo('.home__explore-button', .5,
+    .fromTo('.home__button-explore', .5,
       {x: "0%", opacity: 0, ease: Power2.easeOut},
       {x: "-50%", opacity: 1, ease: Power2.easeOut},
     )

@@ -1,11 +1,7 @@
 @import '../../styles/base/_vars.scss';
+@import '../../styles/mixins/_breakpoints.scss';
 
 .switcher {
-  position: absolute;
-  right: 0;
-  top: 0;
-
-  width: 4vw;
 }
 
 .switcher__line {
@@ -14,6 +10,10 @@
 
   background-color: $dune;
   opacity: 0.2;
+
+  @include breakpoint-tablet {
+    display: none;
+  }
 }
 
 .switcher__link {
@@ -22,6 +22,10 @@
   height: 12vh;
 
   align-items: center;
+
+  @include breakpoint-tablet {
+    height: auto;
+  }
 }
 
 .switcher--white {

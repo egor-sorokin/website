@@ -1,4 +1,6 @@
 @import '../../../styles/base/_vars.scss';
+@import '../../../styles/mixins/_breakpoints.scss';
+
 
 .about {
   display: flex;
@@ -91,6 +93,11 @@
     position: absolute;
     top: 50px;
     right: 100px;
+
+    @include breakpoint-tablet {
+      right: 40px;
+      top: 40px;
+    }
   }
 }
 

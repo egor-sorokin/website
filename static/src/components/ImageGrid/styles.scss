@@ -1,4 +1,5 @@
 @import '../../styles/base/_vars.scss';
+@import '../../styles/mixins/_breakpoints.scss';
 
 .image-grid {
   display: flex;
@@ -30,6 +31,28 @@
     &:nth-child(1) {
       .item__image {
         background-size: 130%;
+      }
+    }
+
+    @include breakpoint-tablet {
+      min-width: 50%;
+      min-height: 230px;
+
+      &:nth-child(1),
+      &:nth-child(4) {
+        display: none;
+      }
+
+      &:nth-child(1) {
+        .item__image {
+          background-size: inherit;
+        }
+      }
+      &:hover:nth-child(1),
+      &:hover:nth-child(4) {
+        .item__image {
+          background-size: 110%;
+        }
       }
     }
 

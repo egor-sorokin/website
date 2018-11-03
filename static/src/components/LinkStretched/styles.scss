@@ -1,6 +1,7 @@
 @import '../../styles/base/_vars.scss';
+@import '../../styles/mixins/_breakpoints.scss';
 
-.link-stretched {
+a.link-stretched {
   letter-spacing: 3px;
 
   transform: translateX(-40px);
@@ -8,10 +9,21 @@
   letter-spacing $defaultTiming $defaultEasing;
 
   cursor: pointer;
+
+  @include breakpoint-tablet {
+    letter-spacing: 3px;
+    transform: translateX(0px);
+  }
 }
 
-.link-stretched:hover {
+a.link-stretched:hover {
   letter-spacing: 5px;
 
   transform: translateX(-34px);
+
+  @include breakpoint-tablet {
+    letter-spacing: 3px;
+
+    transform: translateX(0px);
+  }
 }

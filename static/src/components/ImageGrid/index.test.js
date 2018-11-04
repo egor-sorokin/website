@@ -62,12 +62,12 @@ describe('<ImageGrid />', () => {
     });
 
 
-    it('renders 1 image with link', () => {
+    it('renders 2 image with link', () => {
       expect(component.find('a')).toHaveLength(2);
     });
 
 
-    it('renders 1 image without link', () => {
+    it('renders 2 image without link', () => {
       expect(component.find('div')).toHaveLength(2);
     });
   });

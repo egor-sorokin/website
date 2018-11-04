@@ -7,16 +7,15 @@ export const BUTTON_EXPLORE = {
   url: '',
   text: 'Explore'
 };
-export const BUTTON_ABOUT = {
-  url: '',
-  text: 'About'
-};
 export const BUTTON_CLOSE = {
   text: 'Close',
   url: ''
 };
+export const SWITCHER_ABOUT = {
+  text: 'About',
+  type: 'white'
+};
 export const SWITCHER_PROJECTS = {
-  url: '',
   text: 'Launch',
   type: 'black'
 };

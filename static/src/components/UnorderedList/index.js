@@ -29,7 +29,9 @@ const UnorderedList = ({title, items, type}) => {
         <a
           href={item.url}
           target="_blank"
-          className="unorderedlist__text">{item.name}</a>
+          className="unorderedlist__text">
+          {item.name}
+        </a>
       </li>
     )
   });

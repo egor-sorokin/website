@@ -4,15 +4,24 @@ import LinkStretched from  '../LinkStretched/index'
 import './styles.scss';
 
 
-const Switcher = ({data, switcherLink}) => {
-  const cssClassesLinkStretched = "switcher__link font-s-12-secondary text-c-dune";
+const Switcher = ({data, switcherLink, onClick}) => {
   let link;
+  let {type, text} = switcherLink;
 
-  if (data && data.url) {
+  if (text && text.toLowerCase() === 'about') {
     link = (
       <LinkStretched
-        cssClasses={cssClassesLinkStretched}
-        text={switcherLink.text}
+        cssClasses="switcher__link font-s-12-secondary text-c-mercury-light"
+        text={text}
+        onClick={onClick}
+      ></LinkStretched>
+    );
+  } else if ((data && data.url)) {
+    link = (
+      <LinkStretched
+        cssClasses="switcher__link font-s-12-secondary text-c-dune"
+        text={text}
+        onClick={onClick}
         url={data.url}
         target="_blank"
       ></LinkStretched>
@@ -20,20 +29,22 @@ const Switcher = ({data, switcherLink}) => {
   }
 
   return (
-    <div className={`switcher switcher--${switcherLink.type}`}>
+    <div className={`switcher switcher--${type}`}>
       <div className="switcher__line line--top"/>
       {link}
-      {(link || switcherLink.text.toLowerCase() === 'about') && (
-        <div className="switcher__line line--bottom"/>)}
+      {(link) && (<div className="switcher__line line--bottom"/>)}
     </div>);
 };
 
 Switcher.propTypes = {
+  onClick: PropTypes.func,
   data: PropTypes.shape({}),
   switcherLink: PropTypes.shape({}),
 };
 
 Switcher.defaultProps = {
+  onClick: () => {
+  },
   data: {},
   switcherLink: {},
 };

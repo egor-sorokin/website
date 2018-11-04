@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Switcher /> base tests matches snapshot 1`] = `
+<div
+  className="switcher switcher--undefined"
+>
+  <div
+    className="switcher__line line--top"
+  />
+</div>
+`;

@@ -52,7 +52,7 @@ describe('<Content />', () => {
   });
 
 
-  describe('test setting props', () => {
+  describe('setting props tests', () => {
     beforeEach(() => {
       component = mount(<Content />);
     });
@@ -69,7 +69,7 @@ describe('<Content />', () => {
   });
 
 
-  describe('test props', () => {
+  describe('props tests', () => {
     it('renders descriptionList', () => {
       component = shallow(
         <Content info={info}/>

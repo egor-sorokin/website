@@ -71,7 +71,7 @@ describe('<App />', () => {
   });
 
 
-  describe('test states', () => {
+  describe('states tests', () => {
     beforeEach(() => {
       component = shallow(<App />);
     });
@@ -108,7 +108,7 @@ describe('<App />', () => {
   });
 
 
-  describe('test functions', () => {
+  describe('lifecycle tests', () => {
     it('calls componentDidMount', () => {
       const spy = jest.spyOn(App.prototype, 'componentDidMount');
       // eslint-disable-next-line

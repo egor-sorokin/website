@@ -56,7 +56,7 @@ describe('<ImageGrid />', () => {
   });
 
 
-  describe('test props', () => {
+  describe('props tests', () => {
     beforeEach(() => {
       component = shallow(<ImageGrid gridData={gridData}/>);
     });

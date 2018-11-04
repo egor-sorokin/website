@@ -43,19 +43,19 @@ describe('<DescriptionList />', () => {
   });
 
 
-  describe('test setting props', () => {
+  describe('setting props tests', () => {
     beforeEach(() => {
       component = mount(<DescriptionList />);
     });
 
 
-    it('set props correctly', () => {
+    it('sets props correctly', () => {
       expect('listData' in component.props()).toEqual(true);
     });
   });
 
 
-  describe('test props', () => {
+  describe('props tests', () => {
     beforeEach(() => {
       component = shallow(
         <DescriptionList listData={listData}/>

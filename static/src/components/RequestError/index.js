@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss';
 
+
 const RequestError = () => (
   <div class="request-error">
     <div class="request-error__inner">

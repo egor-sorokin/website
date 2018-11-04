@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LinkMasked /> base tests matches snapshot 1`] = `
+<div
+  className="link-masked"
+>
+  <span
+    className="link-masked__placeholder "
+  />
+  <div
+    className="link-masked__mask"
+  >
+    <a
+      className="link-masked__text "
+      target=""
+    />
+  </div>
+</div>
+`;

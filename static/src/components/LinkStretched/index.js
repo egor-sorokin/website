@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 
-const LinkStretched = props => {
-  const {text, url, target, cssClasses, onClick} = props;
-
-  const handleClick = (e) => {
+const LinkStretched = ({text, url, target, cssClasses, onClick}) => {
+  const handleClick = (event) => {
     if (!url) {
-      e.preventDefault();
+      event.preventDefault();
       onClick();
     } else {
-      onClick(e.currentTarget.dataset.anchorId.substring(1), true);
+      onClick(event.currentTarget.dataset.anchorId.substring(1), true);
     }
   };
 

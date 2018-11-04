@@ -1,16 +1,413 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App /> matches snapshot 1`] = `
+exports[`<App /> base tests matches snapshot 1`] = `
 <div>
   <About
+    data={
+      Object {
+        "personData": Object {
+          "email": "example@admin.com",
+          "first_name": "Egor",
+          "id": 1,
+          "last_name": "Sorokin",
+          "socials": Object {
+            "items": Array [
+              Object {
+                "id": 1,
+                "text": "GitHub",
+                "url": "https://github.com/egor-sorokin",
+              },
+              Object {
+                "id": 2,
+                "text": "CodePen",
+                "url": "https://codepen.io/egor-sorokin/#",
+              },
+              Object {
+                "id": 3,
+                "text": "Heroku",
+                "url": "http://threejs-examples-egor.herokuapp.com/",
+              },
+              Object {
+                "id": 4,
+                "text": "LinkedIn",
+                "url": "https://www.linkedin.com/in/egor-sorokin-1b13ba105",
+              },
+            ],
+            "title": "socials",
+          },
+          "summary": Array [
+            Object {
+              "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds",
+              "title": "introduction",
+            },
+            Object {
+              "text": "This website was design and developed by Egor Sorokin to collect all his projects at one place. The website itself is built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others",
+              "title": "purpose of the website",
+            },
+          ],
+        },
+      }
+    }
+    isFetching={false}
     isOpenedAbout={false}
     toggleAboutSection={[Function]}
   />
   <Home
+    data={
+      Object {
+        "personData": Object {
+          "email": "example@admin.com",
+          "first_name": "Egor",
+          "id": 1,
+          "last_name": "Sorokin",
+          "socials": Object {
+            "items": Array [
+              Object {
+                "id": 1,
+                "text": "GitHub",
+                "url": "https://github.com/egor-sorokin",
+              },
+              Object {
+                "id": 2,
+                "text": "CodePen",
+                "url": "https://codepen.io/egor-sorokin/#",
+              },
+              Object {
+                "id": 3,
+                "text": "Heroku",
+                "url": "http://threejs-examples-egor.herokuapp.com/",
+              },
+              Object {
+                "id": 4,
+                "text": "LinkedIn",
+                "url": "https://www.linkedin.com/in/egor-sorokin-1b13ba105",
+              },
+            ],
+            "title": "socials",
+          },
+          "summary": Array [
+            Object {
+              "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds",
+              "title": "introduction",
+            },
+            Object {
+              "text": "This website was design and developed by Egor Sorokin to collect all his projects at one place. The website itself is built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others",
+              "title": "purpose of the website",
+            },
+          ],
+        },
+      }
+    }
+    isFetching={false}
     toggleAboutSection={[Function]}
   />
-  <Projects />
+  <Projects
+    data={
+      Object {
+        "projects": Array [
+          Object {
+            "experiments": Array [],
+            "id": 1,
+            "image": Object {
+              "alt": "Southwestern University",
+              "src": "assets/pr_su.jpg",
+            },
+            "info": Array [
+              Object {
+                "label": "role",
+                "text": "Web Software Engineer",
+                "url": "",
+              },
+              Object {
+                "label": "company",
+                "text": "Handsome",
+                "url": "https://www.handsome.is",
+              },
+              Object {
+                "label": "description",
+                "text": "Southwestern is a place and time of personal growth and joint endeavor. The main goals of the partnership with Handsome were to do not just a re-branding and a re-design of the website, but also to create a set of reusable UI components for the future usage",
+                "url": "",
+              },
+            ],
+            "name": "Southwestern University",
+            "url": "https://www.southwestern.edu",
+          },
+          Object {
+            "experiments": Array [],
+            "id": 2,
+            "image": Object {
+              "alt": "Game: Orbs",
+              "src": "assets/pr_orbs.gif",
+            },
+            "info": Array [
+              Object {
+                "label": "role",
+                "text": "Web Software Engineer",
+                "url": "",
+              },
+              Object {
+                "label": "company",
+                "text": "Handsome",
+                "url": "https://www.handsome.is",
+              },
+              Object {
+                "label": "description",
+                "text": "The project was focused on studying Vanilla JavaScript, on the implementation of complex animations using standard tools and setting up the project infrastructure from scratch",
+                "url": "",
+              },
+            ],
+            "name": "Game: Orbs",
+            "url": "https://labs.handsome.is/games/orbs/",
+          },
+          Object {
+            "experiments": Array [],
+            "id": 3,
+            "image": Object {
+              "alt": "Company.com",
+              "src": "assets/pr_company.jpg",
+            },
+            "info": Array [
+              Object {
+                "label": "role",
+                "text": "Web Software Engineer",
+                "url": "",
+              },
+              Object {
+                "label": "company",
+                "text": "Handsome",
+                "url": "https://www.handsome.is",
+              },
+              Object {
+                "label": "description",
+                "text": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design their dashboard and marketing website",
+                "url": "",
+              },
+            ],
+            "name": "Company.com",
+            "url": "https://www.company.com",
+          },
+          Object {
+            "experiments": Array [],
+            "id": 4,
+            "image": Object {
+              "alt": "Handsome: Wiki",
+              "src": "assets/pr_hndwiki.jpg",
+            },
+            "info": Array [
+              Object {
+                "label": "role",
+                "text": "Web Software Engineer",
+                "url": "",
+              },
+              Object {
+                "label": "company",
+                "text": "Handsome",
+                "url": "https://www.handsome.is",
+              },
+              Object {
+                "label": "description",
+                "text": "The main idea of the project was to create a knowledge base for employees at Handsome with the support of different devices (mobile phones, tablets, desktop)",
+                "url": "",
+              },
+            ],
+            "name": "Handsome Wiki (internal project)",
+            "url": "https://www.google.com",
+          },
+          Object {
+            "experiments": Array [],
+            "id": 5,
+            "image": Object {
+              "alt": "Brand Retail OS",
+              "src": "assets/pr_bros.jpg",
+            },
+            "info": Array [
+              Object {
+                "label": "role",
+                "text": "Frontend Software Engineer (Freelance)",
+                "url": "",
+              },
+              Object {
+                "label": "company",
+                "text": "LIGADIGITAL",
+                "url": "https://www.ligadigital.com",
+              },
+              Object {
+                "label": "description",
+                "text": "Manage your entire marketing campaign end to end with BrandRetail OS. Work on this project included bugfix and an implementation of new features",
+                "url": "",
+              },
+            ],
+            "name": "Brand Retail OS",
+            "url": "https://www.brandretailos.com/",
+          },
+          Object {
+            "experiments": Array [],
+            "id": 6,
+            "image": Object {
+              "alt": "Scroll Versions for Confluence",
+              "src": "assets/pr_scversions.jpg",
+            },
+            "info": Array [
+              Object {
+                "label": "role",
+                "text": "Software Engineer",
+                "url": "",
+              },
+              Object {
+                "label": "company",
+                "text": "K15t Software",
+                "url": "https://www.k15t.com",
+              },
+              Object {
+                "label": "description",
+                "text": "Scroll Versions is the engine that powers great documentation. It takes management, authoring, and publishing in Confluence to new levels of ease and flexibility. The work on the project included moving code towards new technologies, bugfix, refactoring, writing tests, and developing new features with a focus on usability",
+                "url": "",
+              },
+            ],
+            "name": "Scroll Versions for Confluence",
+            "url": "https://marketplace.atlassian.com/apps/1210818/scroll-versions-for-confluence",
+          },
+          Object {
+            "experiments": Array [],
+            "id": 7,
+            "image": Object {
+              "alt": "Scroll Translations for Confluence",
+              "src": "assets/pr_sctranslations.jpg",
+            },
+            "info": Array [
+              Object {
+                "label": "role",
+                "text": "Software Engineer",
+                "url": "",
+              },
+              Object {
+                "label": "company",
+                "text": "K15t Software",
+                "url": "https://www.k15t.com",
+              },
+              Object {
+                "label": "description",
+                "text": "Scroll Translations helps you manage and deliver your Confluence content to a global audience. Manage multiple languages of your documentation in a single space. The work on the project included moving code towards new technologies, bugfix, refactoring, writing tests and developing new features with a focus on usability",
+                "url": "",
+              },
+            ],
+            "name": "Scroll Translations for Confluence",
+            "url": "https://marketplace.atlassian.com/apps/1211616/scroll-translations-for-confluence",
+          },
+          Object {
+            "experiments": Array [
+              Object {
+                "id": 1,
+                "image": "assets/exp_name.jpg",
+                "label": "title",
+                "url": "",
+              },
+              Object {
+                "id": 2,
+                "image": "assets/exp_glitch.jpg",
+                "label": "Glitch",
+                "url": "https://codepen.io/egor-sorokin/pen/xXpGzw",
+              },
+              Object {
+                "id": 3,
+                "image": "assets/exp_shapes.jpg",
+                "label": "Geometric shapes",
+                "url": "http://threejs-examples-egor.herokuapp.com/geometric-shapes/",
+              },
+              Object {
+                "id": 4,
+                "image": "assets/exp_logo.jpg",
+                "label": "Logo",
+                "url": "",
+              },
+              Object {
+                "id": 5,
+                "image": "assets/exp_loader.jpg",
+                "label": "Loader",
+                "url": "http://threejs-examples-egor.herokuapp.com/loader/",
+              },
+              Object {
+                "id": 6,
+                "image": "assets/exp_grid.jpg",
+                "label": "Grid",
+                "url": "https://codepen.io/egor-sorokin/pen/yzKpBL",
+              },
+            ],
+            "id": 8,
+            "image": Object {
+              "alt": "",
+              "src": "",
+            },
+            "info": Array [
+              Object {
+                "label": "role",
+                "text": "—",
+                "url": "",
+              },
+              Object {
+                "label": "company",
+                "text": "—",
+                "url": "",
+              },
+              Object {
+                "label": "description",
+                "text": "Set of own experiments hosted on Codepen and Heroku",
+                "url": "",
+              },
+            ],
+            "name": "Experiments",
+            "url": "",
+          },
+        ],
+      }
+    }
+  />
   <Contact
+    data={
+      Object {
+        "personData": Object {
+          "email": "example@admin.com",
+          "first_name": "Egor",
+          "id": 1,
+          "last_name": "Sorokin",
+          "socials": Object {
+            "items": Array [
+              Object {
+                "id": 1,
+                "text": "GitHub",
+                "url": "https://github.com/egor-sorokin",
+              },
+              Object {
+                "id": 2,
+                "text": "CodePen",
+                "url": "https://codepen.io/egor-sorokin/#",
+              },
+              Object {
+                "id": 3,
+                "text": "Heroku",
+                "url": "http://threejs-examples-egor.herokuapp.com/",
+              },
+              Object {
+                "id": 4,
+                "text": "LinkedIn",
+                "url": "https://www.linkedin.com/in/egor-sorokin-1b13ba105",
+              },
+            ],
+            "title": "socials",
+          },
+          "summary": Array [
+            Object {
+              "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds",
+              "title": "introduction",
+            },
+            Object {
+              "text": "This website was design and developed by Egor Sorokin to collect all his projects at one place. The website itself is built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others",
+              "title": "purpose of the website",
+            },
+          ],
+        },
+      }
+    }
     toggleAboutSection={[Function]}
   />
 </div>

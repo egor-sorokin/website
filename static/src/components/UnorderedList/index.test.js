@@ -57,9 +57,7 @@ describe('<UnorderedList />', () => {
 
 
     it('renders masked link', () => {
-      console.log(component.debug());
       component.setProps({type: LINK_MASKED});
-      console.log(component.debug());
 
       expect('items' in component.props()).toBeTruthy();
       expect('type' in component.props()).toBeTruthy();

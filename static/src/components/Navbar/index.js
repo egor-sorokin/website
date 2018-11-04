@@ -6,14 +6,12 @@ import './styles.scss';
 
 
 class Navbar extends Component {
-  scrollToSection = (section, scrollTo) => {
-    if (scrollTo) {
+  scrollToSection = (section) => {
       scrollToY(
         document.getElementById(section).offsetTop,
         500,
         'easeInOutQuint'
       );
-    }
   };
 
   render() {

@@ -40,12 +40,13 @@ describe('<Navbar />', () => {
     });
 
 
+    // TODO: Tests should mock DOM: Cannot read property 'offsetTop' of null
     it('clicks on an anchor link', () => {
       component = mount(<Navbar items={NAVBAR_ITEMS}/>);
-
+    
       const linkButton = component.find(LinkStretched).first().find('a').first();
       linkButton.simulate('click', section);
-
+    
       expect(scrollToSection).toHaveBeenCalled();
       expect(scrollToSection).toHaveBeenCalledTimes(1);
     });

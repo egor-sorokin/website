@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<About /> base tests matches snapshot 1`] = `
+<div>
+  <section
+    className="about text-c-mercury-light"
+  >
+    <div
+      className="about__item about__item--left"
+    >
+      <div
+        className="line line--top"
+      />
+      <Logo />
+      <div
+        className="line line--bottom"
+      />
+    </div>
+    <div
+      className="about__item about__item--middle"
+    >
+      <h1
+        className="about__title font-s-36"
+      >
+        undefined undefined
+      </h1>
+      <Summary
+        summary={Array []}
+      />
+    </div>
+    <div
+      className="about__item about__item--right"
+    >
+      <OrderedList
+        items={Array []}
+        title=""
+        type="mask"
+      />
+    </div>
+    <div
+      className="button-close"
+    >
+      <LinkStretched
+        cssClasses="button-close__link font-s-12-secondary text-c-mercury-light"
+        onClick={[Function]}
+        target=""
+        text="Close"
+        url=""
+      />
+    </div>
+  </section>
+</div>
+`;

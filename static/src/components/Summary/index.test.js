@@ -8,12 +8,12 @@ describe('<Summary />', () => {
   let component;
   const summary = [
     {
-      "title": "test title",
-      "text": "test text"
+      title: "test title",
+      text: "test text"
     },
     {
-      "title": "test title 2",
-      "text": "test text 2"
+      title: "test title 2",
+      text: "test text 2"
     }
   ];
 
@@ -45,8 +45,8 @@ describe('<Summary />', () => {
       component = shallow(<Summary summary={summary}/>);
 
       expect(component.find('li')).toHaveLength(2);
-      expect(component.find('li').at(0).find('.summary__title').text()).toEqual(summary.title);
-      expect(component.find('li').at(1).find('.summary__title').text()).toEqual(summary.title);
+      expect(component.find('li').at(0).find('.summary__title').text()).toEqual(summary[0].title);
+      expect(component.find('li').at(1).find('.summary__title').text()).toEqual(summary[1].title);
     });
   });
 }); 

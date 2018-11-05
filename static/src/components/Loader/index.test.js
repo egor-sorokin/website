@@ -6,8 +6,9 @@ import Loader from './index';
 describe('<Loader />', () => {
   let component;
   let spy;
-  let tweenline = {
-    play: () => {}
+  const tweenline = {
+    play: () => {
+    }
   };
 
   describe('base tests', () => {
@@ -15,11 +16,11 @@ describe('<Loader />', () => {
       component = shallow(<Loader />);
     });
 
-    
+
     it('renders without crashing', () => {
       expect(component).toBeDefined();
     });
-    
+
 
     it('matches snapshot', () => {
       expect(component).toMatchSnapshot();
@@ -62,11 +63,11 @@ describe('<Loader />', () => {
     });
 
 
-    it('calls play animation', () => {
+    it('calls play an animation', () => {
       spy = jest.spyOn(tweenline, 'play');
       // eslint-disable-next-line
       component = mount(<Loader />);
-      component.setState({ loaderTween: tweenline });
+      component.setState({loaderTween: tweenline});
       component.state().loaderTween.play();
       expect(spy).toHaveBeenCalledTimes(1);
     });

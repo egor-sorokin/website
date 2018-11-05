@@ -1,9 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Contact /> matches snapshot 1`] = `
+exports[`<Contact /> base tests matches snapshot 1`] = `
 <div>
-  <p>
-    Loading...
-  </p>
+  <section
+    className="banner contact"
+  >
+    <div
+      className="contact-inner"
+    >
+      <div
+        className="contact-inner__item"
+      >
+        <Navbar
+          items={
+            Array [
+              Object {
+                "text": "Home",
+                "type": "white",
+                "url": "#home",
+              },
+              Object {
+                "text": "Projects",
+                "type": "white",
+                "url": "#projects",
+              },
+              Object {
+                "text": "Experiments",
+                "type": "white",
+                "url": "#experiments",
+              },
+            ]
+          }
+        />
+        <div
+          className="delimiter"
+        />
+      </div>
+      <div
+        className="contact-inner__item"
+      >
+        <Logo />
+      </div>
+      <div
+        className="contact-inner__item"
+      >
+        <UnorderedList
+          items={Array []}
+          title=""
+          type="mask"
+        />
+      </div>
+    </div>
+  </section>
 </div>
 `;

@@ -1,78 +1,79 @@
 // eslint-disable-next-line
-import { shallow, render, mount } from 'enzyme';
+import {shallow, render, mount} from 'enzyme';
 import React from 'react';
 import Contact from './index';
+import Logo from '../../Logo/index';
+import UnorderedList from '../../UnorderedList/index';
+import Navbar from '../../Navbar/index';
+
 
 describe('<Contact />', () => {
-  const component = shallow(<Contact />);
-  const errorMessage = 'error message';
-  const loadingIndicator = 'Loading...';
-  const personalData = {
+  let component;
+  const personData = {
     id: 1,
     first_name: 'Bob',
     last_name: 'Cat',
     email: 'example@admin.com',
-    summary: 'blablabla',
+    summary: [
+      {
+        title: 'test title',
+        text: 'test text'
+      },
+      {
+        title: 'test title 2',
+        text: 'test text 2'
+      }
+    ],
+    socials: {
+      title: 'test title',
+      items: [
+        {
+          id: 1,
+          text: 'test text 1',
+          url: 'test.urlone'
+        },
+        {
+          id: 2,
+          text: 'test text 2',
+          url: 'test.urltwo'
+        }
+      ]
+    }
   };
 
 
-  it('renders without crashing', () => {
-    shallow(<Contact />);
+  describe('base tests', () => {
+    beforeEach(() => {
+      component = shallow(<Contact />);
+    });
+
+
+    it('renders without crashing', () => {
+      expect(component).toBeDefined();
+    });
+
+
+    it('matches snapshot', () => {
+      expect(component).toMatchSnapshot();
+    });
+
+
+    it('renders 1 components', () => {
+      expect(component.children()).toHaveLength(1);
+    });
   });
 
 
-  it('matches snapshot', () => {
-    expect(component).toMatchSnapshot();
-  });
+  describe('props tests', () => {
+    it('renders data', () => {
+      component = mount(<Contact />);
+      component.setProps({personData: personData});
+      expect('personData' in component.props()).toBeTruthy();
+      expect(component.find(<Navbar />)).toBeTruthy();
+      expect(component.find(<Logo />)).toBeTruthy();
+      expect(component.find(<UnorderedList />)).toBeTruthy();
 
-
-  it('renders error message', () => {
-    component.setState({ error: errorMessage });
-
-    expect(component.state().error).toBe(errorMessage);
-    expect(component.html()).toBe(`<div><p>${component.state().error}</p></div>`);
-
-    component.setState({ error: null });
-  });
-
-
-  it('renders loading indicator', () => {
-    component.setState({ isFetching: true });
-
-    expect(component.state().isFetching).toBe(true);
-    expect(component.html()).toBe(`<div><p>${loadingIndicator}</p></div>`);
-
-    component.setState({ isFetching: false });
-  });
-
-
-  it('renders data', () => {
-    component.setState({ data: { personalData } });
-
-    expect(component.state().data.personalData).toEqual(personalData);
-
-    component.setState({ data: {} });
-  });
-
-
-  it('renders children when passed in', () => {
-    const wrapper = shallow((
-      <Contact>
-        <div className="unique" />
-      </Contact>
-    ));
-    expect(wrapper.contains(<div className="unique" />)).toEqual(true);
-  });
-
-
-  it('calls componentDidMount', () => {
-    const spy = jest.spyOn(Contact.prototype, 'componentDidMount');
-    // eslint-disable-next-line
-    const wrapper = mount(<Contact />);
-    expect(spy).toHaveBeenCalledTimes(1);
-
-    afterEach(() => {
-      spy.mockClear();
+      component.setProps({personData: {}});
     });
   });
 });

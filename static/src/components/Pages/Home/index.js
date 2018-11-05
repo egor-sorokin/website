@@ -3,9 +3,9 @@ import {TimelineMax} from 'gsap';
 import PropTypes from 'prop-types';
 import scrollToY from 'scroll-to-y';
 import ButtonExplore from './ButtonExplore';
-import LinkStretched from '../../LinkStretched/index';
+import Switcher from '../../Switcher/index';
 import {attachShowAnimation} from './animation';
-import {BUTTON_EXPLORE, BUTTON_ABOUT} from '../../../constants/index';
+import {BUTTON_EXPLORE, SWITCHER_ABOUT} from '../../../constants/index';
 import './styles.scss';
 
 
@@ -26,14 +26,12 @@ class Home extends Component {
   }
 
 
-  scrollToProjects = (section, scrollTo) => {
-    if (scrollTo) {
-      scrollToY(
-        document.getElementById(section).offsetTop,
-        500,
-        'easeInOutQuint'
-      );
-    }
+  scrollToProjects = (section) => {
+    scrollToY(
+      document.getElementById(section).offsetTop,
+      500,
+      'easeInOutQuint'
+    );
   };
 
 
@@ -45,7 +43,7 @@ class Home extends Component {
   render() {
     const {data} = this.props;
     const personData = data.personData || {};
-
+    
     return (
       <div>
         <section
@@ -60,17 +58,10 @@ class Home extends Component {
             onClick={this.scrollToProjects}
           >{BUTTON_EXPLORE.text}</ButtonExplore>
 
-          <div className="switcher switcher--white">
-            <div className="switcher__line line--top"/>
-            <div className="home__button-about">
-              <LinkStretched
-              onClick={this.clickAboutButton}
-              cssClasses="switcher__link font-s-12-secondary text-c-dune"
-              text={BUTTON_ABOUT.text}
-            ></LinkStretched>
-            </div>
-            <div className="switcher__line line--bottom"/>
-          </div>
+          <Switcher
+            switcherLink={SWITCHER_ABOUT}
+            onClick={this.clickAboutButton}
+          ></Switcher>
         </section>
       </div>
     );

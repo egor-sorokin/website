@@ -49,6 +49,10 @@ describe('<OrderedList />', () => {
       component = mount(<OrderedList items={items}/>);
     });
 
+    afterEach(() => {
+      component = '';
+    });
+
 
     it('renders 1 simple link', () => {
       expect('items' in component.props()).toBeTruthy();

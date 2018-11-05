@@ -1,78 +1,162 @@
 // eslint-disable-next-line
-import { shallow, render, mount } from 'enzyme';
+import {shallow, render, mount} from 'enzyme';
 import React from 'react';
 import About from './index';
+import Summary from '../../Summary/index';
+import OrderedList from '../../OrderedList/index';
+import Logo from '../../Logo/index';
+import LinkStretched from '../../LinkStretched/index';
+
 
 describe('<About />', () => {
-  const component = shallow(<About />);
-  const errorMessage = 'error message';
-  const loadingIndicator = 'Loading...';
-  const personalData = {
+  let component;
+  let spy;
+  const tweenline = {
+    play: () => {
+    },
+    reversed: () => {
+    }
+  };
+  const personData = {
     id: 1,
     first_name: 'Bob',
     last_name: 'Cat',
     email: 'example@admin.com',
-    summary: 'blablabla',
+    summary: [
+      {
+        title: 'test title',
+        text: 'test text'
+      },
+      {
+        title: 'test title 2',
+        text: 'test text 2'
+      }
+    ],
+    socials: {
+      title: 'test title',
+      items: [
+        {
+          id: 1,
+          text: 'test text 1',
+          url: 'test.urlone'
+        },
+        {
+          id: 2,
+          text: 'test text 2',
+          url: 'test.urltwo'
+        }
+      ]
+    }
   };
-
-
-  it('renders without crashing', () => {
-    shallow(<About />);
+  const toggleAboutSection = jest.fn(() => {});
+  const onClick = jest.fn(() => {
+    toggleAboutSection();
   });
 
 
-  it('matches snapshot', () => {
-    expect(component).toMatchSnapshot();
+  describe('base tests', () => {
+    beforeEach(() => {
+      component = shallow(<About />);
+    });
+
+
+    it('renders without crashing', () => {
+      expect(component).toBeDefined();
+    });
+
+
+    it('matches snapshot', () => {
+      expect(component).toMatchSnapshot();
+    });
+
+
+    it('renders 1 component', () => {
+      expect(component.children()).toHaveLength(1);
+    });
   });
 
 
-  it('renders error message', () => {
-    component.setState({ error: errorMessage });
+  describe('props tests', () => {
+    it('renders data', () => {
+      component = mount(<About />);
+      component.setProps({personData: personData});
+      expect('personData' in component.props()).toBeTruthy();
+      expect(component.find(<Summary />)).toBeTruthy();
+      expect(component.find(<OrderedList />)).toBeTruthy();
+      expect(component.find(<Logo />)).toBeTruthy();
+      expect(component.find(<LinkStretched />)).toBeTruthy();
+      expect(component.find('.about__title')).toBeTruthy();
 
-    expect(component.state().error).toBe(errorMessage);
-    expect(component.html()).toBe(`<div><p>${component.state().error}</p></div>`);
-
-    component.setState({ error: null });
+      component.setProps({personData: {}});
+    });
   });
 
 
-  it('renders loading indicator', () => {
-    component.setState({ isFetching: true });
-
-    expect(component.state().isFetching).toBe(true);
-    expect(component.html()).toBe(`<div><p>${loadingIndicator}</p></div>`);
-
-    component.setState({ isFetching: false });
+  describe('close button functionality tests', () => {
+    // TODO: test nested event toggleAboutSection and onClick
+    // it('clicks on the close button', () => {
+    //   spy = jest.spyOn(About.prototype, 'clickCloseButton');
+    //   component = mount(<About />);
+    //
+    //   let closeButton = component.find('.button-close__link').at(0);
+    //   closeButton.simulate('click');
+    //
+    //   expect(spy).toHaveBeenCalledTimes(1);
+    //
+    //   expect(onClick).toHaveBeenCalled();
+    //   expect(toggleAboutSection).toHaveBeenCalled();
+    //   expect(onClick).toHaveBeenCalledTimes(1);
+    //   expect(toggleAboutSection).toHaveBeenCalledTimes(1);
+    // });
   });
 
 
-  it('renders data', () => {
-    component.setState({ data: { personalData } });
+  describe('lifecycle tests', () => {
+    beforeEach(() => {
+      component = '';
+    });
 
-    expect(component.state().data.personalData).toEqual(personalData);
-
-    component.setState({ data: {} });
-  });
-
-
-  it('renders children when passed in', () => {
-    const wrapper = shallow((
-      <About>
-        <div className="unique" />
-      </About>
-    ));
-    expect(wrapper.contains(<div className="unique" />)).toEqual(true);
-  });
-
-
-  it('calls componentDidMount', () => {
-    const spy = jest.spyOn(About.prototype, 'componentDidMount');
-    // eslint-disable-next-line
-    const wrapper = mount(<About />);
-    expect(spy).toHaveBeenCalledTimes(1);
 
     afterEach(() => {
       spy.mockClear();
     });
+
+
+    it('calls play an animation', () => {
+      spy = jest.spyOn(tweenline, 'play');
+      // eslint-disable-next-line
+      component = shallow(<About isFetching={false}/>);
+      component.setState({aboutTween: tweenline});
+      component.state().aboutTween.play();
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+
+    it('calls componentDidMount', () => {
+      spy = jest.spyOn(About.prototype, 'componentDidMount');
+      // eslint-disable-next-line
+      component = shallow(<About />);
+      component.setProps({personData: personData});
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+
+    it('calls componentDidUpdate', () => {
+      spy = jest.spyOn(About.prototype, 'componentDidUpdate');
+      // eslint-disable-next-line
+      component = mount(<About />);
+      component.setProps({personData: personData});
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+
+    // it('calls componentDidUpdate', () => {
+    //   // TODO: test componentDidUpdate with param: prepProps
+    //   spy = jest.spyOn(About.prototype, 'componentDidUpdate');
+    //   // eslint-disable-next-line
+    //   component = mount(<About />);
+    //   component.setProps({personData: personData});
+    //   expect(spy).toHaveBeenCalledTimes(1);
+    // });
   });
 });

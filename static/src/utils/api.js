@@ -22,7 +22,10 @@ const fetchData = (url) => {
         return response.data;
       }
 
-      throw new Error('Something went wrong ...');
+      throw {
+        status: response.status,
+        message: "Something went wrong"
+      };
     })
 };
 

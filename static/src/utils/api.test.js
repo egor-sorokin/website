@@ -1,72 +1,79 @@
 // eslint-disable-next-line
-import { shallow, render, mount } from 'enzyme';
+import {shallow, render, mount} from 'enzyme';
 import axios from 'axios';
 import React from 'react';
-import { URL_PATH_PROJECTS } from '../constants/index';
-import Projects from '../components/Pages/Projects/index';
-import withFetching from './api';
+import {URL_PATH_PROJECTS} from '../constants/index';
+import fetchData from './api';
 
 
 jest.mock('axios', () => ({
-  get: jest.fn(() => Promise.resolve({ data: {} })),
+  get: jest.fn(
+    () => Promise.resolve(),
+    () => Promise.reject()
+  ),
 }));
 
 
-describe('WithFetching', () => {
-  const WithFetching = withFetching(URL_PATH_PROJECTS, Projects);
-  let wrapper;
+describe('fetchData tests', () => {
+  const response = {
+    status: 200,
+    data: {
+      person: {
+        id: 1,
+        first_name: 'Bob',
+        last_name: 'Cat',
+        email: 'example@admin.com',
+        summary: 'blablabla'
+      }
+    }
+  };
+  const error = {
+    status: 404,
+    message: 'Something went wrong'
+  };
 
 
-  it('checks that axios get request was called only once', () => {
+  it('checks that axios get request was called only once', async() => {
     // eslint-disable-next-line
-    wrapper = shallow(<WithFetching />);
-
-    return Promise.resolve().then(() => {}).then(() => {}).then(() => {})
-      .then(() => {
-        expect(axios.get).toHaveBeenCalledTimes(1);
-      });
-  });
-
-
-  it('should fetch projects', () => {
-    // eslint-disable-next-line
-    const projects = ['High'];
-
     axios.get.mockImplementationOnce(() =>
       Promise.resolve({
-        status: 200,
-        data: {
-          projects,
-        },
-      }));
+        status: response.status,
+        data: response.data
+      })
+    );
 
-    // eslint-disable-next-line
-    wrapper = shallow(<WithFetching />);
-
-    return Promise.resolve().then(() => {}).then(() => {}).then(() => {})
-      .then(() => {
-        expect(wrapper.state().data.projects).toEqual(projects);
-      });
+    await fetchData(URL_PATH_PROJECTS);
+    expect(axios.get).toHaveBeenCalledTimes(1);
   });
 
 
-  it('should handle response error', () => {
-    const error = 'Something went wrong ...';
-
+  it('should fetch projects', async() => {
     axios.get.mockImplementationOnce(() =>
       Promise.resolve({
-        status: 404,
-        error,
+        status: response.status,
+        data: response.data
       }));
 
-    wrapper = shallow(<WithFetching />);
-
-    return Promise.resolve().then(() => {}).then(() => {}).then(() => {})
-      .then(() => {
-        expect(wrapper.state().error).toEqual(error);
-      });
+    const result = await fetchData(URL_PATH_PROJECTS);
+    expect(result.person).toEqual(response.data.person);
+    expect(result.status).toEqual(response.data.status);
   });
 
+
+  it('should handle response error', async() => {
+    axios.get.mockImplementationOnce(() =>
+      Promise.resolve({
+        status: error.status,
+        message: error.message
+      }));
+
+    try {
+      await fetchData(URL_PATH_PROJECTS);
+    } catch (e) {
+      expect(e.message).toEqual(error.message);
+      expect(e.status).toEqual(error.status);
+    }
+  });
 
   afterEach(() => {
     axios.get.mockClear();

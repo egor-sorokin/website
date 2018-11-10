@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const ButtonExplore = props => {
+const ButtonExplore = ({cssClasses, onClick, children}) => {
   const handleClick = () => {
-    props.onClick('projects', true);
+    onClick('projects', true);
   };
 
-  let classNames = `${props.cssClasses} button button--white`;
+  let classNames = `${cssClasses} button button--white`;
 
   return (
     <div className={classNames}>
@@ -16,7 +16,7 @@ const ButtonExplore = props => {
         className="button__link font-s-12"
         onClick={handleClick}
       >
-        {props.children}
+        {children}
       </a>
     </div>
   );

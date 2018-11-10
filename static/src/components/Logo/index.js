@@ -4,7 +4,8 @@ import './styles.scss';
 
 const Logo = () => (
   <div className="logo">
-    <svg className="logo__circles" height="100" viewBox="-20 -35 150 150" width="100" xmlns="http://www.w3.org/2000/svg">
+    <svg className="logo__circles" height="100" viewBox="-20 -35 150 150" width="100"
+         xmlns="http://www.w3.org/2000/svg">
       <g fill="none" fillRule="evenodd" stroke="#ddd">
         <circle cx="44" cy="44" fill="#424242" r="43"/>
         <ellipse className="logo__circle-big" cx="54.238" cy="29.549" fill="#2d2b28" rx="25.254" ry="25.73"/>

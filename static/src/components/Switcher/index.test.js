@@ -25,7 +25,8 @@ describe('<Switcher />', () => {
       type: 'black'
     }
   };
-  const onClick = jest.fn(() => {});
+  const onClick = jest.fn(() => {
+  });
 
 
   describe('base tests', () => {

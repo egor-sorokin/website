@@ -7,11 +7,11 @@ import './styles.scss';
 
 class Navbar extends Component {
   scrollToSection = (section) => {
-      scrollToY(
-        document.getElementById(section).offsetTop,
-        500,
-        'easeInOutQuint'
-      );
+    scrollToY(
+      document.getElementById(section).offsetTop,
+      500,
+      'easeInOutQuint'
+    );
   };
 
   render() {
@@ -37,7 +37,8 @@ class Navbar extends Component {
       </ul>
     )
   }
-};
+}
+;
 
 Navbar.propTypes = {
   items: PropTypes.instanceOf(Array)

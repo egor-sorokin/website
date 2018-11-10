@@ -27,8 +27,8 @@ describe('<LinkStretched />', () => {
     it('renders without crashing', () => {
       expect(component).toBeDefined();
     });
-    
-    
+
+
     it('matches snapshot', () => {
       expect(component).toMatchSnapshot();
     });

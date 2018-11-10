@@ -71,7 +71,6 @@ describe('fetchData tests', () => {
       await fetchData(URL_PATH_PROJECTS);
     } catch (e) {
       expect(e.message).toEqual(error.message);
-      expect(e.status).toEqual(error.status);
     }
   });
 

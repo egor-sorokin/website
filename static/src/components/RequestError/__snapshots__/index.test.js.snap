@@ -2,17 +2,17 @@
 
 exports[`<RequestError /> base tests matches snapshot 1`] = `
 <div
-  class="request-error"
+  className="request-error"
 >
   <div
-    class="request-error__inner"
+    className="request-error__inner"
   >
     <h3
-      class="request-error__text text-c-l-dune"
+      className="request-error__text text-c-l-dune"
     >
       Something went wrong, please contact
       <a
-        class="request-error__link"
+        className="request-error__link"
         href="https://www.linkedin.com/in/egor-sorokin-1b13ba105"
         target="_blank"
       >

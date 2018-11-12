@@ -9,18 +9,19 @@ import {LINK_MASKED} from '../../constants/index';
 describe('<OrderedList />', () => {
   let component;
   const title = 'title';
-  let items = [
+  const items = [
     {
-      "id": 1,
-      "text": "test text 1",
-      "url": "test.urlone"
+      id: 1,
+      text: 'test text 1',
+      url: 'test.urlone'
     },
     {
-      "id": 2,
-      "text": "test text 2",
-      "url": "test.urltwo"
+      id: 2,
+      text: 'test text 2',
+      url: 'test.urltwo'
     }
   ];
+
 
   describe('base tests', () => {
     beforeEach(() => {
@@ -46,22 +47,18 @@ describe('<OrderedList />', () => {
 
   describe('props tests', () => {
     beforeEach(() => {
-      component = mount(<OrderedList items={items}/>);
+      component = mount(<OrderedList items={items} />);
     });
-
-    afterEach(() => {
-      component = '';
-    });
-
 
     it('renders 1 simple link', () => {
       expect('items' in component.props()).toBeTruthy();
-      expect(component.find('li').first().childAt(0).is('a')).toBeTruthy();
+      expect(component.find('li').first().childAt(1).is('a')).toBeTruthy();
     });
 
 
     it('renders masked link', () => {
       component.setProps({type: LINK_MASKED});
+      component.update();
 
       expect('items' in component.props()).toBeTruthy();
       expect('type' in component.props()).toBeTruthy();

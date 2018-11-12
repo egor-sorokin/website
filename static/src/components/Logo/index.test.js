@@ -6,7 +6,7 @@ import Logo from './index';
 
 describe('<Logo />', () => {
   let component;
-  
+
   describe('base tests', () => {
     beforeEach(() => {
       component = shallow(<Logo />);
@@ -17,7 +17,7 @@ describe('<Logo />', () => {
       expect(component).toBeDefined();
     });
     
-    
+
     it('matches snapshot', () => {
       expect(component).toMatchSnapshot();
     });

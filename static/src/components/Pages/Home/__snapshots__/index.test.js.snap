@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<ButtonExplore /> base tests matches snapshot 1`] = `
+<div
+  className=" button button--white"
+>
+  <a
+    className="button__link font-s-12"
+    href="#projects"
+    onClick={[Function]}
+  />
+</div>
+`;
+
 exports[`<Home /> base tests matches snapshot 1`] = `
 <div>
   <section

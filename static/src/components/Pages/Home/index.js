@@ -43,7 +43,7 @@ class Home extends Component {
   render() {
     const {data} = this.props;
     const personData = data.personData || {};
-    
+
     return (
       <div>
         <section

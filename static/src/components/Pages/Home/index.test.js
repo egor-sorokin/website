@@ -3,46 +3,16 @@ import {shallow, render, mount} from 'enzyme';
 import React from 'react';
 import Home from './index';
 import ButtonExplore from './ButtonExplore';
+import Switcher from '../../Switcher/index';
 
 
 describe('<Home />', () => {
   let component;
   let spy;
-  let scrollToProjects;
-  const section = 'projects';
+  const toggleAboutSection = jest.fn(() => {
+  });
   const tweenline = {
     play: () => {
-    }
-  };
-  const personData = {
-    id: 1,
-    first_name: 'Bob',
-    last_name: 'Cat',
-    email: 'example@admin.com',
-    summary: [
-      {
-        title: 'test title',
-        text: 'test text'
-      },
-      {
-        title: 'test title 2',
-        text: 'test text 2'
-      }
-    ],
-    socials: {
-      title: 'test title',
-      items: [
-        {
-          id: 1,
-          text: 'test text 1',
-          url: 'test.urlone'
-        },
-        {
-          id: 2,
-          text: 'test text 2',
-          url: 'test.urltwo'
-        }
-      ]
     }
   };
 
@@ -89,7 +59,22 @@ describe('<Home />', () => {
   });
 
 
+  describe('props tests', () => {
+    it('clicks on about button', () => {
+      component = mount(<Home toggleAboutSection={toggleAboutSection}/>);
+
+      expect(component.find(<Switcher />)).toBeTruthy();
+      expect(component.find(<ButtonExplore />)).toBeTruthy();
+    });
+  });
+
+
   describe('inner functions tests', () => {
+    afterEach(() => {
+      spy.mockClear();
+    });
+
+
     it('calls play an animation', () => {
       spy = jest.spyOn(tweenline, 'play');
       // eslint-disable-next-line
@@ -100,17 +85,49 @@ describe('<Home />', () => {
 
       spy.mockClear();
     });
+  });
+});
 
 
-    // TODO: Tests should mock DOM: Cannot read property 'offsetTop' of null
+describe('<ButtonExplore />', () => {
+  let component;
+  const section = 'projects';
+  const onClick = jest.fn(() => {
+  });
+
+
+  describe('base tests', () => {
+    beforeEach(() => {
+      component = shallow(<ButtonExplore />);
+    });
+
+
+    it('renders without crashing', () => {
+      expect(component).toBeDefined();
+    });
+
+
+    it('matches snapshot', () => {
+      expect(component).toMatchSnapshot();
+    });
+
+
+    it('renders 1 components', () => {
+      expect(component.children()).toHaveLength(1);
+    });
+  });
+
+
+  describe('inner functions tests', () => {
     it('clicks on explore button', () => {
-      component = mount(<Home />);
-      scrollToProjects = jest.fn(() => 'mock implementation');
-    
-      const exploreButton = component.find(ButtonExplore).first().find('a').first();
+      component = mount(<ButtonExplore onClick={onClick}/>);
+
+      const exploreButton = component.find('a');
+      expect(exploreButton).toBeTruthy();
+
       exploreButton.simulate('click', section);
-      expect(scrollToProjects).toHaveBeenCalled();
-      expect(scrollToProjects).toHaveBeenCalledTimes(1);
+
+      expect(onClick).toHaveBeenCalled();
     });
   });
 });

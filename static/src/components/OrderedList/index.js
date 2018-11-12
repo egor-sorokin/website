@@ -27,7 +27,7 @@ const OrderedList = ({title, items, type}) => {
       <li
         key={item.id}
         className="orderedlist__item">
-        <div class="orderedlist__item-dash"></div>
+        <div className="orderedlist__item-dash"></div>
         <a
           href={item.url}
           target="_blank"

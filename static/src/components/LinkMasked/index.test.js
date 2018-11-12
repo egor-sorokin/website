@@ -22,7 +22,7 @@ describe('<LinkMasked />', () => {
     it('renders without crashing', () => {
       expect(component).toBeDefined();
     });
-    
+
 
     it('matches snapshot', () => {
       expect(component).toMatchSnapshot();
@@ -37,7 +37,7 @@ describe('<LinkMasked />', () => {
 
   describe('traversions tests', () => {
     beforeEach(() => {
-      component = shallow(<LinkMasked linkData={linkData} />);
+      component = shallow(<LinkMasked linkData={linkData}/>);
     });
 
 

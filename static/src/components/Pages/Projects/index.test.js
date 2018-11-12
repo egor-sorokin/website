@@ -89,8 +89,6 @@ describe('<Projects />', () => {
       expect(component.find('#experiments')).toHaveLength(1);
       expect(component.find(<Content />)).toBeTruthy();
       expect(component.find(<Switcher />)).toBeTruthy();
-
-      component.setProps({data: {}});
     });
   });
 });

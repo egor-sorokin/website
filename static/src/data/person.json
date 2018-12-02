@@ -7,11 +7,11 @@
     "summary": [
       {
         "title": "introduction",
-        "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds"
+        "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds."
       },
       {
         "title": "purpose of the website",
-        "text": "This website was design and developed by Egor Sorokin to collect all his projects at one place. The website itself is built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others"
+        "text": "This website was designed and developed by Egor Sorokin to collect all his projects in one place. It was built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others."
       }
     ],
     "socials": {

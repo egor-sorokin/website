@@ -110,33 +110,6 @@
     },
     {
       "id": 5,
-      "name": "Brand Retail OS",
-      "url": "https://www.brandretailos.com/",
-      "info": [
-        {
-          "label": "role",
-          "text": "Frontend Software Engineer (Freelance)",
-          "url": ""
-        },
-        {
-          "label": "company",
-          "text": "LIGADIGITAL",
-          "url": "https://www.ligadigital.com"
-        },
-        {
-          "label": "description",
-          "text": "Manage your entire marketing campaign end to end with BrandRetail OS. Work on this project included bugfix and an implementation of new features",
-          "url": ""
-        }
-      ],
-      "image": {
-        "src": "assets/pr_bros.jpg",
-        "alt": "Brand Retail OS"
-      },
-      "experiments": []
-    },
-    {
-      "id": 6,
       "name": "Scroll Versions for Confluence",
       "url": "https://marketplace.atlassian.com/apps/1210818/scroll-versions-for-confluence",
       "info": [
@@ -163,7 +136,7 @@
       "experiments": []
     },
     {
-      "id": 7,
+      "id": 6,
       "name": "Scroll Translations for Confluence",
       "url": "https://marketplace.atlassian.com/apps/1211616/scroll-translations-for-confluence",
       "info": [
@@ -190,7 +163,7 @@
       "experiments": []
     },
     {
-      "id": 8,
+      "id": 7,
       "name": "Experiments",
       "url": "",
       "info": [

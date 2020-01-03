@@ -37,11 +37,11 @@ exports[`<App /> base tests matches snapshot 1`] = `
           },
           "summary": Array [
             Object {
-              "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds",
+              "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds.",
               "title": "introduction",
             },
             Object {
-              "text": "This website was design and developed by Egor Sorokin to collect all his projects at one place. The website itself is built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others",
+              "text": "This website was designed and developed by Egor Sorokin to collect all his projects in one place. It was built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others.",
               "title": "purpose of the website",
             },
           ],
@@ -87,11 +87,11 @@ exports[`<App /> base tests matches snapshot 1`] = `
           },
           "summary": Array [
             Object {
-              "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds",
+              "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds.",
               "title": "introduction",
             },
             Object {
-              "text": "This website was design and developed by Egor Sorokin to collect all his projects at one place. The website itself is built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others",
+              "text": "This website was designed and developed by Egor Sorokin to collect all his projects in one place. It was built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others.",
               "title": "purpose of the website",
             },
           ],
@@ -217,33 +217,6 @@ exports[`<App /> base tests matches snapshot 1`] = `
             "experiments": Array [],
             "id": 5,
             "image": Object {
-              "alt": "Brand Retail OS",
-              "src": "assets/pr_bros.jpg",
-            },
-            "info": Array [
-              Object {
-                "label": "role",
-                "text": "Frontend Software Engineer (Freelance)",
-                "url": "",
-              },
-              Object {
-                "label": "company",
-                "text": "LIGADIGITAL",
-                "url": "https://www.ligadigital.com",
-              },
-              Object {
-                "label": "description",
-                "text": "Manage your entire marketing campaign end to end with BrandRetail OS. Work on this project included bugfix and an implementation of new features",
-                "url": "",
-              },
-            ],
-            "name": "Brand Retail OS",
-            "url": "https://www.brandretailos.com/",
-          },
-          Object {
-            "experiments": Array [],
-            "id": 6,
-            "image": Object {
               "alt": "Scroll Versions for Confluence",
               "src": "assets/pr_scversions.jpg",
             },
@@ -269,7 +242,7 @@ exports[`<App /> base tests matches snapshot 1`] = `
           },
           Object {
             "experiments": Array [],
-            "id": 7,
+            "id": 6,
             "image": Object {
               "alt": "Scroll Translations for Confluence",
               "src": "assets/pr_sctranslations.jpg",
@@ -333,7 +306,7 @@ exports[`<App /> base tests matches snapshot 1`] = `
                 "url": "https://codepen.io/egor-sorokin/pen/yzKpBL",
               },
             ],
-            "id": 8,
+            "id": 7,
             "image": Object {
               "alt": "",
               "src": "",
@@ -397,11 +370,11 @@ exports[`<App /> base tests matches snapshot 1`] = `
           },
           "summary": Array [
             Object {
-              "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds",
+              "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds.",
               "title": "introduction",
             },
             Object {
-              "text": "This website was design and developed by Egor Sorokin to collect all his projects at one place. The website itself is built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others",
+              "text": "This website was designed and developed by Egor Sorokin to collect all his projects in one place. It was built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others.",
               "title": "purpose of the website",
             },
           ],

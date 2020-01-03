@@ -18,7 +18,10 @@ exports[`<Content /> base tests matches snapshot 1`] = `
     className="col col--right"
   >
     <img
+      alt=""
       className="image"
+      src=""
+      title=""
     />
   </div>
 </section>

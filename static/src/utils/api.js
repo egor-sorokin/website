@@ -1,15 +1,13 @@
 import axios from 'axios';
 // import { DEFAULT_API_URL } from '../constants/index';
-import {API_DELAY} from '../constants/index';
+import { API_DELAY } from '../constants/index';
 
 
-const timeout = (ms, promise) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      promise.then(resolve, reject)
-    }, ms);
-  })
-};
+const timeout = (ms, promise) => new Promise((resolve, reject) => {
+  setTimeout(() => {
+    promise.then(resolve, reject);
+  }, ms);
+});
 
 
 const fetchData = (url) => {
@@ -22,8 +20,8 @@ const fetchData = (url) => {
         return response.data;
       }
 
-      throw new Error ("Something went wrong");
-    })
+      throw new Error('Something went wrong');
+    });
 };
 
 

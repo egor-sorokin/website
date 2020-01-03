@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Home from '../Pages/Home/index';
 import Contact from '../Pages/Contact/index';
 import About from '../Pages/About/index';
@@ -6,7 +6,7 @@ import Projects from '../Pages/Projects/index';
 import Loader from '../Loader/index';
 import RequestError from '../RequestError/index';
 import fetchData from '../../utils/api';
-import {URL_PATH_PERSON_DATA, URL_PATH_PROJECTS} from '../../constants/index';
+import { URL_PATH_PERSON_DATA, URL_PATH_PROJECTS } from '../../constants/index';
 
 
 class App extends Component {
@@ -18,18 +18,18 @@ class App extends Component {
       projectsData: {},
       isOpenedAbout: false,
       isFetching: true,
-      error: null
-    }
+      error: null,
+    };
   }
 
 
   componentDidMount() {
     this._fetchData();
-  };
+  }
 
 
   _fetchData() {
-    this.setState({isFetching: true});
+    this.setState({ isFetching: true });
 
     const promisePersonData = fetchData(URL_PATH_PERSON_DATA);
     const promiseProjectsData = fetchData(URL_PATH_PROJECTS);
@@ -39,25 +39,25 @@ class App extends Component {
         this.setState({
           isFetching: false,
           personData: results[0],
-          projectsData: results[1]
-        })
+          projectsData: results[1],
+        });
       })
-      .catch(error => this.setState({error: error.message, isFetching: false}))
+      .catch(error => this.setState({ error: error.message, isFetching: false }));
   }
 
 
   toggleAboutSection = () => {
-    this.setState({isOpenedAbout: !this.state.isOpenedAbout});
+    this.setState({ isOpenedAbout: !this.state.isOpenedAbout });
   };
 
 
   render() {
     if (this.state.error) {
-      return <RequestError></RequestError>;
+      return <RequestError />;
     }
 
     if (this.state.isFetching) {
-      return <Loader></Loader>;
+      return <Loader />;
     }
 
     return (
@@ -81,7 +81,7 @@ class App extends Component {
           toggleAboutSection={this.toggleAboutSection}
         />
       </div>
-    )
+    );
   }
 }
 

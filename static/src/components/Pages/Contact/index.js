@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Logo from '../../Logo/index';
 import UnorderedList from '../../UnorderedList/index';
 import Navbar from '../../Navbar/index';
-import {NAVBAR_ITEMS, LINK_MASKED} from '../../../constants/index';
+import { NAVBAR_ITEMS, LINK_MASKED } from '../../../constants/index';
 import './styles.scss';
 
 
-const Contact = ({data}) => {
+const Contact = ({ data }) => {
   const personData = data.personData || {};
   const socials = personData.socials || [];
 
@@ -19,7 +19,7 @@ const Contact = ({data}) => {
             <Navbar
               items={NAVBAR_ITEMS}
             />
-            <div className="delimiter"/>
+            <div className="delimiter" />
           </div>
           <div className="contact-inner__item">
             <Logo />
@@ -39,11 +39,15 @@ const Contact = ({data}) => {
 
 
 Contact.propTypes = {
-  data: PropTypes.shape({}),
+  data: PropTypes.shape({
+    personData: PropTypes.shape({}),
+  }),
 };
 
 Contact.defaultProps = {
-  data: {}
+  data: {
+    personData: {},
+  },
 };
 
 

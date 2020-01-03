@@ -12,6 +12,7 @@ exports[`<LinkMasked /> base tests matches snapshot 1`] = `
   >
     <a
       className="link-masked__text "
+      href=""
       target=""
     />
   </div>

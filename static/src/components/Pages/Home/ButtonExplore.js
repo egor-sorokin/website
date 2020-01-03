@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const ButtonExplore = ({cssClasses, onClick, children}) => {
+const ButtonExplore = ({ cssClasses, onClick, children }) => {
   const handleClick = () => {
     onClick('projects', true);
   };
 
-  let classNames = `${cssClasses} button button--white`;
+  const classNames = `${cssClasses} button button--white`;
 
   return (
     <div className={classNames}>
@@ -26,9 +26,9 @@ ButtonExplore.propTypes = {
   cssClasses: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
+    PropTypes.node,
   ]),
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 
@@ -36,7 +36,7 @@ ButtonExplore.defaultProps = {
   cssClasses: '',
   children: [],
   onClick: () => {
-  }
+  },
 };
 
 export default ButtonExplore;

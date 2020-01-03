@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import scrollToY from 'scroll-to-y';
 import LinkStretched from '../LinkStretched/index';
@@ -10,16 +10,16 @@ class Navbar extends Component {
     scrollToY(
       document.getElementById(section).offsetTop,
       500,
-      'easeInOutQuint'
+      'easeInOutQuint',
     );
   };
 
   render() {
-    const {items} = this.props;
+    const { items } = this.props;
     const cssClassesLinkStretched = 'navbar__text font-s-12-secondary text-c-mercury-light';
     const navbarItems = items.map((item, i) => (
       <li
-        key={i+1}
+        key={i + 1}
         className="navbar__item"
       >
         <LinkStretched
@@ -27,7 +27,7 @@ class Navbar extends Component {
           url={item.url}
           text={item.text}
           onClick={this.scrollToSection}
-        ></LinkStretched>
+        />
       </li>
     ));
 
@@ -35,17 +35,17 @@ class Navbar extends Component {
       <ul className="navbar">
         {navbarItems}
       </ul>
-    )
+    );
   }
 }
-;
+
 
 Navbar.propTypes = {
-  items: PropTypes.instanceOf(Array)
+  items: PropTypes.instanceOf(Array),
 };
 
 Navbar.defaultProps = {
-  items: []
+  items: [],
 };
 
 export default Navbar;

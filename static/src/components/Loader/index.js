@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {TimelineMax} from 'gsap';
-import {attachHideAnimation} from './animation';
+import React, { Component } from 'react';
+import { TimelineMax } from 'gsap';
+import { attachHideAnimation } from './animation';
 import './styles.scss';
 
 class Loader extends Component {
@@ -12,7 +12,7 @@ class Loader extends Component {
 
 
   componentDidMount() {
-    this.loaderTween = new TimelineMax({paused: true});
+    this.loaderTween = new TimelineMax({ paused: true });
     attachHideAnimation(this.loaderTween);
   }
 

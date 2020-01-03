@@ -5,35 +5,35 @@ export const API_DELAY = 200;
 export const LINK_MASKED = 'mask';
 export const BUTTON_EXPLORE = {
   url: '',
-  text: 'Explore'
+  text: 'Explore',
 };
 export const BUTTON_CLOSE = {
   text: 'Close',
-  url: ''
+  url: '',
 };
 export const SWITCHER_ABOUT = {
   text: 'About',
-  type: 'white'
+  type: 'white',
 };
 export const SWITCHER_PROJECTS = {
   text: 'Launch',
-  type: 'black'
+  type: 'black',
 };
 export const NAVBAR_ITEMS = [
   {
     url: '#home',
     text: 'Home',
-    type: 'white'
+    type: 'white',
   },
   {
     url: '#projects',
     text: 'Projects',
-    type: 'white'
+    type: 'white',
   },
   {
     url: '#experiments',
     text: 'Experiments',
-    type: 'white'
-  }
+    type: 'white',
+  },
 ];
 

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 
-const LinkStretched = ({text, url, target, cssClasses, onClick}) => {
+const LinkStretched = ({
+  text, url, target, cssClasses, onClick,
+}) => {
   const handleClick = (event) => {
     if (!url) {
       event.preventDefault();
@@ -20,8 +22,9 @@ const LinkStretched = ({text, url, target, cssClasses, onClick}) => {
       target={target}
       onClick={handleClick}
       className={`${cssClasses} link-stretched`}
-    >{text}</a>
-  )
+    >{text}
+    </a>
+  );
 };
 
 
@@ -30,7 +33,7 @@ LinkStretched.propTypes = {
   cssClasses: PropTypes.string,
   text: PropTypes.string,
   url: PropTypes.string,
-  target: PropTypes.string
+  target: PropTypes.string,
 };
 
 LinkStretched.defaultProps = {
@@ -39,7 +42,7 @@ LinkStretched.defaultProps = {
   url: '',
   target: '',
   onClick: () => {
-  }
+  },
 };
 
 

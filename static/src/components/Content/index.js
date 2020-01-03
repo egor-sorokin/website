@@ -5,7 +5,9 @@ import ImageGrid from '../ImageGrid/index';
 import './styles.scss';
 
 
-const Content = ({name, info, image, experiments}) => (
+const Content = ({
+  name, info, image, experiments,
+}) => (
   <section className="project">
     <div className="col col--left">
       <h1 className="font-s-40">
@@ -17,11 +19,12 @@ const Content = ({name, info, image, experiments}) => (
     </div>
     <div className="col col--right">
       {experiments.length === 0 ? (
-        <img className="image"
-             title={image.alt}
-             alt={image.alt}
-             src={image.src}>
-        </img>
+        <img
+          className="image"
+          title={image.alt}
+          alt={image.alt}
+          src={image.src}
+        />
       ) : (
         <ImageGrid
           gridData={experiments}
@@ -33,14 +36,20 @@ const Content = ({name, info, image, experiments}) => (
 
 Content.propTypes = {
   name: PropTypes.string,
-  image: PropTypes.shape({}),
+  image: PropTypes.shape({
+    alt: PropTypes.string,
+    src: PropTypes.string,
+  }),
   info: PropTypes.instanceOf(Array),
   experiments: PropTypes.instanceOf(Array),
 };
 
 Content.defaultProps = {
   name: '',
-  image: {},
+  image: {
+    alt: '',
+    src: '',
+  },
   info: [],
   experiments: [],
 };

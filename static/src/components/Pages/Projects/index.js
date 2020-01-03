@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Content from '../../Content/index';
 import Switcher from '../../Switcher/index';
-import {SWITCHER_PROJECTS} from '../../../constants/index';
+import { SWITCHER_PROJECTS } from '../../../constants/index';
 import './styles.scss';
 
 
-const Projects = ({data}) => {
+const Projects = ({ data }) => {
   const projects = data.projects || [];
 
   const projectsComponent = projects.map((project, i) => {
@@ -51,11 +51,15 @@ const Projects = ({data}) => {
 
 
 Projects.propTypes = {
-  data: PropTypes.shape({})
+  data: PropTypes.shape({
+    projects: PropTypes.shape({}),
+  }),
 };
 
 Projects.defaultProps = {
-  data: {}
+  data: {
+    projects: {},
+  },
 };
 
 

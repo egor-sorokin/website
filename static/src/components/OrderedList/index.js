@@ -1,40 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LinkMasked from '../LinkMasked/index';
-import {LINK_MASKED} from '../../constants/index';
+import { LINK_MASKED } from '../../constants/index';
 import './styles.scss';
 
 
-const OrderedList = ({title, items, type}) => {
-  const cssClassesLinkMasked = "orderedlist__text font-s-18 text-c-mercury-light";
+const OrderedList = ({ title, items, type }) => {
+  const cssClassesLinkMasked = 'orderedlist__text font-s-18 text-c-mercury-light';
   const orderedListItems = items.map((item) => {
     if (type === LINK_MASKED) {
       return (
         <li
           key={item.id}
-          className="orderedlist__item">
-          <div className="orderedlist__item-dash"></div>
+          className="orderedlist__item"
+        >
+          <div className="orderedlist__item-dash" />
           <LinkMasked
             linkData={item}
             cssClasses={cssClassesLinkMasked}
             target="_blank"
-          ></LinkMasked>
+          />
         </li>
-      )
+      );
     }
 
     return (
       <li
         key={item.id}
-        className="orderedlist__item">
-        <div className="orderedlist__item-dash"></div>
+        className="orderedlist__item"
+      >
+        <div className="orderedlist__item-dash" />
         <a
           href={item.url}
           target="_blank"
           className="orderedlist__text"
-        >{item.name}</a>
+        >{item.name}
+        </a>
       </li>
-    )
+    );
   });
 
   return (
@@ -44,19 +47,19 @@ const OrderedList = ({title, items, type}) => {
         {orderedListItems}
       </ol>
     </div>
-  )
+  );
 };
 
 OrderedList.propTypes = {
   title: PropTypes.string,
   items: PropTypes.instanceOf(Array),
-  type: PropTypes.string
+  type: PropTypes.string,
 };
 
 OrderedList.defaultProps = {
   title: '',
   items: [],
-  type: ''
+  type: '',
 };
 
 export default OrderedList;

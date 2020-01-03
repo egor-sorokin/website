@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import {TimelineMax} from 'gsap';
+import React, { Component } from 'react';
+import { TimelineMax } from 'gsap';
 import PropTypes from 'prop-types';
 import scrollToY from 'scroll-to-y';
 import ButtonExplore from './ButtonExplore';
 import Switcher from '../../Switcher/index';
-import {attachShowAnimation} from './animation';
-import {BUTTON_EXPLORE, SWITCHER_ABOUT} from '../../../constants/index';
+import { attachShowAnimation } from './animation';
+import { BUTTON_EXPLORE, SWITCHER_ABOUT } from '../../../constants/index';
 import './styles.scss';
 
 
@@ -30,7 +30,7 @@ class Home extends Component {
     scrollToY(
       document.getElementById(section).offsetTop,
       500,
-      'easeInOutQuint'
+      'easeInOutQuint',
     );
   };
 
@@ -41,27 +41,29 @@ class Home extends Component {
 
 
   render() {
-    const {data} = this.props;
+    const { data } = this.props;
     const personData = data.personData || {};
 
     return (
       <div>
         <section
           id="home"
-          className="banner home text-c-mercury-light">
+          className="banner home text-c-mercury-light"
+        >
           <h3 className="home__name font-s-36">
-            {personData.first_name + ' ' + personData.last_name}
+            {`${personData.first_name} ${personData.last_name}`}
           </h3>
 
           <ButtonExplore
             cssClasses="home__button-explore"
             onClick={this.scrollToProjects}
-          >{BUTTON_EXPLORE.text}</ButtonExplore>
+          >{BUTTON_EXPLORE.text}
+          </ButtonExplore>
 
           <Switcher
             switcherLink={SWITCHER_ABOUT}
             onClick={this.clickAboutButton}
-          ></Switcher>
+          />
         </section>
       </div>
     );
@@ -71,15 +73,19 @@ class Home extends Component {
 
 Home.propTypes = {
   isFetching: PropTypes.bool,
-  data: PropTypes.shape({}),
-  toggleAboutSection: PropTypes.func
+  data: PropTypes.shape({
+    personData: PropTypes.shape({}),
+  }),
+  toggleAboutSection: PropTypes.func,
 };
 
 Home.defaultProps = {
   isFetching: true,
-  data: {},
+  data: {
+    personData: {},
+  },
   toggleAboutSection: () => {
-  }
+  },
 };
 
 

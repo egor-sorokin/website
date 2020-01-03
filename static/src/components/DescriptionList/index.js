@@ -4,12 +4,13 @@ import LinkMasked from '../LinkMasked/index';
 import './styles.scss';
 
 
-const DescriptionList = ({listData}) => {
-  const cssClassesLinkMasked = "link-masked--white font-s-20 text-c-l-dune";
+const DescriptionList = ({ listData }) => {
+  const cssClassesLinkMasked = 'link-masked--white font-s-20 text-c-l-dune';
   const component = listData.map((item, i) => (
     <li
-      key={i+1}
-      className="description-list__item item">
+      key={i + 1}
+      className="description-list__item item"
+    >
       <h6 className="item__title font-s-12-secondary">
         {item.label}
       </h6>
@@ -19,7 +20,7 @@ const DescriptionList = ({listData}) => {
             linkData={item}
             cssClasses={cssClassesLinkMasked}
             target="_blank"
-          ></LinkMasked>
+          />
         </div>
       ) : (
         <p className="item__plain-text font-s-20 text-c-l-dune">

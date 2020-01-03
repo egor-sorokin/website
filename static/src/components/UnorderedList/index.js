@@ -1,39 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LinkMasked from '../LinkMasked/index';
-import {LINK_MASKED} from '../../constants/index';
+import { LINK_MASKED } from '../../constants/index';
 import './styles.scss';
 
 
-const UnorderedList = ({title, items, type}) => {
-  const cssClassesLinkMasked = "unorderedlist__text font-s-18 text-c-mercury-light";
+const UnorderedList = ({ title, items, type }) => {
+  const cssClassesLinkMasked = 'unorderedlist__text font-s-18 text-c-mercury-light';
   const unorderedListItems = items.map((item) => {
     if (type === LINK_MASKED) {
       return (
         <li
           key={item.id}
-          className="unorderedlist__item">
+          className="unorderedlist__item"
+        >
           <LinkMasked
             linkData={item}
             cssClasses={cssClassesLinkMasked}
             target="_blank"
-          ></LinkMasked>
+          />
         </li>
-      )
+      );
     }
 
     return (
       <li
         key={item.id}
-        className="unorderedlist__item">
+        className="unorderedlist__item"
+      >
         <a
           href={item.url}
           target="_blank"
-          className="unorderedlist__text">
+          className="unorderedlist__text"
+        >
           {item.name}
         </a>
       </li>
-    )
+    );
   });
 
   return (
@@ -43,19 +46,19 @@ const UnorderedList = ({title, items, type}) => {
         {unorderedListItems}
       </ul>
     </div>
-  )
+  );
 };
 
 UnorderedList.propTypes = {
   title: PropTypes.string,
   items: PropTypes.instanceOf(Array),
-  type: PropTypes.string
+  type: PropTypes.string,
 };
 
 UnorderedList.defaultProps = {
   title: '',
   items: [],
-  type: ''
+  type: '',
 };
 
 export default UnorderedList;

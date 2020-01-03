@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 
-const LinkStretched = ({linkData, cssClasses, target}) => (
+const LinkStretched = ({ linkData, cssClasses, target }) => (
   <div className="link-masked">
     <span className={`link-masked__placeholder ${cssClasses}`}>{linkData.text}</span>
     <div className="link-masked__mask">
@@ -19,15 +19,21 @@ const LinkStretched = ({linkData, cssClasses, target}) => (
 );
 
 LinkStretched.propTypes = {
-  linkData: PropTypes.shape({}),
+  linkData: PropTypes.shape({
+    url: PropTypes.string,
+    text: PropTypes.string,
+  }),
   cssClasses: PropTypes.string,
-  target: PropTypes.string
+  target: PropTypes.string,
 };
 
 LinkStretched.defaultProps = {
-  linkData: {},
+  linkData: {
+    url: '',
+    text: '',
+  },
   cssClasses: '',
-  target: ''
+  target: '',
 };
 
 export default LinkStretched;

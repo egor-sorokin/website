@@ -11,7 +11,8 @@ const RequestError = () => (
           href="https://www.linkedin.com/in/egor-sorokin-1b13ba105"
           target="_blank"
           className="request-error__link"
-        > administrator</a>
+        > administrator
+        </a>
       </h3>
     </div>
   </div>

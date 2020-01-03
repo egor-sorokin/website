@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LinkStretched from  '../LinkStretched/index'
+import LinkStretched from '../LinkStretched/index';
 import './styles.scss';
 
 
-const Switcher = ({data, switcherLink, onClick}) => {
+const Switcher = ({ data, switcherLink, onClick }) => {
   let link;
-  let {type, text} = switcherLink;
+  const { type, text } = switcherLink;
 
   if (text && text.toLowerCase() === 'about') {
     link = (
@@ -14,7 +14,7 @@ const Switcher = ({data, switcherLink, onClick}) => {
         cssClasses="switcher__link font-s-12-secondary text-c-mercury-light"
         text={text}
         onClick={onClick}
-      ></LinkStretched>
+      />
     );
   } else if ((data && data.url)) {
     link = (
@@ -24,22 +24,27 @@ const Switcher = ({data, switcherLink, onClick}) => {
         onClick={onClick}
         url={data.url}
         target="_blank"
-      ></LinkStretched>
+      />
     );
   }
 
   return (
     <div className={`switcher switcher--${type}`}>
-      <div className="switcher__line line--top"/>
+      <div className="switcher__line line--top" />
       {link}
-      {(link) && (<div className="switcher__line line--bottom"/>)}
+      {(link) && (<div className="switcher__line line--bottom" />)}
     </div>);
 };
 
 Switcher.propTypes = {
   onClick: PropTypes.func,
-  data: PropTypes.shape({}),
-  switcherLink: PropTypes.shape({}),
+  data: PropTypes.shape({
+    url: PropTypes.string,
+  }),
+  switcherLink: PropTypes.shape({
+    type: PropTypes.string,
+    text: PropTypes.string,
+  }),
 };
 
 Switcher.defaultProps = {

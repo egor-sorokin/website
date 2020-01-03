@@ -11,7 +11,7 @@
       },
       {
         "title": "purpose of the website",
-        "text": "This website was designed and developed by Egor Sorokin to collect all his projects in one place. It was built with technologies such as React, GSAP, Webpack, Jest, Enzyme and some others."
+        "text": "This website was designed and developed by Egor Sorokin to collect all his projects in one place."
       }
     ],
     "socials": {
@@ -19,23 +19,28 @@
       "items": [
         {
           "id": 1,
+          "text": "Medium",
+          "url": "https://medium.com/@egors"
+        },
+        {
+          "id": 2,
+          "text": "LinkedIn",
+          "url": "https://www.linkedin.com/in/egor-sorokin-1b13ba105"
+        },
+        {
+          "id": 3,
           "text": "GitHub",
           "url": "https://github.com/egor-sorokin"
         },
         {
-          "id": 2,
+          "id": 4,
           "text": "CodePen",
           "url": "https://codepen.io/egor-sorokin/#"
         },
         {
-          "id": 3,
+          "id": 5,
           "text": "Heroku",
           "url": "http://threejs-examples-egor.herokuapp.com/"
-        },
-        {
-          "id": 4,
-          "text": "LinkedIn",
-          "url": "https://www.linkedin.com/in/egor-sorokin-1b13ba105"
         }
       ]
     }

@@ -3,7 +3,7 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 require('@babel/polyfill').default;
@@ -55,7 +55,7 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin('dist', {} ),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css'
     }),

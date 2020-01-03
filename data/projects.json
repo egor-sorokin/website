@@ -120,7 +120,7 @@
         },
         {
           "label": "company",
-          "text": "K15t Software",
+          "text": "K15t",
           "url": "https://www.k15t.com"
         },
         {
@@ -147,7 +147,7 @@
         },
         {
           "label": "company",
-          "text": "K15t Software",
+          "text": "K15t",
           "url": "https://www.k15t.com"
         },
         {
@@ -164,6 +164,33 @@
     },
     {
       "id": 7,
+      "name": "Scroll ImageMap for Confluence",
+      "url": "https://marketplace.atlassian.com/apps/253/scroll-imagemap-for-confluence?hosting=datacenter&tab=overview",
+      "info": [
+        {
+          "label": "role",
+          "text": "Software Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "K15t",
+          "url": "https://www.k15t.com"
+        },
+        {
+          "label": "description",
+          "text": "Scroll ImageMap makes static Confluence images interactive by letting users add multiple clickable regions within them. These regions support mouseover tooltips and can connect readers to Confluence content or external URLs",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "assets/pr_scimagemap.jpg",
+        "alt": "Scroll ImageMap for Confluence"
+      },
+      "experiments": []
+    },
+    {
+      "id": 8,
       "name": "Experiments",
       "url": "",
       "info": [

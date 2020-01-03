@@ -52,14 +52,12 @@ const Projects = ({ data }) => {
 
 Projects.propTypes = {
   data: PropTypes.shape({
-    projects: PropTypes.shape({}),
+    projects: PropTypes.instanceOf(Array),
   }),
 };
 
 Projects.defaultProps = {
-  data: {
-    projects: {},
-  },
+  data: {},
 };
 
 

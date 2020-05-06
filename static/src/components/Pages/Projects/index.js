@@ -7,7 +7,6 @@ import './styles.scss';
 
 
 const Projects = ({ projects }) => {
-  console.log('projjectsdata', projects);
   const projectsComponent = projects.map(project => (
     <section
       key={project.id}

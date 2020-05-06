@@ -6,21 +6,18 @@ import Projects from '../Pages/Projects/index';
 import Loader from '../Loader/index';
 import RequestError from '../RequestError/index';
 import fetchData from '../../utils/api';
-import { URL_PATH_PERSON_DATA, URL_PATH_PROJECTS } from '../../constants/index';
+import { URL_PATH_PERSON_DATA, URL_PATH_PROJECTS } from '../../constants';
 
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      personData: {},
-      projectsData: {},
-      isOpenedAbout: false,
-      isFetching: true,
-      error: null,
-    };
-  }
+  state = {
+    person: null,
+    projects: [],
+    experimentsData: [],
+    isOpenedAbout: false,
+    isFetching: true,
+    error: null,
+  };
 
 
   componentDidMount() {
@@ -32,14 +29,17 @@ class App extends Component {
     this.setState({ isFetching: true });
 
     const promisePersonData = fetchData(URL_PATH_PERSON_DATA);
-    const promiseProjectsData = fetchData(URL_PATH_PROJECTS);
+    const promiseProjects = fetchData(URL_PATH_PROJECTS);
 
-    Promise.all([promisePersonData, promiseProjectsData])
+    Promise.all([
+      promisePersonData,
+      promiseProjects,
+    ])
       .then((results) => {
         this.setState({
           isFetching: false,
-          personData: results[0],
-          projectsData: results[1],
+          person: results[0].person,
+          projects: results[1].projects,
         });
       })
       .catch(error => this.setState({ error: error.message, isFetching: false }));
@@ -52,35 +52,43 @@ class App extends Component {
 
 
   render() {
-    if (this.state.error) {
+    const {
+      error,
+      isFetching,
+      isOpenedAbout,
+      person,
+      projects,
+    } = this.state;
+
+    if (error) {
       return <RequestError />;
     }
 
-    if (this.state.isFetching) {
+    if (isFetching) {
       return <Loader />;
     }
 
     return (
-      <div>
+      <React.Fragment>
         <About
-          isFetching={this.state.isFetching}
-          data={this.state.personData}
-          isOpenedAbout={this.state.isOpenedAbout}
+          isFetching={isFetching}
+          person={person}
+          isOpenedAbout={isOpenedAbout}
           toggleAboutSection={this.toggleAboutSection}
         />
         <Home
-          isFetching={this.state.isFetching}
-          data={this.state.personData}
+          isFetching={isFetching}
+          person={person}
           toggleAboutSection={this.toggleAboutSection}
         />
         <Projects
-          data={this.state.projectsData}
+          projects={projects}
         />
         <Contact
-          data={this.state.personData}
+          person={person}
           toggleAboutSection={this.toggleAboutSection}
         />
-      </div>
+      </React.Fragment>
     );
   }
 }

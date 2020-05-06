@@ -7,9 +7,8 @@ import { NAVBAR_ITEMS, LINK_MASKED } from '../../../constants/index';
 import './styles.scss';
 
 
-const Contact = ({ data }) => {
-  const personData = data.personData || {};
-  const socials = personData.socials || [];
+const Contact = ({ person }) => {
+  const socials = person ? person.socials : [];
 
   return (
     <div>
@@ -39,15 +38,9 @@ const Contact = ({ data }) => {
 
 
 Contact.propTypes = {
-  data: PropTypes.shape({
-    personData: PropTypes.shape({}),
-  }),
-};
-
-Contact.defaultProps = {
-  data: {
-    personData: {},
-  },
+  person: PropTypes.shape({
+    socials: PropTypes.shape({}),
+  }).isRequired,
 };
 
 

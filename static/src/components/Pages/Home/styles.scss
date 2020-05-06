@@ -35,24 +35,6 @@
       width: auto;
     }
   }
-
-  .line {
-    position: absolute;
-    right: 4%;
-
-    height: 40vh;
-    width: 1px;
-    background-color: $mercuryLight;
-
-    transform: translateX(-50%);
-
-    &--bottom {
-      bottom: 0;
-    }
-    &--top {
-      top: 0;
-    }
-  }
 }
 
 .button {

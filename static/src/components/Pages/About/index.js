@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TimelineMax } from 'gsap';
+
 import { attachToggleAnimation } from './animation';
 import OrderedList from '../../OrderedList/index';
 import Summary from '../../Summary/index';
@@ -48,20 +49,20 @@ class About extends Component {
 
     return (
       <section className="about text-c-mercury-light">
-        <div className="about__item about__item--left">
-          <div className="line line--top" />
+        <div className="about__item item item--left">
+          <div className="item__line item__line--top" />
           <Logo />
-          <div className="line line--bottom" />
+          <div className="item__line item__line--bottom" />
         </div>
-        <div className="about__item about__item--middle">
-          <h1 className="about__title font-s-36">
+        <div className="about__item item item--middle">
+          <h1 className="item__title font-s-36">
             {`${person.first_name} ${person.last_name}`}
           </h1>
           <Summary
             summary={person.summary}
           />
         </div>
-        <div className="about__item about__item--right">
+        <div className="about__item item item--right">
           <OrderedList
             title={socials.title}
             items={socials.items}

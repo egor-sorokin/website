@@ -1,34 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Content from '../../Content/index';
-import Switcher from '../../Switcher/index';
+
 import { SWITCHER_PROJECTS } from '../../../constants/index';
 import './styles.scss';
+import InnerSlide from '../../InnerSlide';
 
 
 const Projects = ({ projects }) => {
-  const projectsComponent = projects.map(project => (
-    <section
-      key={project.id}
-      className="slide-inner"
-    >
-      <div className="container">
-        <Content
-          name={project.name}
-          info={project.info}
-          image={project.image}
-          experiments={project.experiments}
-        />
-      </div>
-      <Switcher
-        data={project}
-        switcherLink={SWITCHER_PROJECTS}
-      />
-    </section>
+  const projectsComponent = projects.map(({
+    id, name, info, image, url,
+  }) => (
+    <InnerSlide
+      key={id}
+      name={name}
+      info={info}
+      image={image}
+      url={url}
+      switcherLink={SWITCHER_PROJECTS}
+    />
   ));
 
   return (
-    <main>
+    <main id="projects">
       {projectsComponent}
     </main>
   );

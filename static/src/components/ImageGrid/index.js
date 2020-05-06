@@ -1,27 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './styles.scss';
 
 
 const ImageGrid = ({ gridData }) => {
-  const component = gridData.map((item, i) => (
+  const component = gridData.map(({ id, url, image }, i) => (
     <li
-      key={item.id}
+      key={id}
       className="image-grid__item item text-c-mercury"
     >
       {(i === 0 || i === 3) ?
-        (<div
-          className="item__image image"
-          style={{ backgroundImage: `url(${item.image})` }}
-        />) : (
+        (
+          <div
+            className="item__image image"
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ) : (
           <a
-            href={item.url}
+            href={url}
             target="_blank"
             className="item__image image"
-            style={{ backgroundImage: `url(${item.image})` }}
-          />)
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        )
       }
-
     </li>
   ));
 

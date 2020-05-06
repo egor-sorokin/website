@@ -6,14 +6,15 @@ import Projects from '../Pages/Projects/index';
 import Loader from '../Loader/index';
 import RequestError from '../RequestError/index';
 import fetchData from '../../utils/api';
-import { URL_PATH_PERSON_DATA, URL_PATH_PROJECTS } from '../../constants';
+import { URL_PATH_EXPERIMENTS, URL_PATH_PERSON_DATA, URL_PATH_PROJECTS } from '../../constants';
+import Experiments from '../Pages/Experiments';
 
 
 class App extends Component {
   state = {
     person: null,
     projects: [],
-    experimentsData: [],
+    experiments: [],
     isOpenedAbout: false,
     isFetching: true,
     error: null,
@@ -30,16 +31,19 @@ class App extends Component {
 
     const promisePersonData = fetchData(URL_PATH_PERSON_DATA);
     const promiseProjects = fetchData(URL_PATH_PROJECTS);
+    const promiseExperiments = fetchData(URL_PATH_EXPERIMENTS);
 
     Promise.all([
       promisePersonData,
       promiseProjects,
+      promiseExperiments,
     ])
       .then((results) => {
         this.setState({
           isFetching: false,
           person: results[0].person,
           projects: results[1].projects,
+          experiments: results[2].experiments,
         });
       })
       .catch(error => this.setState({ error: error.message, isFetching: false }));
@@ -58,6 +62,7 @@ class App extends Component {
       isOpenedAbout,
       person,
       projects,
+      experiments,
     } = this.state;
 
     if (error) {
@@ -83,6 +88,9 @@ class App extends Component {
         />
         <Projects
           projects={projects}
+        />
+        <Experiments
+          experiments={experiments}
         />
         <Contact
           person={person}

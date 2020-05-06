@@ -27,9 +27,11 @@ class About extends Component {
 
 
   componentDidUpdate(prepProps) {
-    if (this.props.isOpenedAbout !== prepProps.isOpenedAbout) {
-      this.aboutTween.reversed(!this.props.isOpenedAbout);
-      document.body.style.overflowY = (this.props.isOpenedAbout ? 'hidden' : 'initial');
+    const { isOpenedAbout } = this.props;
+
+    if (isOpenedAbout !== prepProps.isOpenedAbout) {
+      this.aboutTween.reversed(!isOpenedAbout);
+      document.body.style.overflowY = (isOpenedAbout ? 'hidden' : 'initial');
     }
   }
 
@@ -40,63 +42,58 @@ class About extends Component {
 
 
   render() {
-    const { data } = this.props;
-    const personData = data.personData || {};
-    const socials = personData.socials || [];
+    const { person } = this.props;
+    const socials = person.socials || [];
     const cssClassesButton = 'button-close__link font-s-12-secondary text-c-mercury-light';
 
     return (
-      <div>
-        <section className="about text-c-mercury-light">
-          <div className="about__item about__item--left">
-            <div className="line line--top" />
-            <Logo />
-            <div className="line line--bottom" />
-          </div>
-          <div className="about__item about__item--middle">
-            <h1 className="about__title font-s-36">
-              {`${personData.first_name} ${personData.last_name}`}
-            </h1>
-            <Summary
-              summary={personData.summary}
-            />
-          </div>
-          <div className="about__item about__item--right">
-            <OrderedList
-              title={socials.title}
-              items={socials.items}
-              type={LINK_MASKED}
-            />
-          </div>
-          <div className="button-close">
-            <LinkStretched
-              onClick={this.clickCloseButton}
-              cssClasses={cssClassesButton}
-              text={BUTTON_CLOSE.text}
-            />
-          </div>
-        </section>
-      </div>
+      <section className="about text-c-mercury-light">
+        <div className="about__item about__item--left">
+          <div className="line line--top" />
+          <Logo />
+          <div className="line line--bottom" />
+        </div>
+        <div className="about__item about__item--middle">
+          <h1 className="about__title font-s-36">
+            {`${person.first_name} ${person.last_name}`}
+          </h1>
+          <Summary
+            summary={person.summary}
+          />
+        </div>
+        <div className="about__item about__item--right">
+          <OrderedList
+            title={socials.title}
+            items={socials.items}
+            type={LINK_MASKED}
+          />
+        </div>
+        <div className="button-close">
+          <LinkStretched
+            onClick={this.clickCloseButton}
+            cssClasses={cssClassesButton}
+            text={BUTTON_CLOSE.text}
+          />
+        </div>
+      </section>
     );
   }
 }
 
 
 About.propTypes = {
-  isFetching: PropTypes.bool,
-  data: PropTypes.shape({
-    personData: PropTypes.shape({}),
-  }),
-  isOpenedAbout: PropTypes.bool,
+  isFetching: PropTypes.bool.isRequired,
+  person: PropTypes.shape({
+    first_name: PropTypes.string,
+    last_name: PropTypes.string,
+    socials: PropTypes.shape({}),
+    summary: PropTypes.instanceOf(Array),
+  }).isRequired,
+  isOpenedAbout: PropTypes.bool.isRequired,
   toggleAboutSection: PropTypes.func,
 };
 
 About.defaultProps = {
-  data: {
-    personData: {},
-  },
-  isFetching: true,
-  isOpenedAbout: false,
   toggleAboutSection: () => {
   },
 };

@@ -5,9 +5,9 @@
   "main": "index.js",
   "homepage": "https://egor-sorokin.github.io/website/",
   "scripts": {
-    "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production",
-    "watch": "webpack --watch --mode development",
+    "dev": " DEV_MODE=true webpack-dev-server",
+    "build": "webpack",
+    "watch": "DEV_MODE=true webpack --watch",
     "lint": "eslint src",
     "test": "jest --no-cache",
     "test:watch": "jest --watch",
@@ -90,6 +90,7 @@
     "gh-pages": "^2.1.1",
     "lodash": "^4.17.15",
     "npm": "^6.13.4",
-    "scroll-to-y": "^1.0.1"
+    "scroll-to-y": "^1.0.1",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }

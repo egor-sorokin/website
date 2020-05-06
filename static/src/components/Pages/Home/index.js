@@ -41,17 +41,16 @@ class Home extends Component {
 
 
   render() {
-    const { data } = this.props;
-    const personData = data.personData || {};
+    const { person } = this.props;
 
     return (
-      <div>
+      person ? (
         <section
           id="home"
           className="banner home text-c-mercury-light"
         >
           <h3 className="home__name font-s-36">
-            {`${personData.first_name} ${personData.last_name}`}
+            {`${person.first_name} ${person.last_name}`}
           </h3>
 
           <ButtonExplore
@@ -65,25 +64,22 @@ class Home extends Component {
             onClick={this.clickAboutButton}
           />
         </section>
-      </div>
+      ) : null
     );
   }
 }
 
 
 Home.propTypes = {
-  isFetching: PropTypes.bool,
-  data: PropTypes.shape({
-    personData: PropTypes.shape({}),
-  }),
+  isFetching: PropTypes.bool.isRequired,
+  person: PropTypes.shape({
+    first_name: PropTypes.string,
+    last_name: PropTypes.string,
+  }).isRequired,
   toggleAboutSection: PropTypes.func,
 };
 
 Home.defaultProps = {
-  isFetching: true,
-  data: {
-    personData: {},
-  },
   toggleAboutSection: () => {
   },
 };

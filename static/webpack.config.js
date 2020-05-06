@@ -1,19 +1,23 @@
 const path = require('path');
-const autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 require('@babel/polyfill').default;
 
+const devMode = (process.env.DEV_MODE === 'true' || process.env.DEV_MODE === true) || false;
+const mode = devMode ? 'development' : 'production';
 const PATHS = {
   app: path.join(__dirname, '/src/index.js'),
   build: path.join(__dirname, '/dist')
 };
 
 module.exports = {
+  mode,
+  context: __dirname,
   entry: {
     main: PATHS.app
   },
@@ -21,12 +25,16 @@ module.exports = {
     path: PATHS.build,
     filename: '[name].[chunkhash].js'
   },
+  resolve: {
+    modules: ['node_modules'],
+    extensions: ['.jsx', '.js', '.html']
+  },
 
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        include: path.resolve(__dirname, 'src'),
         use: [
           {
             loader: 'babel-loader'
@@ -34,7 +42,10 @@ module.exports = {
           {
             loader: 'eslint-loader',
             options: {
-              fix: true
+              fix: true,
+              failOnWarning: false,
+              failOnError: false,
+              cache: false
             }
           }
         ]
@@ -56,6 +67,9 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 1
+    }),
     new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css'
     }),
@@ -65,11 +79,41 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html'
     }),
-    new WebpackMd5Hash(),
     new CopyWebpackPlugin([
       { from: path.join(__dirname, 'src/data/*.json'), to: 'data/', flatten: true },
       { from: path.join(__dirname, 'src/assets/*'), to: 'assets/', flatten: true },
       { from: path.join(__dirname, 'src/favicon.ico'), flatten: true }
-    ])
-  ]
+    ]),
+    new webpack.DefinePlugin({
+      'process.env': {
+        ENV: JSON.stringify(mode),
+      }
+    }),
+    ...(devMode ? [
+      new webpack.ProgressPlugin({
+        profile: true
+      })
+    ] : [])
+  ],
+  devtool: devMode ? 'cheap-source-map' : false,
+  cache: devMode,
+  watchOptions: {
+    ignored: /node_modules/,
+    aggregateTimeout: 3000
+  },
+  profile: true,
+  stats: {
+    errorDetails: true
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJSPlugin({
+        uglifyOptions: {
+          compress: {
+            drop_debugger: false
+          }
+        }
+      })
+    ]
+  }
 };

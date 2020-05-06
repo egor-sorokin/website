@@ -1,0 +1,47 @@
+{
+    "experiments": {
+        "id": 8,
+        "name": "Experiments",
+        "url": "",
+        "label": "description",
+        "text": "Set of own experiments hosted on Codepen and Heroku",
+        "showcases": [
+            {
+                "id": 1,
+                "label": "title",
+                "url": "",
+                "image": "assets/exp_name.jpg"
+            },
+            {
+                "id": 2,
+                "label": "Glitch",
+                "url": "https://codepen.io/egor-sorokin/pen/xXpGzw",
+                "image": "assets/exp_glitch.jpg"
+            },
+            {
+                "id": 3,
+                "label": "Geometric shapes",
+                "url": "http://threejs-examples-egor.herokuapp.com/geometric-shapes/",
+                "image": "assets/exp_shapes.jpg"
+            },
+            {
+                "id": 4,
+                "label": "Logo",
+                "url": "",
+                "image": "assets/exp_logo.jpg"
+            },
+            {
+                "id": 5,
+                "label": "Loader",
+                "url": "http://threejs-examples-egor.herokuapp.com/loader/",
+                "image": "assets/exp_loader.jpg"
+            },
+            {
+                "id": 6,
+                "label": "Grid",
+                "url": "https://codepen.io/egor-sorokin/pen/yzKpBL",
+                "image": "assets/exp_grid.jpg"
+            }
+        ]
+    }
+}

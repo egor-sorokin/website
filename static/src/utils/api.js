@@ -11,7 +11,7 @@ const timeout = (ms, promise) => new Promise((resolve, reject) => {
 
 
 const fetchData = (url) => {
-  // const mockDataUrl = `http://localhost:8080/src/utils/data/${url}.json`;
+  // const mockDataUrl = `http://localhost:8082/src/data/${url}.json`;
   const mockDataUrl = `https://egor-sorokin.github.io/website/data/${url}.json`;
 
   return timeout(API_DELAY, axios.get(mockDataUrl))

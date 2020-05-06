@@ -24,8 +24,7 @@
       "image": {
         "src": "assets/pr_su.jpg",
         "alt": "Southwestern University"
-      },
-      "experiments": []
+      }
     },
     {
       "id": 2,
@@ -51,8 +50,7 @@
       "image": {
         "src": "assets/pr_orbs.gif",
         "alt": "Game: Orbs"
-      },
-      "experiments": []
+      }
     },
     {
       "id": 3,
@@ -78,8 +76,7 @@
       "image": {
         "src": "assets/pr_company.jpg",
         "alt": "Company.com"
-      },
-      "experiments": []
+      }
     },
     {
       "id": 4,
@@ -105,8 +102,7 @@
       "image": {
         "src": "assets/pr_hndwiki.jpg",
         "alt": "Handsome: Wiki"
-      },
-      "experiments": []
+      }
     },
     {
       "id": 5,
@@ -132,8 +128,7 @@
       "image": {
         "src": "assets/pr_scversions.jpg",
         "alt": "Scroll Versions for Confluence"
-      },
-      "experiments": []
+      }
     },
     {
       "id": 6,
@@ -159,8 +154,7 @@
       "image": {
         "src": "assets/pr_sctranslations.jpg",
         "alt": "Scroll Translations for Confluence"
-      },
-      "experiments": []
+      }
     },
     {
       "id": 7,
@@ -186,72 +180,7 @@
       "image": {
         "src": "assets/pr_scimagemap.jpg",
         "alt": "Scroll ImageMap for Confluence"
-      },
-      "experiments": []
-    },
-    {
-      "id": 8,
-      "name": "Experiments",
-      "url": "",
-      "info": [
-        {
-          "label": "role",
-          "text": "—",
-          "url": ""
-        },
-        {
-          "label": "company",
-          "text": "—",
-          "url": ""
-        },
-        {
-          "label": "description",
-          "text": "Set of own experiments hosted on Codepen and Heroku",
-          "url": ""
-        }
-      ],
-      "image": {
-        "src": "",
-        "alt": ""
-      },
-      "experiments": [
-        {
-          "id": 1,
-          "label": "title",
-          "url": "",
-          "image": "assets/exp_name.jpg"
-        },
-        {
-          "id": 2,
-          "label": "Glitch",
-          "url": "https://codepen.io/egor-sorokin/pen/xXpGzw",
-          "image": "assets/exp_glitch.jpg"
-        },
-        {
-          "id": 3,
-          "label": "Geometric shapes",
-          "url": "http://threejs-examples-egor.herokuapp.com/geometric-shapes/",
-          "image": "assets/exp_shapes.jpg"
-        },
-        {
-          "id": 4,
-          "label": "Logo",
-          "url": "",
-          "image": "assets/exp_logo.jpg"
-        },
-        {
-          "id": 5,
-          "label": "Loader",
-          "url": "http://threejs-examples-egor.herokuapp.com/loader/",
-          "image": "assets/exp_loader.jpg"
-        },
-        {
-          "id": 6,
-          "label": "Grid",
-          "url": "https://codepen.io/egor-sorokin/pen/yzKpBL",
-          "image": "assets/exp_grid.jpg"
-        }
-      ]
+      }
     }
   ]
 }

@@ -12,6 +12,7 @@ const Projects = ({ projects }) => {
   }) => (
     <InnerSlide
       key={id}
+      slideName="projects"
       name={name}
       info={info}
       image={image}

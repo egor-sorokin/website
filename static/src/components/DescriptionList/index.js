@@ -23,9 +23,10 @@ const DescriptionList = ({ listData }) => {
           />
         </div>
       ) : (
-        <p className="item__plain-text font-f-sec font-s-20 text-c-l-dune">
-          {item.text}
-        </p>
+        <p
+          className="item__plain-text font-f-sec font-s-20 text-c-l-dune"
+          dangerouslySetInnerHTML={{ __html: item.text }}
+        />
       )}
     </li>
   ));

@@ -7,7 +7,7 @@ import './styles.scss';
 
 
 const Content = ({
-  name, info, image, experiments,
+  name, info, image, showcases, slideName,
 }) => (
   <section className="project">
     <div className="col col--left">
@@ -19,7 +19,7 @@ const Content = ({
       />
     </div>
     <div className="col col--right">
-      {experiments.length === 0 ? (
+      {slideName !== 'experiments' ? (
         <img
           className="image"
           title={image.alt}
@@ -28,7 +28,7 @@ const Content = ({
         />
       ) : (
         <ImageGrid
-          gridData={experiments}
+          gridData={showcases}
         />
       )}
     </div>
@@ -36,13 +36,14 @@ const Content = ({
 );
 
 Content.propTypes = {
+  slideName: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.shape({
     alt: PropTypes.string,
     src: PropTypes.string,
   }),
   info: PropTypes.instanceOf(Array),
-  experiments: PropTypes.instanceOf(Array),
+  showcases: PropTypes.instanceOf(Array),
 };
 
 Content.defaultProps = {
@@ -51,7 +52,7 @@ Content.defaultProps = {
     src: '',
   },
   info: [],
-  experiments: [],
+  showcases: [],
 };
 
 export default Content;

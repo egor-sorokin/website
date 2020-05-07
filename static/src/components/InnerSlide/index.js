@@ -12,14 +12,16 @@ const InnerSlide = ({
   image,
   switcherLink,
   showcases,
+  slideName,
 }) => (
   <section className="slide-inner">
     <div className="container">
       <Content
+        slideName={slideName}
         name={name}
         info={info}
         image={image}
-        experiments={showcases}
+        showcases={showcases}
       />
     </div>
     <Switcher
@@ -31,6 +33,7 @@ const InnerSlide = ({
 
 
 InnerSlide.propTypes = {
+  slideName: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   switcherLink: PropTypes.shape({}),
   info: PropTypes.instanceOf(Array),

@@ -8,6 +8,7 @@ const Experiments = ({ experiments }) => (
   <main id="experiments">
     <InnerSlide
       key="experiments"
+      slideName="experiments"
       name={experiments.name}
       info={experiments.info}
       showcases={experiments.showcases}

@@ -17,13 +17,13 @@ export const attachShowAnimation = (targetTween) => {
       1,
     )
     .fromTo(
-      '.home .switcher .line--top', 0.5,
+      '.home .switcher .logo__line--top', 0.5,
       { y: '-100%', ease: Power2.easeOut },
       { y: '0%', ease: Power2.easeOut },
       '-=0.3',
     )
     .fromTo(
-      '.home .line--bottom', 0.5,
+      '.home .logo__line--bottom', 0.5,
       { y: '100%', ease: Power2.easeOut },
       { y: '0%', ease: Power2.easeOut },
       '-=0.4',

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import DescriptionList from '../DescriptionList/index';
 import ImageGrid from '../ImageGrid/index';
 import './styles.scss';
@@ -35,7 +36,7 @@ const Content = ({
 );
 
 Content.propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   image: PropTypes.shape({
     alt: PropTypes.string,
     src: PropTypes.string,
@@ -45,7 +46,6 @@ Content.propTypes = {
 };
 
 Content.defaultProps = {
-  name: '',
   image: {
     alt: '',
     src: '',

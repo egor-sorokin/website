@@ -2,7 +2,6 @@
     "experiments": {
         "id": 8,
         "name": "Experiments",
-        "url": "",
         "label": "description",
         "text": "Set of own experiments hosted on Codepen and Heroku",
         "showcases": [

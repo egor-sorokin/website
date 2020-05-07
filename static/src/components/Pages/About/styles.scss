@@ -25,7 +25,7 @@
     padding: 15vh 10vw 5vh;
   }
 
-  &__item {
+  .item {
     display: flex;
     flex-direction: column;
 
@@ -33,6 +33,27 @@
 
     &-footer {
       margin-top: 10vh;
+    }
+    &__title {
+      text-align: center;
+    }
+    &__line {
+      position: absolute;
+      left: 50%;
+
+      height: 44vh;
+      width: 1px;
+      background-color: $mercury;
+      opacity: 0.2;
+
+      transform: translateX(-50%);
+
+      &--bottom {
+        bottom: 0;
+      }
+      &--top {
+        top: 0;
+      }
     }
     &--left {
       display: flex;
@@ -81,31 +102,6 @@
         padding-top: 0;
         padding-bottom: 0;
       }
-    }
-  }
-
-  &__title {
-    text-align: center;
-  }
-}
-
-.about {
-  .line {
-    position: absolute;
-    left: 50%;
-
-    height: 44vh;
-    width: 1px;
-    background-color: $mercury;
-    opacity: 0.2;
-
-    transform: translateX(-50%);
-
-    &--bottom {
-      bottom: 0;
-    }
-    &--top {
-      top: 0;
     }
   }
 }

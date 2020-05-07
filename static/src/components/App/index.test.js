@@ -9,6 +9,7 @@ import Contact from '../Pages/Contact/index';
 import Projects from '../Pages/Projects/index';
 import Loader from '../Loader/index';
 import RequestError from '../RequestError/index';
+import Experiments from "../Pages/Experiments";
 // import RequestError from '../RequestError/index';
 
 
@@ -20,7 +21,7 @@ describe('<App />', () => {
     first_name: 'Bob',
     last_name: 'Cat',
     email: 'example@admin.com',
-    summary: 'blablabla',
+    summary: [],
   };
   const projects = {
     id: 1,
@@ -36,9 +37,9 @@ describe('<App />', () => {
     image: {
       src: "assets/pr_su.jpg",
       alt: "Southwestern University"
-    },
-    experiments: []
+    }
   };
+  const experiments = {};
 
 
   describe('base tests', () => {
@@ -56,13 +57,14 @@ describe('<App />', () => {
     });
 
 
-    it('renders 4 components', async() => {
+    it('renders 5 components', async() => {
       // timeout is equal to api delay + 1ms
       await new Promise(res => setTimeout(() => {
         expect(component.children()).toHaveLength(4);
         expect(component.find(Home)).toBeTruthy();
         expect(component.find(About)).toBeTruthy();
         expect(component.find(Projects)).toBeTruthy();
+        expect(component.find(Experiments)).toBeTruthy();
         expect(component.find(Contact)).toBeTruthy();
 
         res();
@@ -81,7 +83,7 @@ describe('<App />', () => {
       component.setState({isFetching: true});
       expect(component.find(Loader)).toHaveLength(1);
       expect(component.state().isFetching).toBe(true);
-      component.setState({isFetching: false});
+      component.setState({isFetching: false, person: person});
     });
 
 
@@ -93,17 +95,23 @@ describe('<App />', () => {
     });
 
 
-    it('renders personData', () => {
-      component.setState({personData: {person}});
-      expect(component.state().personData.person).toEqual(person);
-      component.setState({personData: {}});
+    it('renders person', () => {
+      component.setState({person: {person}});
+      expect(component.state().person.person).toEqual(person);
+      component.setState({person: {}});
     });
 
 
-    it('renders projectsData', () => {
-      component.setState({projectsData: {projects}});
-      expect(component.state().projectsData.projects).toEqual(projects);
-      component.setState({projectsData: {}});
+    it('renders projects', () => {
+      component.setState({projects: {projects}});
+      expect(component.state().projects.projects).toEqual(projects);
+      component.setState({projects: {}});
+    });
+
+    it('renders experiments', () => {
+      component.setState({ experiments });
+      expect(component.state().experiments).toEqual(experiments);
+      component.setState({experiments: {}});
     });
   });
 

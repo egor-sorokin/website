@@ -45,7 +45,20 @@ exports[`<Contact /> base tests matches snapshot 1`] = `
         className="contact-inner__item"
       >
         <UnorderedList
-          items={Array []}
+          items={
+            Array [
+              Object {
+                "id": 1,
+                "text": "test text 1",
+                "url": "test.urlone",
+              },
+              Object {
+                "id": 2,
+                "text": "test text 2",
+                "url": "test.urltwo",
+              },
+            ]
+          }
           title=""
           type="mask"
         />

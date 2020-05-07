@@ -13,32 +13,30 @@ exports[`<ButtonExplore /> base tests matches snapshot 1`] = `
 `;
 
 exports[`<Home /> base tests matches snapshot 1`] = `
-<div>
-  <section
-    className="banner home text-c-mercury-light"
-    id="home"
+<section
+  className="banner home text-c-mercury-light"
+  id="home"
+>
+  <h3
+    className="home__name font-s-36"
   >
-    <h3
-      className="home__name font-s-36"
-    >
-      undefined undefined
-    </h3>
-    <ButtonExplore
-      cssClasses="home__button-explore"
-      onClick={[Function]}
-    >
-      Explore
-    </ButtonExplore>
-    <Switcher
-      data={Object {}}
-      onClick={[Function]}
-      switcherLink={
-        Object {
-          "text": "About",
-          "type": "white",
-        }
+    a b
+  </h3>
+  <ButtonExplore
+    cssClasses="home__button-explore"
+    onClick={[Function]}
+  >
+    Explore
+  </ButtonExplore>
+  <Switcher
+    onClick={[Function]}
+    switcherLink={
+      Object {
+        "text": "About",
+        "type": "white",
       }
-    />
-  </section>
-</div>
+    }
+    url=""
+  />
+</section>
 `;

@@ -9,7 +9,7 @@ import Navbar from '../../Navbar/index';
 
 describe('<Contact />', () => {
   let component;
-  const personData = {
+  const person = {
     id: 1,
     first_name: 'Bob',
     last_name: 'Cat',
@@ -44,7 +44,7 @@ describe('<Contact />', () => {
 
   describe('base tests', () => {
     beforeEach(() => {
-      component = shallow(<Contact />);
+      component = shallow(<Contact person={person}/>);
     });
 
 
@@ -66,14 +66,11 @@ describe('<Contact />', () => {
 
   describe('props tests', () => {
     it('renders data', () => {
-      component = mount(<Contact />);
-      component.setProps({personData: personData});
-      expect('personData' in component.props()).toBeTruthy();
+      component = mount(<Contact person={person}/>);
+      expect('person' in component.props()).toBeTruthy();
       expect(component.find(<Navbar />)).toBeTruthy();
       expect(component.find(<Logo />)).toBeTruthy();
       expect(component.find(<UnorderedList />)).toBeTruthy();
-
-      component.setProps({personData: {}});
     });
   });
 });

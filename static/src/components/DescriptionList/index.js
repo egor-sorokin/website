@@ -5,7 +5,7 @@ import './styles.scss';
 
 
 const DescriptionList = ({ listData }) => {
-  const cssClassesLinkMasked = 'link-masked--white font-s-20 text-c-l-dune';
+  const cssClassesLinkMasked = 'link-masked--white font-f-sec font-s-20 text-c-l-dune';
   const component = listData.map((item, i) => (
     <li
       key={i + 1}
@@ -23,7 +23,7 @@ const DescriptionList = ({ listData }) => {
           />
         </div>
       ) : (
-        <p className="item__plain-text font-s-20 text-c-l-dune">
+        <p className="item__plain-text font-f-sec font-s-20 text-c-l-dune">
           {item.text}
         </p>
       )}

@@ -33,9 +33,9 @@ const Switcher = ({ url, switcherLink, onClick }) => {
     <div className={`switcher switcher--${type}`}>
       { link ? (
         <React.Fragment>
-          <div className="switcher__line line" />
+          <div className="switcher__line line line--top" />
           {link}
-          <div className="switcher__line line" />
+          <div className="switcher__line line line--bottom" />
         </React.Fragment>
       ) : (
         <div className="switcher__line line line--full" />

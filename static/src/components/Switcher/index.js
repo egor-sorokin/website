@@ -31,10 +31,17 @@ const Switcher = ({ url, switcherLink, onClick }) => {
 
   return (
     <div className={`switcher switcher--${type}`}>
-      <div className="switcher__line line line--top" />
-      {link}
-      {(link) && (<div className="switcher__line line line--bottom" />)}
-    </div>);
+      { link ? (
+        <React.Fragment>
+          <div className="switcher__line line line--top" />
+          {link}
+          <div className="switcher__line line line--bottom" />
+        </React.Fragment>
+      ) : (
+        <div className="switcher__line line line--full" />
+      )}
+    </div>
+  );
 };
 
 Switcher.propTypes = {

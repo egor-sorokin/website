@@ -17,7 +17,7 @@
         },
         {
           "label": "description",
-          "text": "Southwestern is a place and time of personal growth and joint endeavor. The main goals of the partnership with Handsome were to do not just a re-branding and a re-design of the website, but also to create a set of reusable UI components for the future usage",
+          "text": "Southwestern is a place and time of personal growth and joint endeavor. The main goals of the partnership with Handsome were to do not just a re-branding and a re-design of the website, but also to create a set of reusable UI components for the future usage.",
           "url": ""
         }
       ],
@@ -43,7 +43,7 @@
         },
         {
           "label": "description",
-          "text": "The project was focused on studying Vanilla JavaScript, on the implementation of complex animations using standard tools and setting up the project infrastructure from scratch",
+          "text": "The project was focused on studying Vanilla JavaScript, on the implementation of complex animations using standard tools and setting up the project infrastructure from scratch.",
           "url": ""
         }
       ],
@@ -69,7 +69,7 @@
         },
         {
           "label": "description",
-          "text": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design their dashboard and marketing website",
+          "text": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design their dashboard and marketing website.",
           "url": ""
         }
       ],
@@ -95,7 +95,7 @@
         },
         {
           "label": "description",
-          "text": "The main idea of the project was to create a knowledge base for employees at Handsome with the support of different devices (mobile phones, tablets, desktop)",
+          "text": "The main idea of the project was to create a knowledge base for employees at Handsome with the support of different devices (mobile phones, tablets, desktop).",
           "url": ""
         }
       ],
@@ -121,12 +121,12 @@
         },
         {
           "label": "description",
-          "text": "Scroll Versions is the engine that powers great documentation. It takes management, authoring, and publishing in Confluence to new levels of ease and flexibility. The work on the project included moving code towards new technologies, bugfix, refactoring, writing tests, and developing new features with a focus on usability",
+          "text": "Scroll Versions is the engine that powers great documentation. It takes management, authoring, and publishing in Confluence to new levels of ease and flexibility. The work on the project included moving code towards new technologies, bugfix, refactoring, writing tests, and developing new features with a focus on usability.",
           "url": ""
         }
       ],
       "image": {
-        "src": "assets/pr_scversions.jpg",
+        "src": "assets/pr_sversions.png",
         "alt": "Scroll Versions for Confluence"
       }
     },
@@ -147,19 +147,19 @@
         },
         {
           "label": "description",
-          "text": "Scroll Translations helps you manage and deliver your Confluence content to a global audience. Manage multiple languages of your documentation in a single space. The work on the project included moving code towards new technologies, bugfix, refactoring, writing tests and developing new features with a focus on usability",
+          "text": "Scroll Translations helps you manage and deliver your Confluence content to a global audience. Manage multiple languages of your documentation in a single space. The work on the project included moving code towards new technologies, bugfix, refactoring, writing tests and developing new features with a focus on usability.",
           "url": ""
         }
       ],
       "image": {
-        "src": "assets/pr_sctranslations.jpg",
+        "src": "assets/pr_stranslations.png",
         "alt": "Scroll Translations for Confluence"
       }
     },
     {
       "id": 7,
-      "name": "Scroll ImageMap for Confluence",
-      "url": "https://marketplace.atlassian.com/apps/253/scroll-imagemap-for-confluence?hosting=datacenter&tab=overview",
+      "name": "Scroll Viewport for Confluence",
+      "url": "https://marketplace.atlassian.com/apps/1211636/scroll-viewport-for-confluence?hosting=datacenter&tab=overview",
       "info": [
         {
           "label": "role",
@@ -173,13 +173,39 @@
         },
         {
           "label": "description",
-          "text": "Scroll ImageMap makes static Confluence images interactive by letting users add multiple clickable regions within them. These regions support mouseover tooltips and can connect readers to Confluence content or external URLs",
+          "text": "With Scroll Viewport for Confluence, your team can collaborate on documentation in Confluence then display it online as a help center. Users can find the help they need with site-wide search and a layout designed with content fundability in mind.",
           "url": ""
         }
       ],
       "image": {
-        "src": "assets/pr_scimagemap.jpg",
+        "src": "assets/pr_sviewport.png",
         "alt": "Scroll ImageMap for Confluence"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Custom development",
+      "url": "",
+      "info": [
+        {
+          "label": "role",
+          "text": "Software Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "K15t",
+          "url": "https://www.k15t.com"
+        },
+        {
+          "label": "description",
+          "text": "Development of custom Jira and Confluence apps for medium and large size companies.",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "assets/pr_custom.png",
+        "alt": "Logos"
       }
     }
   ]

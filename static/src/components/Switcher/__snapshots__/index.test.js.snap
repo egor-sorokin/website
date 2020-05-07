@@ -5,7 +5,7 @@ exports[`<Switcher /> base tests matches snapshot 1`] = `
   className="switcher switcher--undefined"
 >
   <div
-    className="switcher__line line--top"
+    className="switcher__line line line--full"
   />
 </div>
 `;

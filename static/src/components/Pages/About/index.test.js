@@ -11,13 +11,14 @@ import LinkStretched from '../../LinkStretched/index';
 describe('<About />', () => {
   let component;
   let spy;
+
   const tweenline = {
     play: () => {
     },
     reversed: () => {
     }
   };
-  const personData = {
+  const person = {
     id: 1,
     first_name: 'Bob',
     last_name: 'Cat',
@@ -48,6 +49,8 @@ describe('<About />', () => {
       ]
     }
   };
+  const isFetching = false;
+  const isOpenedAbout = true;
   const toggleAboutSection = jest.fn(() => {
   });
   const onClick = jest.fn(() => {
@@ -57,7 +60,13 @@ describe('<About />', () => {
 
   describe('base tests', () => {
     beforeEach(() => {
-      component = shallow(<About />);
+      component = shallow(
+        <About
+          person={person}
+          isFetching={isFetching}
+          isOpenedAbout={isOpenedAbout}
+        />
+      );
     });
 
 
@@ -71,31 +80,42 @@ describe('<About />', () => {
     });
 
 
-    it('renders 1 component', () => {
-      expect(component.children()).toHaveLength(1);
+    it('renders 4 component', () => {
+      expect(component.children()).toHaveLength(4);
     });
   });
 
 
   describe('props tests', () => {
     it('renders data', () => {
-      component = mount(<About />);
-      component.setProps({personData: personData});
-      expect('personData' in component.props()).toBeTruthy();
+      component = mount(
+        <About
+          person={person}
+          isFetching={isFetching}
+          isOpenedAbout={isOpenedAbout}
+        />
+      );
+      expect('person' in component.props()).toBeTruthy();
       expect(component.find(<Summary />)).toBeTruthy();
       expect(component.find(<OrderedList />)).toBeTruthy();
       expect(component.find(<Logo />)).toBeTruthy();
       expect(component.find(<LinkStretched />)).toBeTruthy();
       expect(component.find('.about__title')).toBeTruthy();
 
-      component.setProps({personData: {}});
+      component.setProps({person: {}});
     });
   });
 
 
   describe('close button functionality tests', () => {
     it('clicks on the close button', () => {
-      component = mount(<About />);
+      component = mount(
+        <About
+          person={person}
+          isFetching={isFetching}
+          isOpenedAbout={!isOpenedAbout}
+        />
+      );
       component.setProps({toggleAboutSection: toggleAboutSection});
 
       let closeButton = component.find('.button-close .link-stretched').at(0);
@@ -122,7 +142,13 @@ describe('<About />', () => {
     it('calls play an animation', () => {
       spy = jest.spyOn(tweenline, 'play');
       // eslint-disable-next-line
-      component = shallow(<About isFetching={false}/>);
+      component = shallow(
+        <About
+          person={person}
+          isFetching={isFetching}
+          isOpenedAbout={isOpenedAbout}
+        />
+      );
       component.setState({aboutTween: tweenline});
       component.state().aboutTween.play();
       expect(spy).toHaveBeenCalledTimes(1);
@@ -132,7 +158,13 @@ describe('<About />', () => {
     it('calls reversed animation', () => {
       spy = jest.spyOn(tweenline, 'reversed');
       // eslint-disable-next-line
-      component = shallow(<About isFetching={false}/>);
+      component = shallow(
+        <About
+          person={person}
+          isFetching={isFetching}
+          isOpenedAbout={isOpenedAbout}
+        />
+      );
       component.setState({aboutTween: tweenline});
       component.state().aboutTween.reversed();
 
@@ -143,8 +175,13 @@ describe('<About />', () => {
     it('calls componentDidMount', () => {
       spy = jest.spyOn(About.prototype, 'componentDidMount');
       // eslint-disable-next-line
-      component = shallow(<About />);
-      component.setProps({personData: personData});
+      component = shallow(
+        <About
+          person={person}
+          isFetching={isFetching}
+          isOpenedAbout={isOpenedAbout}
+        />
+      );
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
@@ -152,8 +189,14 @@ describe('<About />', () => {
     it('calls componentDidUpdate', () => {
       spy = jest.spyOn(About.prototype, 'componentDidUpdate');
       // eslint-disable-next-line
-      component = mount(<About />);
-      component.setProps({personData: personData});
+      component = mount(
+        <About
+          person={person}
+          isFetching={isFetching}
+          isOpenedAbout={isOpenedAbout}
+        />
+      );
+      component.setProps({ person });
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
@@ -161,7 +204,13 @@ describe('<About />', () => {
     it('calls componentDidUpdate with updated props', () => {
       spy = jest.spyOn(About.prototype, 'componentDidUpdate');
       // eslint-disable-next-line
-      component = shallow(<About isFetching={false}/>);
+      component = shallow(
+        <About
+          person={person}
+          isFetching={isFetching}
+          isOpenedAbout={isOpenedAbout}
+        />
+      );
       component.setState({aboutTween: tweenline});
       component.setProps({isOpenedAbout: true});
 

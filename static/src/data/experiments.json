@@ -2,8 +2,7 @@
     "experiments": {
         "id": 8,
         "name": "Experiments",
-        "label": "description",
-        "text": "Set of own experiments hosted on Codepen and Heroku",
+        "info": "Set of own experiments hosted on Codepen and Heroku. For more project samples check <a href=\"https://github.com/egor-sorokin\" target=\"blank\">GitHub profile</a>.",
         "showcases": [
             {
                 "id": 1,

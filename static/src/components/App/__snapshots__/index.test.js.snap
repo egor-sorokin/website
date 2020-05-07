@@ -5,7 +5,7 @@ exports[`<App /> base tests matches snapshot 1`] = `
   <About
     data={
       Object {
-        "personData": Object {
+        "person": Object {
           "email": "example@admin.com",
           "first_name": "Egor",
           "id": 1,
@@ -55,7 +55,7 @@ exports[`<App /> base tests matches snapshot 1`] = `
   <Home
     data={
       Object {
-        "personData": Object {
+        "person": Object {
           "email": "example@admin.com",
           "first_name": "Egor",
           "id": 1,
@@ -338,7 +338,7 @@ exports[`<App /> base tests matches snapshot 1`] = `
   <Contact
     data={
       Object {
-        "personData": Object {
+        "person": Object {
           "email": "example@admin.com",
           "first_name": "Egor",
           "id": 1,

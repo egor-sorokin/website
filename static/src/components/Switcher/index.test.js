@@ -1,4 +1,4 @@
-// eslint-disable-next-line 
+// eslint-disable-next-line
 import {shallow, render, mount} from 'enzyme';
 import React from 'react';
 import Switcher from './index';
@@ -64,8 +64,8 @@ describe('<Switcher />', () => {
 
 
     it('renders switcher link', () => {
-      component.setProps({data: data.withUrl, switcherLink: switcherLink.another});
-      expect('data' in component.props()).toBeTruthy();
+      component.setProps({url: data.withUrl.url, switcherLink: switcherLink.another});
+      expect('url' in component.props()).toBeTruthy();
       expect('switcherLink' in component.props()).toBeTruthy();
       expect(component.find(LinkStretched)).toBeTruthy();
       expect(component.find(LinkStretched).find('a').text()).toEqual(switcherLink.another.text);
@@ -91,4 +91,4 @@ describe('<Switcher />', () => {
       expect(component.find('div').someWhere(n => n.hasClass('switcher--white'))).toBeTruthy();
     });
   });
-}); 
+});

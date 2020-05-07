@@ -9,6 +9,11 @@ import Switcher from '../../Switcher/index';
 describe('<Home />', () => {
   let component;
   let spy;
+  const isFetching = false;
+  const person = {
+    first_name: 'a',
+    last_name: 'b',
+  }
   const toggleAboutSection = jest.fn(() => {
   });
   const tweenline = {
@@ -19,7 +24,7 @@ describe('<Home />', () => {
 
   describe('base tests', () => {
     beforeEach(() => {
-      component = shallow(<Home />);
+      component = shallow(<Home person={person} isFetching={false}/>);
     });
 
 
@@ -34,7 +39,8 @@ describe('<Home />', () => {
 
 
     it('renders 1 components', () => {
-      expect(component.children()).toHaveLength(1);
+      console.log(component.debug());
+      expect(component.children()).toHaveLength(3);
     });
   });
 
@@ -53,7 +59,7 @@ describe('<Home />', () => {
     it('calls componentDidMount', () => {
       spy = jest.spyOn(Home.prototype, 'componentDidMount');
       // eslint-disable-next-line
-      component = shallow(<Home />);
+      component = shallow(<Home person={person} isFetching={false}/>);
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });
@@ -61,7 +67,7 @@ describe('<Home />', () => {
 
   describe('props tests', () => {
     it('clicks on about button', () => {
-      component = mount(<Home toggleAboutSection={toggleAboutSection}/>);
+      component = mount(<Home person={person} isFetching={false} toggleAboutSection={toggleAboutSection}/>);
 
       expect(component.find(<Switcher />)).toBeTruthy();
       expect(component.find(<ButtonExplore />)).toBeTruthy();
@@ -78,7 +84,7 @@ describe('<Home />', () => {
     it('calls play an animation', () => {
       spy = jest.spyOn(tweenline, 'play');
       // eslint-disable-next-line
-      component = shallow(<Home isFetching={false}/>);
+      component = shallow(<Home person={person} isFetching={false}/>);
       component.setState({homeTween: tweenline});
       component.state().homeTween.play();
       expect(spy).toHaveBeenCalledTimes(1);

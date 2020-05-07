@@ -14,7 +14,7 @@ class App extends Component {
   state = {
     person: null,
     projects: [],
-    experiments: [],
+    experiments: {},
     isOpenedAbout: false,
     isFetching: true,
     error: null,

@@ -1,7 +1,8 @@
-@import '../../styles/base/_vars.scss';
-@import '../../styles/mixins/_breakpoints.scss';
+@import '../mixins/_breakpoints.scss';
+@import '../base/_vars.scss';
 
-.project {
+
+.content {
   display: flex;
   flex-direction: row;
   align-content: center;

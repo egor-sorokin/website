@@ -1,0 +1,49 @@
+@import '../mixins/_breakpoints.scss';
+@import '../base/_vars.scss';
+
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  @include breakpoint-tablet {
+    flex-direction: column;
+    flex-flow: column-reverse;
+  }
+
+  .col {
+  }
+
+  .col--right {
+    width: 67%;
+
+    @include breakpoint-tablet {
+      width: 100%;
+    }
+  }
+
+  .col--left {
+    width: 33%;
+
+    padding-right: 5%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @include breakpoint-tablet {
+      width: 100%;
+
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+  }
+
+  .image {
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -44,9 +44,10 @@
   top: 0;
   left: 50%;
 
-  width: 1px;
+  width: 2px;
   height: 320px;
   background-color: $mercuryLight;
+  opacity: 0.5;
 
   transform: translateX(-50%);
 }

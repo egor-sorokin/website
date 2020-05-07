@@ -3,13 +3,17 @@
 
 .line {
   height: 44vh;
-  width: 1px;
+  width: 2px;
 
   background-color: $dune;
-  opacity: 0.2;
+  opacity: 0.1;
 
   @include breakpoint-tablet {
     display: none;
+  }
+
+  &--full {
+    height: 100vh;
   }
 }
 

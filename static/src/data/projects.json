@@ -2,110 +2,84 @@
   "projects": [
     {
       "id": 1,
-      "name": "Southwestern University",
-      "url": "https://www.southwestern.edu",
+      "name": "Bosch PRO360",
+      "url": "https://www.bosch-professional.com/pro360/",
       "info": [
         {
           "label": "role",
-          "text": "Web Software Engineer",
+          "text": "Software Engineer/FE Team Lead",
           "url": ""
         },
         {
           "label": "company",
-          "text": "Handsome",
-          "url": "https://www.handsome.is"
+          "text": "Futurice",
+          "url": "https://www.futurice.com"
         },
         {
           "label": "description",
-          "text": "Southwestern is a place and time of personal growth and joint endeavor. The main goals of the partnership with Handsome were to do not just a re-branding and a re-design of the website, but also to create a set of reusable UI components for the future usage.",
+          "text": "Bosch PRO360 a worldwide inventory management application for power tools, includes several web and mobile apps.",
           "url": ""
         }
       ],
       "image": {
-        "src": "assets/pr_su.jpg",
-        "alt": "Southwestern University"
+        "src": "assets/pr_pro360.png",
+        "alt": "Bosch PRO360"
       }
     },
     {
       "id": 2,
-      "name": "Game: Orbs",
-      "url": "https://labs.handsome.is/games/orbs/",
+      "name": "Accessibility checker for websites",
+      "url": "",
       "info": [
         {
           "label": "role",
-          "text": "Web Software Engineer",
+          "text": "Software Engineer",
           "url": ""
         },
         {
           "label": "company",
-          "text": "Handsome",
-          "url": "https://www.handsome.is"
+          "text": "Futurice",
+          "url": "https://www.futurice.com"
         },
         {
           "label": "description",
-          "text": "The project was focused on studying Vanilla JavaScript, on the implementation of complex animations using standard tools and setting up the project infrastructure from scratch.",
+          "text": "Accessibility checker for websites owned by Futurice. The tool is based on the W3C Web Content Accessibility Guidelines (WCAG). Not publicly available yet.",
           "url": ""
         }
       ],
       "image": {
-        "src": "assets/pr_orbs.gif",
-        "alt": "Game: Orbs"
+        "src": "assets/pr_accessibility.png",
+        "alt": "Accessibility checker for websites"
       }
     },
     {
       "id": 3,
-      "name": "Company.com",
-      "url": "https://www.company.com",
+      "name": "futuLog",
+      "url": "",
       "info": [
         {
           "label": "role",
-          "text": "Web Software Engineer",
+          "text": "Software Engineer",
           "url": ""
         },
         {
           "label": "company",
-          "text": "Handsome",
-          "url": "https://www.handsome.is"
+          "text": "Futurice",
+          "url": "https://www.futurice.com"
         },
         {
           "label": "description",
-          "text": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design their dashboard and marketing website.",
+          "text": "Futurice owned internal app developed for Human Care department to prevent spread COVID by notifying office people in case of positive cases. Not publicly available.",
           "url": ""
         }
       ],
       "image": {
-        "src": "assets/pr_company.jpg",
-        "alt": "Company.com"
+        "src": "assets/pr_futulog.png",
+        "alt": "futuLog"
       }
     },
     {
       "id": 4,
-      "name": "Handsome Wiki (internal project)",
-      "url": "https://www.google.com",
-      "info": [
-        {
-          "label": "role",
-          "text": "Web Software Engineer",
-          "url": ""
-        },
-        {
-          "label": "company",
-          "text": "Handsome",
-          "url": "https://www.handsome.is"
-        },
-        {
-          "label": "description",
-          "text": "The main idea of the project was to create a knowledge base for employees at Handsome with the support of different devices (mobile phones, tablets, desktop).",
-          "url": ""
-        }
-      ],
-      "image": {
-        "src": "assets/pr_hndwiki.jpg",
-        "alt": "Handsome: Wiki"
-      }
-    },
-    {
-      "id": 5,
       "name": "Scroll Versions for Confluence",
       "url": "https://marketplace.atlassian.com/apps/1210818/scroll-versions-for-confluence",
       "info": [
@@ -131,7 +105,7 @@
       }
     },
     {
-      "id": 6,
+      "id": 5,
       "name": "Scroll Translations for Confluence",
       "url": "https://marketplace.atlassian.com/apps/1211616/scroll-translations-for-confluence",
       "info": [
@@ -157,7 +131,7 @@
       }
     },
     {
-      "id": 7,
+      "id": 6,
       "name": "Scroll Viewport for Confluence",
       "url": "https://marketplace.atlassian.com/apps/1211636/scroll-viewport-for-confluence?hosting=datacenter&tab=overview",
       "info": [
@@ -183,7 +157,7 @@
       }
     },
     {
-      "id": 8,
+      "id": 7,
       "name": "Custom development",
       "url": "",
       "info": [
@@ -206,6 +180,110 @@
       "image": {
         "src": "assets/pr_custom.png",
         "alt": "Logos"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Southwestern University",
+      "url": "https://www.southwestern.edu",
+      "info": [
+        {
+          "label": "role",
+          "text": "Web Software Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "Handsome",
+          "url": "https://www.handsome.is"
+        },
+        {
+          "label": "description",
+          "text": "Southwestern is a place and time of personal growth and joint endeavor. The main goals of the partnership with Handsome were to do not just a re-branding and a re-design of the website, but also to create a set of reusable UI components for the future usage.",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "assets/pr_su.jpg",
+        "alt": "Southwestern University"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Game: Orbs",
+      "url": "",
+      "info": [
+        {
+          "label": "role",
+          "text": "Web Software Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "Handsome",
+          "url": "https://www.handsome.is"
+        },
+        {
+          "label": "description",
+          "text": "The project was focused on studying Vanilla JavaScript, on the implementation of complex animations using standard tools and setting up the project infrastructure from scratch.",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "assets/pr_orbs.gif",
+        "alt": "Game: Orbs"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Company.com",
+      "url": "https://www.company.com",
+      "info": [
+        {
+          "label": "role",
+          "text": "Web Software Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "Handsome",
+          "url": "https://www.handsome.is"
+        },
+        {
+          "label": "description",
+          "text": "Company.com is a trusted provider of enterprise quality operational resources to help start, run and grow your business. The main goals of the partnership with Handsome were to re-design their dashboard and marketing website.",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "assets/pr_company.jpg",
+        "alt": "Company.com"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Handsome Wiki",
+      "url": "",
+      "info": [
+        {
+          "label": "role",
+          "text": "Web Software Engineer",
+          "url": ""
+        },
+        {
+          "label": "company",
+          "text": "Handsome",
+          "url": "https://www.handsome.is"
+        },
+        {
+          "label": "description",
+          "text": "Knowledge base for employees at Handsome with the support of different devices (mobile phones, tablets, desktop). Not publicly available.",
+          "url": ""
+        }
+      ],
+      "image": {
+        "src": "assets/pr_hndwiki.jpg",
+        "alt": "Handsome: Wiki"
       }
     }
   ]

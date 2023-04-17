@@ -3,11 +3,11 @@
     "id": 1,
     "first_name": "Egor",
     "last_name": "Sorokin",
-    "email": "example@admin.com",
+    "email": "",
     "summary": [
       {
         "title": "introduction",
-        "text": "Egor is an entrepreneurial self-learner who fell in love with software engineering early in his career and has dedicated his life to it since. He's passionate, seasoned and always eager to take on engineering challenges of all kinds."
+        "text": "I am Egor, an experienced software engineer with a passion for entrepreneurship and self-learning. I thrive on engineering challenges and am always eager to explore new ideas and technologies. Beyond my professional pursuits, I enjoy dedicating time to personal development through foreign language studies, doing sports, and keeping up with the latest advances in technology. With a positive and easy-going personality, I approach every opportunity with optimism and enthusiasm. I am interested in remote work opportunities, if you have any please contact me on LinkedIn."
       },
       {
         "title": "purpose of the website",
@@ -19,28 +19,23 @@
       "items": [
         {
           "id": 1,
-          "text": "Medium",
-          "url": "https://medium.com/@egors"
-        },
-        {
-          "id": 2,
           "text": "LinkedIn",
           "url": "https://www.linkedin.com/in/egor-sorokin-1b13ba105"
         },
         {
-          "id": 3,
+          "id": 2,
           "text": "GitHub",
           "url": "https://github.com/egor-sorokin"
         },
         {
-          "id": 4,
+          "id": 3,
           "text": "CodePen",
           "url": "https://codepen.io/egor-sorokin/#"
         },
         {
-          "id": 5,
-          "text": "Heroku",
-          "url": "http://threejs-examples-egor.herokuapp.com/"
+          "id": 4,
+          "text": "Medium",
+          "url": "https://medium.com/@egors"
         }
       ]
     }

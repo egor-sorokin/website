@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TimelineMax } from 'gsap';
+
 import { attachHideAnimation } from './animation';
 import './styles.scss';
 

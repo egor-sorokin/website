@@ -17,6 +17,7 @@ const DescriptionList = ({ listData }) => {
       >
         <p
           className="item__plain-text font-f-sec font-s-20 text-c-l-dune"
+          /* eslint-disable-next-line react/no-danger */
           dangerouslySetInnerHTML={{ __html: listData }}
         />
       </li>

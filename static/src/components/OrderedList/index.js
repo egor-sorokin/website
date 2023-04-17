@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import LinkMasked from '../LinkMasked/index';
 import { LINK_MASKED } from '../../constants/index';
 import './styles.scss';

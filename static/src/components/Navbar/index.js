@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import scrollToY from 'scroll-to-y';
+
 import LinkStretched from '../LinkStretched/index';
 import './styles.scss';
 

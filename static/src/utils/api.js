@@ -9,10 +9,11 @@ const timeout = (ms, promise) => new Promise((resolve, reject) => {
   }, ms);
 });
 
+const getEnvPath = () =>
+  (process.env.NODE_ENV === 'development' ? 'http://localhost:8080/src' : 'https://egor-sorokin.github.io/website');
 
 const fetchData = (url) => {
-  // const mockDataUrl = `http://localhost:8082/src/data/${url}.json`;
-  const mockDataUrl = `https://egor-sorokin.github.io/website/data/${url}.json`;
+  const mockDataUrl = `${getEnvPath()}/data/${url}.json`;
 
   return timeout(API_DELAY, axios.get(mockDataUrl))
     .then((response) => {

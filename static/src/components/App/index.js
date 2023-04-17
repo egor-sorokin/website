@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Home from '../Pages/Home/index';
 import Contact from '../Pages/Contact/index';
 import About from '../Pages/About/index';

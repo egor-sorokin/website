@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { TimelineMax } from 'gsap';
 import PropTypes from 'prop-types';
 import scrollToY from 'scroll-to-y';
+
 import ButtonExplore from './ButtonExplore';
 import Switcher from '../../Switcher/index';
 import { attachShowAnimation } from './animation';

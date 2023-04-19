@@ -1,4 +1,5 @@
-import gsap, { Power2 } from 'gsap';
+import { Power2, gsap } from 'gsap';
+gsap.registerPlugin();
 
 export const attachShowAnimation = (targetTween: any) => {
   targetTween

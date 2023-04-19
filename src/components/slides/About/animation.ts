@@ -1,4 +1,4 @@
-import { Power2 } from 'gsap';
+import gsap, { Power2 } from 'gsap';
 
 export const attachToggleAnimation = (targetTween: any) => {
   targetTween

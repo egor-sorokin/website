@@ -44,8 +44,8 @@ export const attachShowAnimation = (targetTween: any) => {
     )
     .fromTo(
       '.home__button-explore',
-      { x: '0%', opacity: 0, ease: Power2.easeOut, duration: 0.5 },
-      { x: '-50%', opacity: 1, ease: Power2.easeOut, duration: 0.5 }
+      { x: '50%', opacity: 0, ease: Power2.easeOut, duration: 0.5 },
+      { x: '0', opacity: 1, ease: Power2.easeOut, duration: 0.5 }
     )
     .to('body', { overflowY: 'initial' });
 };

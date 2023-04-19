@@ -1,0 +1,27 @@
+@import 'mixins/_breakpoints.scss';
+@import 'mixins/_fonts.scss';
+
+@import 'base/_reset.scss';
+@import 'base/_normalize.scss';
+@import 'base/_vars.scss';
+@import 'base/_defaults.scss';
+
+@import 'app/_common.scss';
+@import 'app/_typo.scss';
+@import 'app/_link.scss';
+
+@import 'components/_descriptionList';
+@import 'components/_imageGrid';
+@import 'components/_linkMasked';
+@import 'components/_linkStretched';
+@import 'components/_navbar';
+@import 'components/_switcher';
+@import 'components/_orderedList';
+@import 'components/_unorderedList';
+@import 'components/_logo';
+@import 'components/_summary';
+
+@import 'components/slides/_about';
+@import 'components/slides/_contact';
+@import 'components/slides/_home';
+@import 'components/slides/_projects';

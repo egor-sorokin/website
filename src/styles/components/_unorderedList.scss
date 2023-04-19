@@ -1,0 +1,11 @@
+@import '../base/_vars.scss';
+
+.unorderedlist {
+  &__item {
+    text-align: center;
+
+    &:nth-of-type(n+2) {
+      margin-top: 8px;
+    }
+  }
+}

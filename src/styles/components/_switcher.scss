@@ -1,0 +1,40 @@
+@import '../base/_vars.scss';
+@import '../mixins/_breakpoints.scss';
+
+.line {
+  height: 44vh;
+  width: 2px;
+
+  background-color: $dune;
+  opacity: 0.1;
+
+  @include breakpoint-tablet {
+    display: none;
+  }
+
+  &--full {
+    height: 100vh;
+  }
+}
+
+.switcher__link {
+  display: flex;
+
+  height: 12vh;
+
+  align-items: center;
+
+  @include breakpoint-tablet {
+    height: auto;
+  }
+}
+
+.switcher--white {
+  .line {
+    background-color: $mercury;
+    opacity: 0.2;
+  }
+  .link-stretched {
+    color: $mercuryLight;
+  }
+}

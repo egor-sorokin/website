@@ -1,0 +1,122 @@
+@import '../../base/_vars.scss';
+@import '../../mixins/_breakpoints.scss';
+
+.banner {
+  position: relative;
+
+  min-height: 100vh;
+
+  background-color: $dune;
+}
+
+.home {
+  &__name {
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    left: 10%;
+    top: 50%;
+
+    transform: translateY(-50%);
+  }
+  .switcher {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 4vw;
+
+    @include breakpoint-tablet {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+
+      width: auto;
+    }
+  }
+}
+
+.button {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  z-index: 2;
+
+  cursor: pointer;
+
+  transform: translateX(-50%);
+
+  &:after {
+    content: '';
+    display: block;
+
+    height: 1px;
+
+    transform: translateX(0) translateZ(0) scaleX(1);
+    transform-origin: left;
+
+    transition: width $defaultTiming $defaultEasing,
+    background-color $defaultTiming $defaultEasing,
+    transform $defaultTiming $defaultEasing;
+  }
+
+  &__link {
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+    letter-spacing: 4px;
+
+    transition: letter-spacing $defaultTiming $defaultEasing,
+    color $defaultTiming $defaultEasing;
+  }
+
+  &--white {
+    &:after {
+      width: 55px;
+      background-color: $mercuryLight;
+    }
+    .button__link {
+      color: $mercuryLight;
+    }
+  }
+  &--dark {
+    &:after {
+      width: 30px;
+      background-color: $dune;
+    }
+    .button__link {
+      color: $dune;
+    }
+  }
+}
+
+.button:hover {
+  &:after {
+    transform: translateX(5px) translateZ(0) scaleX(1.2);
+  }
+
+  .button__link {
+    letter-spacing: 4.4px;
+  }
+}
+
+.button--white:hover {
+  &:after {
+    background-color: $mercury;
+  }
+  .button__link {
+    color: $mercury;
+    letter-spacing: 4.4px;
+  }
+}
+
+.button--dark:hover {
+  &:after {
+    background-color: $duneLight;
+  }
+  .button__link {
+    color: $duneLight;
+    letter-spacing: 5.4px;
+  }
+}

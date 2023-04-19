@@ -1,0 +1,134 @@
+@import '../../base/_vars.scss';
+@import '../../mixins/_breakpoints.scss';
+
+.about {
+  display: flex;
+  flex-direction: row;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: $dune;
+
+  width: 100%;
+  height: 100vh;
+
+  transform: translateX(100%);
+
+  z-index: 9999;
+
+  @include breakpoint-mobile {
+    overflow-y: scroll;
+    flex-wrap: wrap;
+
+    padding: 15vh 10vw 5vh;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    &-footer {
+      margin-top: 10vh;
+    }
+    &__title {
+      text-align: center;
+    }
+    &__line {
+      position: absolute;
+      left: 50%;
+
+      height: 44vh;
+      width: 2px;
+      background-color: $mercury;
+      opacity: 0.2;
+
+      transform: translateX(-50%);
+
+      &--bottom {
+        bottom: 0;
+      }
+      &--top {
+        top: 0;
+      }
+    }
+    &--left {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 20vw;
+
+      @include breakpoint-mobile {
+        display: none;
+      }
+    }
+    &--middle {
+      padding-left: 8vw;
+      flex-basis: 52vw;
+
+      @include breakpoint-mobile {
+        padding-left: 0;
+
+        justify-content: center;
+
+        flex-basis: inherit;
+      }
+    }
+    &--right {
+      flex-basis: 28vw;
+      padding-right: 5vw;
+      padding-left: 8vw;
+
+      align-self: center;
+
+      @include breakpoint-mobile {
+        margin-top: 4vh;
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: center;
+
+        flex-basis: inherit;
+      }
+    }
+
+    &--right,
+    &--middle {
+      padding-top: 10vh;
+      padding-bottom: 10vh;
+
+      @include breakpoint-mobile {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.about {
+  .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translateY(-50%) translateX(-43px);
+  }
+}
+
+.about {
+  .button-close {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+
+    @include breakpoint-tablet {
+      right: 40px;
+      top: 40px;
+    }
+  }
+}
+
+.about.visible {
+  transform: translateX(0%);
+}

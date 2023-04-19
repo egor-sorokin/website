@@ -1,0 +1,54 @@
+@import '../../base/_vars.scss';
+@import '../../mixins/_breakpoints.scss';
+
+
+.contact {
+  @include breakpoint-mobile {
+    padding-bottom: 5vh;
+  }
+}
+
+.contact-inner {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+
+  width: 30%;
+  height: 100%;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    width: 100%;
+  }
+}
+
+.contact {
+  .logo {
+    margin-top: 90px;
+    margin-bottom: 150px;
+
+    transform: translateX(7px);
+  }
+  .navbar {
+    margin-top: 155px;
+  }
+}
+
+.delimiter {
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 2px;
+  height: 320px;
+  background-color: $mercuryLight;
+  opacity: 0.5;
+
+  transform: translateX(-50%);
+}
+

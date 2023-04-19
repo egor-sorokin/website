@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<DescriptionList /> base tests matches snapshot 1`] = `
-<ul
-  className="description-list"
-/>
-`;

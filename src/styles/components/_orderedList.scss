@@ -1,0 +1,54 @@
+@import '../base/_vars.scss';
+@import '../mixins/_breakpoints.scss';
+
+
+.orderedlist {
+  &__list {
+    list-style: none;
+    counter-reset: item - 1;
+  }
+
+  &__item {
+    counter-increment: item;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    &:before {
+      content: counter(item, decimal-leading-zero);
+      margin-left: 10px;
+
+      min-width: 20px;
+    }
+    &:after {
+      content: '';
+      display: block;
+
+      position: absolute;
+      top: 14px;
+      left: 0;
+
+      width: 5px;
+      height: 1px;
+
+      background-color: $mercuryLight;
+    }
+    &-dash {
+      margin-top: 13px;
+      margin-right: 10px;
+
+      width: 15px;
+      height: 1px;
+
+      background-color: $mercuryLight;
+
+      @include breakpoint-mobile {
+        width: 5px;
+        margin-right: 5px;
+      }
+    }
+  }
+  &__title {
+    text-align: left;
+  }
+}

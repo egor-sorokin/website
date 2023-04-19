@@ -1,0 +1,18 @@
+@import '../base/_vars.scss';
+
+.summary {
+  margin-top: 50px;
+
+  &__item {
+    &:nth-of-type(n+2) {
+      margin-top: 30px;
+    }
+  }
+  &__title {
+    text-align: left;
+  }
+  &__text {
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+}

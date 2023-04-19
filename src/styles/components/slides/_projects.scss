@@ -1,0 +1,56 @@
+@import '../../base/_vars.scss';
+@import '../../mixins/_breakpoints.scss';
+
+.slide-inner {
+  display: flex;
+  flex-direction: row;
+
+  position: relative;
+
+  height: 100vh;
+  width: 100vw;
+
+  padding: 3vh 2vw 3vh 6vw;
+
+  @include breakpoint-tablet {
+    flex-direction: column;
+    align-items: center;
+
+    height: auto;
+    width: auto;
+
+    padding: 0;
+    margin-top: 80px;
+  }
+
+  .switcher {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 4vw;
+
+    @include breakpoint-tablet {
+      width: auto;
+      position: inherit;
+    }
+  }
+}
+
+.container {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+
+  width: 90%;
+  height: 100%;
+
+  align-self: center;
+
+  @include breakpoint-tablet {
+    width: 80%;
+
+    align-items: center;
+  }
+}

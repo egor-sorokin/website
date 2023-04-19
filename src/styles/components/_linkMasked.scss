@@ -1,0 +1,55 @@
+@import '../base/_vars.scss';
+
+.link-masked {
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+
+  cursor: pointer;
+
+  &__placeholder {
+  }
+  &__mask {
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: translateX(-100%) translateZ(0);
+    transition: transform $defaultTiming $defaultEasing;
+  }
+  &__text {
+    display: block;
+
+    transform: translateX(100%) translateZ(0);
+    transition: transform $defaultTiming $defaultEasing;
+  }
+}
+
+.link-masked:hover {
+  .link-masked__mask {
+    transform: translateX(0) translateZ(0)
+  }
+  .link-masked__text {
+    transform: translateX(0) translateZ(0);
+  }
+}
+
+.link-masked--white {
+  .link-masked__placeholder {
+    color: $mercuryLight;
+  }
+  .link-masked__text {
+    color: $dune;
+  }
+}
+
+.link-masked--black {
+  .link-masked__placeholder {
+    color: $mercuryLight;
+  }
+  .link-masked__text {
+    color: $mercury;
+  }
+}

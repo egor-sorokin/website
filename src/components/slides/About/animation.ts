@@ -4,7 +4,7 @@ export const attachToggleAnimation = (targetTween: any) => {
   targetTween
     .to('.about', { duration: 0.8, x: 0, ease: Power2.easeInOut })
     .fromTo(
-      '.about .about__title',
+      '.about .about__item',
       { duration: 0.4, x: '30%', opacity: 0, ease: Power2.easeOut },
       { x: '0%', opacity: 1, ease: Power2.easeOut }
     )

@@ -12,23 +12,14 @@ const ButtonExplore: FC<ButtonExploreProps> = ({
   onClick,
   children,
 }) => {
-  const buttonRef = useRef<HTMLDivElement | null>(null);
   const classNames = `${cssClasses} button button--white`;
 
   const handleClick = () => {
     onClick('projects', true);
   };
 
-  useEffect(() => {
-    const buttonElement = buttonRef.current;
-    if (buttonElement) {
-      const buttonTween = new TimelineMax();
-      buttonTween.to(buttonElement, { opacity: 1, y: 0, duration: 0.8 });
-    }
-  }, []);
-
   return (
-    <div className={classNames} ref={buttonRef}>
+    <div className={classNames}>
       <a
         href="#projects"
         className="button__link font-s-12"

@@ -36,6 +36,11 @@
           "id": 4,
           "text": "Medium",
           "url": "https://medium.com/@egors"
+        },
+        {
+          "id": 5,
+          "text": "YouTube",
+          "url": "https://www.youtube.com/channel/UCLCjaW-W2cSDYXxewosqQTw"
         }
       ]
     }
